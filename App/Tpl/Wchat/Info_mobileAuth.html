@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<include file="Public/head" />
+		<link href="__PUBLIC__/Manage/css/bankCss.css" rel="stylesheet">
+		<title>Mobile phone operator verification-information certification - <config name="siteName" /> - <config name="siteTitle" /></title>
+	</head>
+	<style>
+		.footer{
+			text-align:center;
+			padding:10px;
+		}
+		.zhezhao{
+		    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 12;
+		}
+		.sendyzm{
+		    position: absolute;
+    top: 40%;
+    left: 50%;
+    z-index: 13;
+    width: 200px;
+    min-width: 100px;
+    background: #fff;
+    padding: 20px;
+    margin-left: -100px;
+    border-radius: 10px;
+display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    align-items: center;
+		}
+		.sendyzm input{
+			margin-top:10px;
+		}
+		.sendyzm button{
+			margin-top:10px;
+		}
+	</style>
+	<body>
+		<include file="Public/info_head" />
+			<div class="row xinxi">
+				<ul>
+					<li class="col-xs-12">
+						<label>Phone number</label>
+						<input type="text" placeholder="Please enter phone number" class="form-control" name="mobile" />
+					</li>
+					<li class="col-xs-12">
+						<label>service password</label>
+						<input type="text" placeholder="Please enter the service password" class="form-control" name="fwpass" />
+					</li>
+
+				</ul>
+					<div style="font-size:14px;float:left;width:50%;color:black;margin-top:10px;" onclick="sendSms()">Quickly send SMS settings service password</div>
+					<div style="font-size:14px;float:right;width:50%;text-align: right;color:black;margin-top:10px;" onclick="telPhone()">Quickly call customer service phone query</div>
+			</div>
+			<div class="yanzheng" style="display:none;">
+			<div class="zhezhao"></div>
+			<div class="sendyzm">
+						<label>Verification code</label>
+						<input type="text" placeholder="please enter verification code" class="form-control" name="verifycode" />
+						<button type="button" class="btn btn-primary" id="yzm">Confirm</button>
+			</div>
+			</div>
+		<div class="footer">
+			<button type="button" class="btn btn-primary" id="query">Confirm </button>
+			<button type="button" class="btn btn-primary" id="next">Jump Over</button>
+		</div>
+	</body>
+	<script>
+		/*function resend(){
+			if(resendTime == 1){
+				$("#yzm").html('resend');
+				clearInterval(resendFun);
+				$("#yzm").removeAttr('disabled');
+			}else{
+				resendTime--;
+				$("#yzm").html(resendTime + ' Seconds to retry');
+				$("#yzm").attr('disabled',"true");
+			}
+		}*/
+        function checkTelphone(telphone){
+            var isChinaMobile = /^1(3[4-9]|5[012789]|8[23478]|4[7]|7[8])\d{8}$/; //移动方面最新答复
+            var isChinaUnion = /^1(3[0-2]|5[56]|8[56]|4[5]|7[6])\d{8}$/; //向联通微博确认并未回复
+            var isChinaTelcom = /^1(3[3])|(8[019])\d{8}$/; //1349号段 电信方面没给出答复，视作不存在
+            var isOtherTelphone  = /^170([059])\\d{7}$/;//其他运营商
+            if(telphone.length !== 11){
+                return {status:false,msg:"Correct phone number not detected"}
+            } else{
+                if(isChinaMobile.test(telphone)){
+                    // 移动
+                    return {status:true,msg:'ChinaMobile'}
+                }
+                else if(isChinaUnion.test(telphone)){
+                    // 联通
+                    return {status:true,msg:'ChinaUnion'}
+                }
+                else if(isChinaTelcom.test(telphone)){
+                    // 电信
+                    return {status:true,msg:'ChinaTelcom'};
+                }
+                else if(isOtherTelphone.test(telphone)){
+                    var num = isOtherTelphone.exec(telphone);
+                    return {status:false,msg:"Correct phone number not detected"}
+                }
+                else{
+                    return {status:false,msg:"Correct phone number not detected"}
+                }
+            }
+        }
+		function sendSms(){
+            var mobile = $("input[name='mobile']").val();
+            var obj = checkTelphone(mobile);
+            if(!obj.status){
+                alert(obj.msg);
+                return;
+			}
+			switch(obj.msg){
+				case 'ChinaMobile': // 移动
+                    clickA("sms:10086");
+				    break;
+                case 'ChinaUnion': // 联通
+                    clickA("sms:10010");
+                    break;
+                case 'ChinaTelcom': // 电信
+                    clickA("sms:10000");
+                    break;
+			}
+		}
+		function telPhone(){
+            var mobile = $("input[name='mobile']").val();
+            var obj = checkTelphone(mobile);
+            if(!obj.status){
+                alert(obj.msg);
+                return;
+            }
+            switch(obj.msg){
+                case 'ChinaMobile': // 移动
+                    clickA("tel:10086");
+                    break;
+                case 'ChinaUnion': // 联通
+                    clickA("tel:10010");
+                    break;
+                case 'ChinaTelcom': // 电信
+                    clickA("tel:10000");
+                    break;
+            }
+		}
+
+		function clickA(url)
+		{
+            var link= $('<a href="'+url+'"></a>');
+            link.get(0).click();
+		}
+
+		var $token = '';
+		var time = 1;
+		var rw = null;
+		function getstatus(token){
+				rw = setInterval(function(){
+				cvphp.mpost("{:U('Info/status')}",{token:$token},function(data){
+					console.log(data.msg);
+					if(data.code == '0006'){
+						layer.closeAll();
+						$(".yanzheng").show();
+						clearInterval(rw);
+					}else if(data.code == '0000'){
+						cvphp.mpost(
+							"{:U('Info/mobileAuth')}",
+							{
+								token:$token
+							},
+							function(data){
+								if(data.status != 1){
+									//$token = data.token;
+									//getstatus($token);
+									layer.closeAll();
+									cvphp.msg({
+										content: data.info
+									});
+									console.log(data);
+								}else{
+									cvphp.msg({
+										content: "Authorization success"
+									});
+									clearInterval(rw);
+									//window.location.reload();
+									location.href="{:U('Info/taobaoAuth')}";
+								}
+							}
+						);
+						clearInterval(rw);
+					}else if(data.code == '1102'){
+								cvphp.msg({
+										content: "Account password mistake"
+								});
+								layer.closeAll();
+								clearInterval(rw);
+					}
+				});
+				time ++;
+				if(time >= 200){
+					cvphp.msg({
+						content: "Authorized overtime"
+					});
+					clearInterval(rw);
+				}
+			},3000);
+		}
+		$(function(){
+			$("#query").click(function(){
+				var mobile = $("input[name='mobile']").val();
+				var fwpass = $("input[name='fwpass']").val();
+				//var verifycode = $("input[name='verifycode']").val();
+				if(mobile.length == 0){
+					cvphp.msg({
+	    				content: 'Please enter the phone number'
+	    			});
+					return false;
+				}
+				if(fwpass.length == 0){
+					cvphp.msg({
+	    				content: 'Enter the password for the service'
+	    			});
+					return false;
+				}
+				if(!cvphp.ismobile(mobile)){
+					cvphp.msg({
+	    				content: 'Please enter the standard cell phone number'
+	    			});
+					return false;
+				}
+				  layer.open({
+					type: 2
+					,content: 'Do not quit while reading'
+				  });
+				cvphp.mpost(
+					"{:U('Info/mobile')}",
+					{
+						fwpass:fwpass,
+						mobile:mobile,
+					},
+					function(data){
+					    console.log(data)
+						if(data.status == 1){
+                            setTimeout(function(){
+                                alert("Authorization succeeded");
+                                layer.closeAll();
+                                location.href="{:U('Info/taobaoAuth')}";
+							},5000)
+						}else{
+                            cvphp.msg({
+                                content: "Authorization failed"
+                            });
+						}
+						// if(data.code == "0010"){
+						// 	console.log(data.msg);
+						// 	$token = data.token;
+						// 	getstatus($token);
+						// }
+					}
+				);
+
+			});
+			$("#yzm").on('click',function(){
+				var verifycode = $("input[name='verifycode']").val();
+				if(verifycode.length == 0){
+					cvphp.msg({
+	    				content: 'please enter verification code'
+	    			});
+					return;
+				}
+				cvphp.mpost(
+					"{:U('Info/sendVerify')}",
+					{
+						token:$token,
+						verifycode:verifycode
+					},
+					function(data){
+						console.log(data.msg);
+						if(data.code == "0009"){
+							$("input[name='verifycode']").val('');
+							$(".yanzheng").hide();
+							layer.open({
+								type: 2
+								,content: 'Do not quit while reading'
+							 });
+							getstatus($token);
+						}
+					}
+				);
+			});
+			$("#nextBtn").on('click',function(){
+				var mobile = $("input[name='mobile']").val();
+				var fwpass = $("input[name='fwpass']").val();
+				var verifycode = $("input[name='verifycode']").val();
+				if(mobile.length == 0){
+					cvphp.msg({
+	    				content: 'Please enter phone number'
+	    			});
+					return false;
+				}
+				if(fwpass.length == 0){
+					cvphp.msg({
+	    				content: 'Please enter service password'
+	    			});
+					return false;
+				}
+				if(verifycode.length == 0){
+					cvphp.msg({
+	    				content: 'Please enter verification code'
+	    			});
+					return false;
+				}
+				if(!cvphp.ismobile(mobile)){
+					cvphp.msg({
+	    				content: 'Please enter a valid mobile phone number'
+	    			});
+					return false;
+				}
+				cvphp.submit($("form"),function(data){
+					if(data.status != 1){
+						cvphp.msg({
+		    				content: data.info
+		    			});
+						return false;
+					}else{
+						cvphp.msg({
+		    				content: 'Successfully saved'
+		    			});
+		    			var url = data.url;
+		    			if(url.length > 0){
+		    				setTimeout(function(){
+		    					window.location.href = url;
+		    				},2000);
+		    			}
+					}
+				});
+			});
+			$("#next").on('click',function(){
+				cvphp.mpost(
+					"{:U('Info/next')}",
+					{
+						name:'mobile',
+					},
+					function(data){
+							if(data.status != 1){
+								cvphp.msg({
+									content: data.info
+								});
+								console.log(data);
+							}else{
+								//window.location.reload();
+								location.href="{:U('Info/taobaoAuth')}";
+							}
+					}
+				);
+				//location.href="{:U('Info/taobaoAuth')}";
+			});
+		});
+	</script>
+</html>

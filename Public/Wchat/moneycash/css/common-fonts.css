@@ -1,0 +1,116 @@
+
+:root {
+    --py-font-family-dinpro-medium:"Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    --py-font-family-pingfang-sc-medium: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    --py-font-family-pingfang-sc-semibold: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    --py-font-family-pingfang-sc-regular: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    --py-font-size-lg: 18px;
+    --py-font-size-md: 16px;
+    --py-font-size-sm: 15px;
+    --py-font-size-xs: 14px;
+    --py-font-size-xss: 13px;
+}
+
+.font-family-dinpro-medium {
+    font-family: var(--py-font-family-dinpro-medium);
+}
+
+.font-family-pingfang-sc-medium {
+    font-family: var(--py-font-family-pingfang-sc-medium);
+}
+
+.font-family-pingfang-sc-semibold {
+    font-family: var(--py-font-family-pingfang-sc-semibold);
+}
+
+.font-family-pingfang-sc-regular {
+    font-family: var(--py-font-family-pingfang-sc-regular);
+}
+
+.font-size-lg {
+    font-size: var(--py-font-size-lg);
+}
+
+.font-size-md {
+    font-size: var(--py-font-size-md);
+}
+
+.font-size-sm {
+    font-size: var(--py-font-size-sm);
+}
+
+.font-size-xs {
+    font-size: var(--py-font-size-xs);
+}
+
+.font-size-xss {
+    font-size: var(--py-font-size-xss);
+}
+
+.font-color-white {
+    color: var(--py-white);
+}
+
+.font-color-black {
+    color: var(--py-black);
+}
+
+.font-color-grey {
+    color: var(--py-grey);
+}
+
+.font-color-grey-2 {
+    color: var(--py-grey-2);
+}
+
+.font-color-grey-3 {
+    color: var(--py-grey-3);
+}
+
+.font-color-grey-4 {
+    color: var(--py-grey-4);
+}
+
+.font-color-grey-5 {
+    color: var(--py-grey-5);
+}
+
+.font-color-grey-6 {
+    color: var(--py-grey-6);
+}
+
+.font-color-grey-7 {
+    color: var(--py-grey-7);
+}
+
+.font-color-blue {
+    color: var(--py-blue);
+}
+
+.font-color-blue-2 {
+    color: var(--py-blue-2);
+}
+
+.font-color-blue-3 {
+    color: var(--py-blue-3);
+}
+
+.font-color-yellow {
+    color: var(--py-yellow);
+}
+
+.font-color-yellow-2 {
+    color: var(--py-yellow-2);
+}
+
+.font-color-gold {
+    color: var(--py-gold);
+}
+
+.font-color-gules {
+    color: var(--py-gules);
+}
+
+.fw-normal {
+    font-weight: 400;
+}

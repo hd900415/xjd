@@ -1,0 +1,277 @@
+@charset "utf-8";
+/* CSS Document */
+.banner {
+    width: 100%;
+    max-height: 7rem;
+}
+
+.banner img {
+    width: 100%;
+    max-height: 7rem;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.ed {
+    width: 100%;
+    background: #f1f8fe;
+    min-height: 2rem;
+    float: left;
+    padding-bottom: 4rem;
+}
+
+.edu {
+    width: 90%;
+    margin-left: 5%;
+    min-height: 12.5rem;
+    background: url(../images/002.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 2rem;
+    color: #a6eeff;
+    position: relative;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.edu span {
+    line-height: 1.2;
+    display: inline-block;
+    width: 90%;
+    margin-top: 2.3rem;
+}
+
+.edu h3 {
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.edu a {
+    width: 50%;
+    height: 2.8rem;
+    display: inline-block;
+    color: #1776d4;
+    border: 1px solid #1776d4;
+    border-radius: 40px;
+    background: #fff;
+    line-height: 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: '黑体';
+    position: absolute;
+    left: 25%;
+    top: 11.5rem;
+}
+
+.content {
+    width: 100%;
+    min-height: 2rem;
+    background: #fff;
+}
+
+.content .null {
+    text-align: center;
+    width: 100%;
+    margin-top: 2rem;
+    color: #666;
+    font-size: 1rem;
+}
+
+.content li {
+    height: 3rem;
+    font-size: 0.9rem;
+    line-height: 3rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.content li label {
+    float: left;
+    margin: 0;
+}
+
+.content li span {
+    float: right;
+    color: #1776d4;
+    font-weight: bold;
+}
+
+.but {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 1.5rem;
+    float: left;
+    margin-bottom: 1.5rem;
+}
+
+.but a {
+    width: 45%;
+    height: 2.5rem;
+    display: inline-block;
+    line-height: 2.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    border-radius: 40px;
+    color: #fff;
+}
+
+.but .but1 {
+    background: #1776d4;
+    float: left;
+}
+
+.but .but2 {
+    background: #ff923f;
+    float: right;
+}
+
+.repay_info {
+    display: block;
+    height: 20rem
+}
+
+.repay_summary {
+    width: 90%;
+    margin: 5rem 5% 2rem 5%;
+}
+
+.repay_summary .title {
+    text-align: center;
+    background-image: url(../images/repay_sub_bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #8b8b8b;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.repay_summary .repay_summary_content span {
+    display: block;
+    margin-top: 0.2rem;
+    color: #969595;
+}
+
+.edu .extend_info {
+    height: 1.6rem;
+    line-height: 1.6rem;
+    padding: 0;
+}
+
+.edu .extend_info label {
+    display: inline-block;
+    position: relative;
+    top: -0.4rem;
+}
+
+.edu .delay_icon {
+    display: inline-block;
+    height: 1.6rem;
+    width: 1.6rem;
+    background: url(../images/delay.png);
+    background-size: 100% 100%;
+    margin: 0 0.3rem 0 0;
+}
+
+.repay-card {
+    /*width: 90%;*/
+    padding: 1rem 3%;
+    min-height: 5rem;
+    /*width: 100%;*/
+    display: block;
+    margin-top: 17rem;
+    z-index: 9999;
+}
+
+.repay-card .layui-card-body {
+    background: #fafafa;
+}
+
+.repay-card label {
+    font-size: 0.9rem;
+    color: #272d3c;
+    font-weight: 600;
+}
+
+.repay-card .layui-form-item {
+    /*display:flex;*/
+}
+
+.repay-card .layui-input-block {
+    margin: 0;
+    float: left;
+}
+
+.repay-card .layui-input-block input.flat {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+}
+
+.layui-form-item .w6 {
+    width: 60%;
+}
+
+.repay-card .layui-form-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.repay-card .layui-form-item .fl {
+    text-align: left;
+}
+
+.repay-card .layui-input-block button.utr-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.repay-card .layui-input-block .br {
+    color: #0aa8e4;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.repay-card .layui-form-item .pd-of-3 {
+    padding-left: 0.5rem;
+}
+
+.repay-card .w2 {
+    width: 20%;
+    text-align: left;
+}
+
+.repay-card .w7 {
+    width: 70%;
+}
+
+.repay-card .w8 {
+    width: 80%;
+}
+
+.repay-card .w3 {
+    width: 30%;
+}
+
+.repay-card .pd-of-3 {
+    text-align: right;
+}
+
+.repay-card .w {
+    width: 20%;
+}
+
+.repay-card .sub {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.repay-card .sub button {
+    border-radius: 20px;
+    width: 50%;
+    margin-top: 1rem;
+}

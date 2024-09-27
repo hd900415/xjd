@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<include file="Public/head" />
+		<link rel="stylesheet" href="__PUBLIC__/Wchat/css/Current.css">
+		<title>repayment plan - <config name="siteName" />  - <config name="siteTitle" /></title>
+	</head>
+	<body>
+		<php>$nowBill = $data['nowBill'];</php>
+		<div class="dangqi">
+			<span>{$data.oid}</span>
+			<p>Due date</p>
+			<h2>{$Think.config.CURRENCY_SYMBOL}{$nowBill.money}</h2>
+			<p>Loan：{$Think.config.CURRENCY_SYMBOL}{$data.money}</p>
+			
+<if condition="$nowBill['status'] eq 0">
+			<label>Pending payment</label>
+</if>
+<if condition="$nowBill['status'] eq 1">
+			<label>Past due</label>
+</if>
+<if condition="$nowBill['status'] eq 2">
+			<label>Paid off</label>
+</if>
+<if condition="$nowBill['status'] eq 3">
+			<label>Overdue payment</label>
+</if>
+<if condition="$nowBill['status'] eq 4">
+			<label>Invalid bill</label>
+</if>
+		</div>
+		<div class="mun">
+			<div class="anniu">
+				<a href="{:U('Repay/repayment',array('id'=>$nowBill['id']))}">
+					<h4>Due date</h4>
+					<em>{$Think.config.CURRENCY_SYMBOL}{$nowBill.money}</em>
+				</a>
+				<a href="#" class="jiesuan">
+					<h4>Remaining Cleared</h4>
+					<em>{$Think.config.CURRENCY_SYMBOL}{$data.allBillMoney}</em>
+				</a>
+			</div>
+			<div class="row list">
+				<div class="title">
+<if condition="$data['timetype'] eq 1">
+					<span>Total{$data.time}period</span>
+	<else/>
+					<span>A total of 1</span>
+</if>
+					<strong>Remaining unpaid：{$Think.config.CURRENCY_SYMBOL}{$data.allBillMoney}</strong>
+				</div>
+				<div class="hk_list">
+					<ul>
+<php>$billList = $data['billList'];</php>
+<volist name="billList" id="vo">
+	<if condition="$vo['status'] eq 0">
+						<li class="col-xs-12">
+		<elseif condition="$vo['status'] eq 1"/>
+						<li class="col-xs-12 yuqi">
+		<else/>
+						<li class="col-xs-12 huanqing">
+	</if>
+							<div class="xiao">
+								<span>{$vo.repayment_time|date="Y/m/d",###}</span>
+								<em>Period{$vo.billnum}</em>
+							</div>
+							<div class="xiao1">
+								<span>{$Think.config.CURRENCY_SYMBOL}{$vo.allmoney}</span>
+							</div>
+							<div class="xiao2">
+	<if condition="$vo['status'] eq 0">
+						<span>Pending payment</span>
+	</if>
+	<if condition="$vo['status'] eq 1">
+						<span>Past due</span>
+	</if>
+	<if condition="$vo['status'] eq 2">
+						<span>Paid off</span>
+	</if>
+	<if condition="$vo['status'] eq 3">
+						<span>Overdue payment</span>
+	</if>
+	<if condition="$vo['status'] eq 4">
+						<span>Invalid bill</span>
+	</if>
+							</div>
+						</li>
+</volist>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

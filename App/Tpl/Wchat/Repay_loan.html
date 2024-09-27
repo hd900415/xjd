@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <include file="Public/head"/>
+    <link rel="stylesheet" href="__PUBLIC__/Wchat/css/QuotaCss.css">
+    <script src="__PUBLIC__/Manage/js/layer/layui.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/Manage/js/layer/css/layui.css">
+    <title>I want to repay - <config name="siteName" /> - <config name="siteTitle" /></title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="banner"><img src="__PUBLIC__/Wchat/images/banner.jpg"></div>
+<div class="ed">
+    <input type="hidden" name="oid" value="{$bill['id']}">
+    <div class="edu">
+        <if condition="$bill['delay'] neq 1">
+            <span>Pending Repayment</span>
+            <h3>{$Think.config.CURRENCY_SYMBOL}<php>echo $bill['money']+$bill['repay_interest'];</php></h3>
+            <else />
+            <span>Available Amount</span>
+            <h3>{$Think.config.CURRENCY_SYMBOL}<php>echo $bill['money']+$bill['repay_interest']+$delayFee;</php></h3>
+        </if>
+
+        <if condition="($hasOverdue eq 1) and ($bill['status'] eq 1)">
+            <span style="color:#ff0000;">Your loan is overdue, please return it immediately</span>
+            <else/>
+            <span>Please pay off your loan before the repayment date to avoid overdue</span>
+        </if>
+        <!--				<a href="{:U('Repay/order')}">Confirmed</a>-->
+    </div>
+</div>
+<div class="content">
+    <div class="repay_info">
+        <ul>
+            <li class="col-xs-12">
+                <label>Request Data:</label>
+                <span>{$bill.add_time|date="d-m-Y",###}</span>
+            </li>
+            <li class="col-xs-12">
+                <label>Refund Data:</label>
+                <span>{$bill.repayment_time|date="d-m-Y",###}</span>
+            </li>
+            <li class="col-xs-12">
+                <label>Service fee:</label>
+                <span>{$Think.config.CURRENCY_SYMBOL}{$bill.repay_interest}</span>
+            </li>
+<!--            <li class="col-xs-12">-->
+<!--                <label>Interests:</label>-->
+<!--                <span>{$Think.config.CURRENCY_SYMBOL}{$bill.interest}</span>-->
+<!--            </li>-->
+        </ul>
+    </div>
+    <div class="but">
+        <!--<a href="{:U('Repay/repayment',array('id'=>$billId))}" class="but1">当期还款</a>-->
+        <a href="{:U('Repay/delay',array('bid'=>$bill['id']))}" class="but1">Extended Loan</a>
+        <a class="but2" href="{:U('Repay/gfpayment',array('id'=>$bill['id']))}">Full Repayment</a>
+    </div>
+    <div class="layui-card repay-card">
+        <div class="layui-card-body">
+            <form class="layui-form" action="#" id="repayProof">
+                <input type="hidden" name="toid" value="{$bill['toid']}">
+                <div class="layui-form-item">
+                    <label class="layui-form-label w2">UTR</label>
+                    <div class="layui-input-block w8">
+                        <input type="text" name="utr"
+                               placeholder="UTR must be 12" class="layui-input w6 flat">
+                        <button type="button"
+                                class="layui-btn layui-btn-primary layui-border-blue upload-image-btn utr-btn br">
+                            Upload<input type="hidden" name="utr_image"/>
+                        </button>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label w7 fl">Repayment Screenshot</label>
+                    <div class="layui-input-block w3 pd-of-3">
+                        <button type="button"
+                                class="layui-btn layui-btn-primary layui-border-blue upload-image-btn br repayment-screen-btn">
+                            Upload<input type="hidden" name="repay_image"/>
+                        </button>
+                    </div>
+                    <div class="payment_image_content">
+                    </div>
+                </div>
+                <div class="layui-form-item" style="border: none">
+                    <div class="layui-input-block sub">
+                        <button class="layui-btn" lay-submit onclick="repayProof(event);return false;">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<php>
+    $domainRules = C('APP_SUB_DOMAIN_RULES');
+    $domans = array_keys($domainRules);
+    $baseUrl = $domans [1];
+    if(!strstr($baseUrl,"http")){
+    $baseUrl="http://".$baseUrl;
+    }
+</php>
+<include file="Public/foot_repay"/>
+</body>
+<script>
+    function postpone() {
+        var _oid = $('input[name="oid"]').val();
+        cvphp.post("{:U('Repay/postpone')}", {oid: _oid}, function (data) {
+            console.log(data.info);
+            if (data.status == 1) {
+                cvphp.msg({
+                    content: data.info
+                });
+                window.location.reload();
+            } else {
+                cvphp.msg({
+                    content: data.info
+                });
+            }
+        })
+    }
+
+    // console.log("{$baseUrl}")
+    layui.use('upload', function () {
+        var upload = layui.upload;
+        var uploadInst = upload.render({
+            elem: '.upload-image-btn', //绑定{$Think.config.CURRENCY}素
+            url: "{:U('Info/uploadImg')}", //上传接口
+            accept: "images",
+            data: {"fileName": "file"},
+            done: function (res) {
+                //上传完毕回调
+                console.log(res);
+                if (res.status == 1) {
+                    console.log(uploadInst);
+                    var _ele = uploadInst.config.item[0]
+                    _image_url = "{$baseUrl}/Public/Upload/" + res.info
+
+                    $(_ele).find('input[type="hidden"]').val(_image_url)
+                    if ($(_ele).hasClass('repayment-screen-btn')) {
+                        $(".payment_image_content").html('<img src="' + _image_url + '" style="width: 90%;margin:0 5%;">')
+                    }
+                    layer.msg("Uploaded successfully")
+                } else {
+                    layer.msg("upload failed");
+                }
+            }
+            , error: function () {
+                //请求异常回调
+            }
+        });
+    })
+
+    function repayProof(evt) {
+        evt.preventDefault();
+        var utr = $("input[name='utr']").val();
+        var toid = $("input[name='toid']").val();
+        var utr_image = $("input[name='utr_image']").val();
+        var repay_image = $("input[name='repay_image']").val();
+        if (utr.length < 2) {
+            layer.msg('Please enter current UTR Number');
+            return false;
+        }
+        // if (utr_image.length < 2) {
+        //     cvphp.msg({
+        //         content: 'Please enter UTR Image'
+        //     });
+        //     return false;
+        // }
+        if (repay_image.length < 2) {
+            layer.msg('Please enter Repayment Image');
+            return false;
+        }
+        cvphp.post("{:U('Repay/repayProof')}", {
+            toid: toid,
+            utr: utr,
+            utr_image: utr_image,
+            repay_image: repay_image
+        }, function (data) {
+            console.log(data.info);
+            if (data.status == 1) {
+                layer.msg(data.info);
+                // window.location.reload();
+            } else {
+                layer.msg(data.info);
+            }
+        })
+    }
+</script>
+</html>

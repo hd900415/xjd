@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <include file="Public/head"/>
+    <link rel="stylesheet" href="__PUBLIC__/Manage/css/table.css">
+    <title>延期支付订单</title>
+    <style>
+        .pay-info {
+            height: 30px;
+            font-size: 14px;
+            margin: 20px 10px 10px;
+        }
+
+        .pay-info span.label-title {
+            font-weight: 600;
+        }
+
+        span.pay-info-money {
+            color: #ff2223;
+        }
+    </style>
+</head>
+<body>
+<div class="nestable">
+    <div class="console-title console-title-border drds-detail-title clearfix">
+        <h5>延期支付订单</h5>
+    </div>
+    <form method="get" id="seachForm">
+        <input type="hidden" name="m" value="DelayPay"/>
+        <input type="hidden" name="a" value="index"/>
+        <if condition="$Think.get.source_type eq 'proof'">
+            <input type="hidden" name="source_type" value="proof"/>
+        </if>
+        <div class="public-selectArea" id="pxs">
+            <div class="clearfix">
+                <div class="wp_box col-sm-4">
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">用户ID：</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control" name="uid" value="{$Think.get.uid}">
+                        </div>
+                    </div>
+                </div>
+                <div class="wp_box col-sm-4">
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">用户名/手机号：</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control" name="uname" value="{$Think.get.uname}">
+                        </div>
+                    </div>
+                </div>
+                <div class="wp_box col-sm-4">
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">贷款订单号：</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control" name="toid" value="{$Think.get.toid}">
+                        </div>
+                    </div>
+                </div>
+                <div class="wp_box col-sm-4">
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">延期订单号：</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control" name="payid" value="{$Think.get.payid}">
+                        </div>
+                    </div>
+                </div>
+                <div class="wp_box col-sm-4">
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">上游订单号：</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control" name="upid" value="{$Think.get.upid}">
+                        </div>
+                    </div>
+                </div>
+                <div class="wp_box col-sm-4">
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">账单状态：</label>
+                        <div class="col-xs-8">
+                            <select class="select form-control" name="status">
+                                <option value="-100"
+                                <if condition="isset($_GET['status']) eq false">selected</if>
+                                >全部</option>
+                                <option value="0"
+                                <if condition="isset($_GET['status'])&&$Think.get.status eq 0">selected</if>
+                                >未支付</option>
+                                <option value="1"
+                                <if condition="$Think.get.status eq 1">selected</if>
+                                >正在处理</option>
+                                <option value="2"
+                                <if condition="$Think.get.status eq 2">selected</if>
+                                >已支付</option>
+                                <option value="-2"
+                                <if condition="$Think.get.status eq -2">selected</if>
+                                >支付失败</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="wp_box col-sm-4">
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">支付创建时间：</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="time-input form-control" id="import-time"
+                                   value="{$Think.get.add_timeEnd} ~ {$Think.get.add_timeEnd}">
+                            <i class="layui-icon layui-icon-close-fill clear-icon-btn"></i>
+                            <input type="hidden" name="add_timeStart" class='add-timeStart'
+                                   value="{$Think.get.add_timeStart}"/>
+                            <input type="hidden" name="add_timeEnd" class="add-timeEnd"
+                                   value="{$Think.get.add_timeEnd}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="wp_box col-sm-4">
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">支付完成时间：</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="time-input form-control" id="pay-time"
+                                   value="{$Think.get.pay_timeStart} ~ {$Think.get.pay_timeEnd}">
+                            <i class="layui-icon layui-icon-close-fill clear-icon-btn"></i>
+                            <input type="hidden" name="pay_timeStart" class='pay_timeStart'
+                                   value="{$Think.get.pay_timeStart}"/>
+                            <input type="hidden" name="pay_timeEnd" class="pay_timeEnd"
+                                   value="{$Think.get.pay_timeEnd}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btnArea">
+                <a href='javascript:$("#seachForm").submit();' class="btn btn-sereachBg">
+                    <i class="glyphicon glyphicon-search public-ico"></i>
+                    <span class="public-label">查询</span>
+                </a>
+                <button onclick="exportDepayPayOrder(event,1)" class="btn btn-primary">
+                    <span class="public-label">导出支付订单</span>
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="scroll-bar-table">
+        <div class="layui-row pay-info">
+            <div class="layui-col-md9">
+                <if condition="$Think.get.source_type neq 'proof'">
+                    <span class="label-title">当前总提交订单数</span>:<span class="pay-info-money">{$allSubmitTotal|default=0}</span>,
+                    <span class="label-title">当前总支付订单数</span>:<span class="pay-info-money">{$allPayTotal|default=0}</span>,
+                    <span class="label-title">当前总支付延期费用</span>:<span class="pay-info-money">{$totalPayMoney|default=0}</span>,
+                    <span class="label-title">今日支付费用</span>:<span class="pay-info-money">{$todayPayMoney|default=0}</span>,
+                    <span class="label-title">昨日支付费用</span>:<span class="pay-info-money">{$yestdayPayMoney|default=0}</span>
+                </if>
+            </div>
+        </div>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>订单流水号</th>
+                <th>关联贷款订单号</th>
+                <th>支付单号</th>
+                <th>上游单号</th>
+                <th>用户名</th>
+                <th>延期费用</th>
+                <th>回调金额</th>
+                <th>创建时间<br/><p style="color:red">回调时间</p></th>
+                <th>状态</th>
+                <th>备注</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <volist name="list" id="vo">
+                <tr id="list-{$vo.id}">
+                    <td>{$vo.id}</td>
+                    <td><a href="{:U('Loan/all')}?oid={$vo.oid}" target="_blank">{$vo.oid}</a></td>
+                    <td>{$vo.pay_id}</td>
+                    <td>{$vo.upid}<br/><span style="color:#0a53be">{$vo.api_trade_no}</span></td>
+                    <td>{$vo.uname}</td>
+                    <td>{$vo.delay_fee}{$Think.config.CURRENCY}</td>
+                    <td>{$vo.tomoney}{$Think.config.CURRENCY}</td>
+                    <td>{$vo.created_at|date="Y/m/d H:i:s H:i:s",###}<br/>
+                        <p style="color:#0aa8e4">
+                            <if condition="($vo.updated_at and $vo.delay_pay_status eq 2)">{$vo.updated_at|date="Y/m/d H:i:s",###}
+                            </if>
+                        </p>
+                    </td>
+                    <td>
+                        <if condition="$vo.delay_pay_status eq 2">已支付
+                            <elseif condition="$vo.delay_pay_status eq -2"/>
+                            支付失败
+                            <elseif condition="$vo.delay_pay_status eq 1"/>
+                            处理中
+                            <else/>
+                            未支付
+                        </if>
+                    </td>
+                    <td>{$vo.remark}</td>
+                    <td class="text-left">
+                        <a href="javascript:delDelayPayOrder('{$vo.id}');">删除订单</a>
+                    </td>
+                </tr>
+            </volist>
+            </tbody>
+        </table>
+    </div>
+    <div class="table-pagin-container">
+        <div class="pull-right page-box">
+            {$page}
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function delDelayPayOrder(id) {
+        layer.confirm(
+            '建议保留订单,订单删除后不可恢复,请确认？',
+            {
+                btn: ['确认删除', '取消']
+            }, function () {
+                cvphp.post(
+                    "{:U('DelayPay/delOrder')}",
+                    {
+                        id: id
+                    },
+                    function (data) {
+                        if (data.status != 1) {
+                            layer.msg(data.info);
+                        } else {
+                            $("#list-" + id).remove();
+                            layer.msg("操作成功");
+                        }
+                    }
+                );
+            }
+        );
+    }
+</script>
+</html>

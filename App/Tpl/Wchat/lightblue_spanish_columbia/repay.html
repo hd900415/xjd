@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <include file="Public/head"/>
+    <link rel="stylesheet" href="__PUBLIC__/Wchat/css/QuotaCss.css">
+    <script src="__PUBLIC__/Manage/js/layer/layui.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/Manage/js/layer/css/layui.css">
+    <link rel="stylesheet" href="__PUBLIC__/Wchat/css/front.css">
+    <title>I want to repay - <config name="siteName" /> - <config name="siteTitle" /></title>
+    <style>
+        .amount-cell span, .data-row .data-row-wrap div:nth-child(1) {
+            font-family: 'Roboto', Helvetica Neue, Helvetica, PingFang SC, Tahoma, Arial sans-serif;
+        }
+        .repayment-img{
+            display: flex;
+        }
+        .img-content{
+            margin-right: 5px;
+        }
+        .img-content img{
+            width: 66px;
+            height: 66px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="head-card-wrap">
+
+    <div class="head-card-content">
+        <if condition="$needDelay eq 1">
+            <div class="bg-top-text">
+                <img src="__PUBLIC__/Wchat/images/20220825-clock.png" alt="">
+                <span>Extendido 7 días</span>
+            </div>
+        </if>
+        <div class="content-wrap">
+            <div class="top-value-show">
+                <div class="money-wrap">
+                    <p>Cantidad de Pago</p>
+                    <div class="amount-cell">
+                        <span>{$Think.config.CURRENCY_SYMBOL}</span>
+                        <span> <if condition="$needDelay eq 1">{$delayFee}<else/>{$needRepayMoney}</if></span>
+                    </div>
+                </div>
+            </div>
+            <if condition="$needDelay eq 1">
+                <div class="data-row">
+                    <div class="data-row-wrap">
+                        <div>{$Think.config.CURRENCY_SYMBOL}{$delayFee}</div>
+                        <div>Monto total del préstamo</div>
+                    </div>
+                    <div class="data-row-wrap">
+                        <div>{$needRepaymentDay}</div>
+                        <div>Fecha de reembolso</div>
+                    </div>
+                </div>
+                <div class="data-row">
+                    <div class="data-row-wrap">
+                        <div>{$Think.config.CURRENCY_SYMBOL}{$needRepayMoney}</div>
+                        <div>Próximo importe de amortización</div>
+                    </div>
+                    <div class="data-row-wrap">
+                        <div>{$nextRepayDay}</div>
+                        <div>Próxima fecha de pago</div>
+                    </div>
+                </div>
+                <else/>
+                <div class="data-row">
+                    <div class="data-row-wrap">
+                        <div>{$Think.config.CURRENCY_SYMBOL}{$needRepayMoney}</div>
+                        <div>Monto total del préstamo</div>
+                    </div>
+                    <div class="data-row-wrap">
+                        <div>{$needRepaymentDay}</div>
+                        <div>Fecha de reembolso</div>
+                    </div>
+                </div>
+            </if>
+
+        </div>
+        <div class="btn-action">
+            <if condition="$needDelay eq 1">
+                <div class="btn btn1" id="payfee">Pagar ahora</div>
+                <else/>
+                <a href="{:U('Repay/fullRepay',array('next'=>'delay','oid'=>$oid))}" class="btn btn1">Préstamo extendido</a>
+                <!--<div class="btn btn2" href="{:U('Repay/gfpayment',array('id'=>$bill['id']))}"
+                     onClick="fullRepay(event)">Reembolso completo
+                </div>-->
+                <div class="btn btn2" onClick="fullRepay(event)">Reembolso completo</div>
+            </if>
+        </div>
+    </div>
+</div>
+<php>
+    $host=$_SERVER['HTTP_HOST'];
+</php>
+
+<div class="reply-info-content card-wrap">
+    <if condition="$host neq 'm.speewallta.top'">
+        <div class="tip-wrap">
+            <div class="item-tip">
+                *Si el pago ya se ha completado, pero el préstamo aún no se ha liquidado, proporcione el número de comprobante de transacción y una captura de pantalla de ese comprobante. Revisaremos y procesaremos esto en media hora.
+            </div>
+        </div>
+        <else />
+        <div class="tip-wrap">
+            <div class="item-tip">
+                * Si el pago se ha completado y el préstamo aún no se liquida, cargue una captura de pantalla del
+                Detalles de la transacción. Verificaremos la confirmación dentro de media hora.
+            </div>
+        </div>
+    </if>
+    <div class="card-content">
+        <if condition="$host neq 'm.speewallta.top'">
+            <div class="delay-img-cover utr-card">
+                <div class="card-utr">
+                    <div class="item-title-cell card-utr-title">
+                        <div class="title-wrap">
+                            <span>Número de recibo de pago:</span>
+                        </div>
+                        <div id="upload" class="up-btn utr-upload-btn" onclick="doRepayProof(event)">
+                            Actualizar
+                        </div>
+                    </div>
+                    <div class="repayment-utr-input">
+                        <input id="delayUtr" placeholder="Número de recibo"
+                               class="utr-input background-color-transparent width-100 bs-box" type="number" name="utr"
+                               value="">
+                    </div>
+                </div>
+            </div>
+        </if>
+        <div class="delay-img-cover card-screenshort">
+            <div class="card-utr">
+                <div class="item-title-cell screenshort-title">
+                    <div class="title-wrap">
+                        <span>Captura de pantalla del comprobante de pago:</span>
+                    </div>
+                    <div class="up-btn screenshort-upload-btn" onclick="doRepayProof(event)">Actualizar</div>
+                </div>
+                <div class="repayment-img">
+                    <div class="img-content">
+                    </div>
+                    <div class="repayment-img-content upload-image-btn">
+                        <img id="img-txz" class="utr-img" src="/Public/Wchat/images/icon_add@2x.png">
+                        <input type="hidden" name="repay_image"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--        <div class="sub-action">-->
+        <!--            <button class="btn" onclick="repayProof(event);return false;">Submit</button>-->
+        <!--        </div>-->
+    </div>
+</div>
+
+<input type="hidden" name="oid" value="{$oid}">
+<input type="hidden" name="toid" value="{$bill.toid}">
+<php>
+    $domainRules = C('APP_SUB_DOMAIN_RULES');
+    $domans = array_keys($domainRules);
+    $baseUrl = $domans [1];
+    if(!strstr($baseUrl,"http")){
+    $baseUrl="http://".$baseUrl;
+    }
+</php>
+</body>
+<script>
+
+    layui.use('upload', function () {
+        var upload = layui.upload;
+        var dl = null;
+        var uploadInst = upload.render({
+            elem: '.upload-image-btn', //绑定{$Think.config.CURRENCY}素
+            url: "{:U('Info/uploadImg')}", //上传接口
+            accept: "images",
+            data: {"fileName": "file"},
+            before: function () {
+                dl = layer.load(1);
+            },
+            done: function (res) {
+                //上传完毕回调
+                console.log(res);
+                if (dl) layer.close(dl);
+                if (res.status == 1) {
+                    console.log(uploadInst);
+                    var _ele = uploadInst.config.item[0]
+                    _image_url = "{$baseUrl}/Public/Upload/" + res.info
+                    layer.msg("Subido exitosamente");
+                    $('.img-content').append("<img src='"+_image_url+"' />");
+                    var str=$(_ele).find('input[type="hidden"]').val();
+                    if(str.length){
+                        str+=','+_image_url;
+                    }else{
+                        str=_image_url;
+                    }
+                    $(_ele).find('input[type="hidden"]').val(str);
+                    if( $('.img-content').children().length>2){
+                        $(_ele).find('img').hide();
+                    }
+                    // $(_ele).find('img').attr('src', _image_url);
+                } else {
+                    layer.msg("subida fallida");
+                }
+
+            }
+            , error: function () {
+                //请求异常回调
+                if (dl) layer.close(dl);
+            }
+        });
+    })
+
+    function fullRepay(event) {
+        event.preventDefault();
+        var ll = layer.open({type: 3});
+        var orderno = $('input[name="oid"]').val();//订单号
+        $.ajax({
+            type: "POST",
+            url: "{:U('Repay/payUrl')}",
+            dataType: "json",
+            data: {'oid': orderno},
+            success: function (response) {
+                if (response.status == 200) {
+                    window.location.href = response.data;
+                } else {
+                    layer.msg("Error" + response.data);
+                }
+                layer.close(ll);
+            },
+            error: function (jqXHR) {
+                console.log("Error: " + jqXHR.status);
+            }
+        });
+    }
+
+    $("#payfee").click(function () {
+        var orderno = $('input[name="oid"]').val();//订单号
+        //还款业务类型
+        var ld = layer.open({type: 3});
+        $.ajax({
+            type: "POST",
+            url: "{:U('Repay/nextpay')}",
+            dataType: "json",
+            data: {'oid': orderno},
+            success: function (data) {
+                layer.close(ld);
+                if (data.status == 1) {
+                    window.location.href = data.info;
+                } else {
+                    layer.msg("Error");
+                }
+            },
+            error: function (jqXHR) {
+                console.log("Error: " + jqXHR.status);
+            }
+        });
+    });
+
+    function doRepayProof(evt) {
+        evt.preventDefault();
+        var utr = $("input[name='utr']").val();
+
+        var toid = $("input[name='oid']").val();
+        var utr_image = $("input[name='utr_image']").val();
+        var repay_image = $("input[name='repay_image']").val();
+        utr = utr ? utr : '';
+        repay_image = repay_image ? repay_image : '';
+        if (utr.length < 2 && repay_image.length < 2) {
+            layer.msg('Es necesario ingresar la clave de rastreo y subir una captura de pantalla con la clave de rastreo');
+            return false;
+        }
+        $.ajax({
+            type: "POST",
+            url: "{:U('Repay/repayProof')}",
+            dataType: 'JSON',
+            data: {
+                oid: toid,
+                utr: utr,
+                utr_image: utr_image,
+                repay_image: repay_image
+            },
+            success: function (data) {
+                console.log(data.info);
+                if (data.status == 1) {
+                    layer.msg('Guardar con éxito');
+                    // window.location.reload();
+                } else {
+                    layer.msg('La presentación falló. Reemplace la UTR e inténtelo nuevamente.');
+                }
+            }
+        })
+    }
+</script>
+</html>

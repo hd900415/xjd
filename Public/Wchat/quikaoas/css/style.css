@@ -1,0 +1,159 @@
+body{
+	background: #f3f2ff;
+}
+.layout{
+	margin: 0 auto;
+	overflow: hidden;
+	width: 7.5rem;position: relative;
+}
+.hpage1{
+	position: relative;padding-top: 1.75rem;padding-bottom: 0.65rem;
+}
+.hpage1::before{
+	content: "";position: absolute;
+	left: 0;right: 0;
+	top: 0;z-index: 1; background:url(../images/bg1.png) no-repeat center/cover;height: 6.8rem;
+}
+.hpage1 .hds{
+	background: #fff;box-shadow: 0px 4px 32px 0px rgba(13,0,162,0.15);
+border-radius: 0.36rem;margin: 0 0.3rem;position: relative;z-index: 2;padding-bottom: 0.4rem;
+}
+.hpage1 .hds .ico{
+	width: 2.32rem;margin: 0 auto;position: relative;top: -1.04rem;
+}
+.hpage1 .hds .ico img{
+	display: block;width: 100%;
+}
+.hpage1 .hds h3{
+	font-size: 0.36rem;
+	font-weight: 500;
+	color: #8E8E8E;
+	line-height: 0.5rem;margin-top: -0.8rem;text-align: center;
+}
+.hpage1 .hds h5{
+	font-size: 0.88rem;
+	color: #2A2A2A;
+	line-height: 1.08rem;text-align: center;margin: 0.3rem 0 0.46rem; font-family: 'bmdo';
+}
+.hpage1 .hds ul{
+	display: flex;justify-content: space-between;align-items: center;
+	padding: 0 0.2rem;
+}
+.hpage1 .hds li{
+	width: 3.1rem;
+	height: 0.96rem;
+	background: #FFFFFF;
+	box-shadow: 0px 0.04rem 0.32rem 0px rgba(13,0,162,0.24);
+	border-radius: 0.5rem;
+	border: 0.02rem solid rgba(125, 108, 247, 1);text-align: center;-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.hpage1 .hds li a{
+	font-size: 0.3rem;
+	font-weight: 600;
+	color: #473AEB;
+	line-height: 0.96rem;
+	display: block;
+}
+.hpage1 .hds li.on{
+	background: linear-gradient(135deg, #8C75F9 0%, #473AEB 100%);border: none;
+}
+.hpage1 .hds li.on a{
+	color: #fff;
+}
+.hpage1 .hds dl{
+	display: flex;justify-content: space-between;align-items: center;padding: 0 0.2rem;margin-top: 0.5rem;text-align: center;
+}
+.hpage1 .hds dl.dls{
+	flex-wrap: wrap;
+}
+.hpage1 .hds dl.dls dd{
+	margin-bottom: 0.16rem;
+}
+.hpage1 .hds dd{
+	padding: 0.22rem 0 0.18rem;background: #eeedfe;
+border-radius: 0.2rem;width: 3.12rem;-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+-o-box-sizing: border-box;
+box-sizing: border-box;
+}
+.hpage1 .hds dd h4{
+	font-size: 0.24rem;
+	font-weight: 400;
+	color: #8E8C97;line-height: 1.7;
+}
+.hpage1 .hds dd h6{
+	font-size: 0.36rem;
+	font-weight: 600;
+	color: #2A2A2A;line-height: 1.7;margin-top: 0.1rem;
+}
+.hpage1 .text{
+	font-size: 0.26rem;
+	font-weight: 400;
+	color: #242329;line-height: 0.36rem;margin: 0.4rem 0.3rem;
+}
+.hpage1 .bds{
+	background: #FFFFFF;
+	box-shadow: 0px 4px 0.32rem 0px rgba(13,0,162,0.15);
+	border-radius: 0.28rem;margin: 0 0.3rem;padding: 0.15rem 0.3rem 0.3rem;margin-bottom: 0.24rem;
+}
+.hpage1 .bds .dfsw{
+	display: flex;justify-content: space-between;align-items: center;
+}
+.hpage1 .bds h4{
+	font-size: 0.34rem;
+	font-weight: 500;
+	color: #2A2A2A;
+	line-height: 0.4rem;
+}
+.hpage1 .bds .btn{
+	width: 1.36rem;
+	line-height: 0.64rem;
+	background: linear-gradient(135deg, #8C75F9 0%, #473AEB 100%);
+	box-shadow: 0px 4px 32px 0px rgba(13,0,162,0.24);
+	border-radius: 0.5rem;font-size: 0.24rem;
+font-weight: 600;
+color: #FFFFFF;text-align: center;display: block;
+}
+.hpage1 .bds .txt{
+	font-size: 0.28rem;
+	font-weight: 400;
+	color: #8E8C97;
+	line-height: 0.4rem;margin-top: 0.16rem;
+}
+.hpage1 .bds .file{
+	margin-top: 0.16rem;position: relative;width: 1.24rem;height: 1.24rem;
+}
+.hpage1 .bds .file .f1{
+	position: absolute;
+	left: 0;right: 0;
+	top: 0;z-index: 2;bottom: 0;opacity: 0;width: 100%;height: 100%;display: block;
+}
+.hpage1 .bds .file .img{
+	width: 100%;height: 100%;display: block;
+}
+.hpage1 .bds .file .img img{
+	width: 100%;height: 100%;display: block;object-fit: cover;
+}
+.qmtime{
+	position: absolute;
+	right: 0;
+	top: 0;z-index: 2;width: 2.8rem;
+line-height: 0.8rem;
+background: #FFFFFF;
+border-radius: 0px 0px 0px 32px;
+opacity: 0.3;font-size: 0.3rem;
+color: #FFFFFF;
+}
+.hpage1 .qmbtn{
+	width: 3.08rem;
+	line-height: 0.96rem;
+	background: linear-gradient(135deg, #8C75F9 0%, #473AEB 100%);
+	box-shadow: 0px 4px 32px 0px rgba(13,0,162,0.24);
+	border-radius: 0.52rem;font-size: 0.3rem;
+font-weight: 600;margin: 0 auto;text-align: center;display: block;
+color: #FFFFFF;
+}
+

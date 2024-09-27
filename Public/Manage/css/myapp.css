@@ -1,0 +1,103 @@
+html {
+    font-size: 16px;
+}
+
+.modal-audit-status-content {
+    padding-top: 20px;
+}
+
+#pxs .wp_box {
+    display: block;
+    padding: 0;
+    margin: 0;
+    height: 40px;
+}
+
+#pxs .wp_box .form-group {
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#pxs .wp_box .control-label {
+    height: 39px;
+    line-height: 39px;
+    text-align: right;
+    overflow: hidden;
+    background-color: #edf2f6;
+    margin: 0;
+    padding: 0;
+}
+
+#pxs .wp_box .col-xs-8 {
+    padding-left: 0;
+    padding-right: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+#pxs .wp_box .form-control {
+    width: 99%;
+    height: 38px;
+    line-height: 38px;
+    background: none;
+    outline: none;
+    border: none;
+    padding: 0;
+    padding-left: 10px;
+}
+
+.clear-icon-btn {
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    line-height: 35px;
+    font-size: 18px;
+    color: #555;
+}
+.clear-icon-btn:hover {
+    color: #999;
+}
+.overdue-warn{
+    color: #f0221d;
+}
+.modal-custom-repay{
+    width: 560px;
+    padding: 20px;
+}
+.modal-custom-repay .layui-form-label{
+    text-align: right;
+}
+.modal-custom-repay .layui-form input[type=checkbox], .modal-custom-repay .layui-form input[type=radio], .modal-custom-repay .layui-form select{
+    display: block;
+}
+.modal-custom-repay .layui-input-block select{
+    width: 100%;
+    height: 38px;
+    padding-left: 10px;
+    border: 1px solid #eee;
+}
+.modal-custom-repay .layui-input-block select option{
+    height: 38px;
+    line-height: 38px;
+}
+.modal-custom-repay .input-group-addons{
+    display: flex;
+}
+
+.input-group-addons .prend-input, .input-group-addons .append-input{
+    height: 38px;
+    line-height: 38px;
+    padding: 0 20px;
+    font-size: 18px;
+    background: #e9e9e9;
+}
+.input-group-addons .input-group-text{
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #eee;
+    text-align: center;
+}

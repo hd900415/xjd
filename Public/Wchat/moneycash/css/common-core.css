@@ -1,0 +1,62 @@
+.container {
+    padding: 0;
+}
+
+.utr-input {
+    border: none;
+    outline: none;
+    padding: 12px 25px;
+    border-bottom: 1px solid var(--py-grey-3);
+}
+
+.utr-input::placeholder {
+    font-family: var(--py-font-family-pingfang-sc-medium);
+    font-size: var(--py-font-size-sm);
+    color: var(--py-grey);
+    line-height: 18px;
+}
+
+.credentials-list, .credentials-list img {
+    width: 66px;
+    height: 66px;
+    object-fit: cover;
+}
+
+.credentials-list {
+    margin: 0 7px 8px 0;
+    position: relative;
+}
+
+.credentials-icon-add {
+    background: url(../img/icon_add.png) no-repeat;
+    background-size: 100%;
+    object-fit: cover;
+}
+
+.credentials-icon-del {
+    background: url(../img/icon_del%402x.png) no-repeat;
+    background-size: 100%;
+    object-fit: cover;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+.btn-check:focus+.btn, .btn:focus {
+    box-shadow: none !important;
+}
+
+.repayment-icon-right {
+    background: url(../img/icon-right%402x.png) no-repeat;
+    background-size: 100%;
+    object-fit: cover;
+    width: 36px;
+    height: 36px;
+}

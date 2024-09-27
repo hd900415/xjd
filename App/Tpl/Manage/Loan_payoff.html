@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <include file="Public/head"/>
+    <link rel="stylesheet" href="__PUBLIC__/Manage/css/table.css">
+    <script src="__PUBLIC__/Manage/js/layer/layui.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/Manage/js/layer/css/layui.css">
+    <title>已还清订单</title>
+    <style>
+        .modal-audit-status-content {
+            padding-top: 20px;
+        }
+
+        .modal-audit-status-content .layui-form-item .layui-col-md4 {
+            width: 30%;
+            height: 80px;
+        }
+
+        .modal-audit-status-content .layui-form-item .layui-col-md8 {
+            width: 70%;
+            height: 80px;
+            margin: 0;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="nestable">
+    <div class="console-title console-title-border drds-detail-title clearfix">
+        <h5>回款借款</h5>
+    </div>
+    <form method="get" id="seachForm">
+        <input type="hidden" name="m" value="Loan"/>
+        <input type="hidden" name="a" value="payoff"/>
+        <div class="public-selectArea" id="pxs">
+            <div class="clearfix">
+                <div class="wp_box col-sm-4">
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">订单号：</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control" name="oid" value="{$Think.get.oid}">
+                        </div>
+                    </div>
+                </div>
+                <div class="wp_box col-sm-4">
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">申请时间：</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="time-input form-control" id="s-time"
+                                   value="{$Think.get.stimeStart} ~ {$Think.get.stimeEnd}">
+                            <i class="layui-icon layui-icon-close-fill clear-icon-btn"></i>
+                            <input type="hidden" name="stimeStart" value="{$Think.get.stimeStart}"/>
+                            <input type="hidden" name="stimeEnd" value="{$Think.get.stimeEnd}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btnArea">
+                <a href='javascript:$("#seachForm").submit();' class="btn btn-sereachBg">
+                    <i class="glyphicon glyphicon-search public-ico"></i>
+                    <span class="public-label">查询</span>
+                </a>
+                <button onclick="exportLoanOrder(event)" class="btn btn-primary">
+                    <span class="public-label">导出订单</span>
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="scroll-bar-table">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th><input type="checkbox" value="0" lay-skin="primary" id="checkall"
+                           onclick="javascript:checkAll(this);"></th>
+                <th>订单号</th>
+                <th>用户名</th>
+                <th>借款金额</th>
+                <th>借款期限</th>
+                <th>预期收益</th>
+                <th>申请时间</th>
+                <th>逾期次数</th>
+                <!--                <th>合同</th>-->
+                <!--                <th>操作</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            <volist name="list" id="vo">
+                <tr id="list-{$vo.id}">
+                    <td><input type="checkbox" name="lid[]" class="check-lid" value="{$vo.id}"></td>
+                    <td>{$vo.oid}</td>
+                    <td>{$vo.user.telnum}</td>
+                    <td>{$vo.money}{$Think.config.CURRENCY}</td>
+                    <td>
+                        {$vo.time}
+                        <if condition="$vo['timetype'] eq 1">个月
+                            <else/>
+                            天
+                        </if>
+                    </td>
+                    <td>{$vo.interest_money}{$Think.config.CURRENCY}</td>
+                    <td>{$vo.start_time|date="Y/m/d H:i:s",###}</td>
+                    <td>{$vo.BillNum} 期共逾期 {$vo.overdueBillNum} 次</td>
+                    <!--                    <td>-->
+                    <!--                        <a href="{:U('Loan/viewContract',array('id'=>$vo['id']))}" title="点击查看合同" target="_blank">查看合同</a>-->
+                    <!--                    </td>-->
+                    <!--                    <td class="text-left">-->
+                    <!--                        <a href="">查看账单</a>-->
+                    <!--                    </td>-->
+                </tr>
+            </volist>
+            </tbody>
+        </table>
+        <label><input type="checkbox" name="check_all"
+                      title="全选搜索后的所有数据">&nbsp;全选搜索后的所有数据</label>
+    </div>
+    <div class="table-pagin-container">
+        <div class="pull-left page-box">
+            <input type="hidden" name="current_status" value="5">
+            <button type="button" class="btn btn-primary btn-audit" onclick="batchAuditAction()">批量修改</button>
+            <!--            <button type="button" class="btn btn-primary btn-audit" onclick="batchDeleteAction('all')">全部修改</button>-->
+            <button type="button" class="btn btn-danger btn-delete" onclick="batchDeleteAction()">批量删除</button>
+        </div>
+        <div class="pull-right page-box">
+            {$page}
+        </div>
+    </div>
+</div>
+</body>
+<div class="modal-audit-status" id="modal-audit-status" style="display: none;">
+    <div class="modal-audit-status-content">
+        <form class="layui-form" action="">
+            <div class="layui-form-item layui-inline layui-col-md12">
+                <label class="layui-col-md4 layui-form-label ">审核状态</label>
+                <div class="layui-input-block layui-col-md8">
+                    <select name="change_status">
+                        <option value="0">待审核</option>
+                        <option value="2">已拒绝</option>
+                        <option value="6">已逾期</option>
+                        <option value="3">还款中</option>
+                        <option value="4">续期中</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    function batchAuditAction() {
+        var check_all = $("input[name=check_all]").prop('checked')
+        var checkType = '';
+        if (check_all) checkType = 'all';
+        batchAudit('', checkType)
+    }
+
+    function batchDeleteAction() {
+        var check_all = $("input[name=check_all]").prop('checked')
+        var checkType = 1;
+        if (check_all == true) checkType = 2;
+
+        batchDelete('', checkType)
+    }
+</script>
+</html>

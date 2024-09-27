@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<include file="Public/head" />
+		<link href="__PUBLIC__/Wchat/css/bankCss.css" rel="stylesheet">
+		<title>buy a package - <config name="siteName" /> - <config name="siteTitle" /></title>
+	</head>
+	<body>
+		<form action="{:U('Repay/buy')}" id="form1" method="post">
+			<div class="row xinxi">
+				<ul>
+					<li class="col-xs-12">
+						<select name="total_fee"id="total_fee">
+						    <option value="">Please select an amount</option>
+						    <option value="588">588 (Silver Bull Card)</option>
+						    <option value="888">888 (Golden Bull Card)</option>
+						</select>
+					</li>		
+				</ul>
+			</div>
+		</form>
+		<div class="footer">
+			<button class="but1" id="nextBtn">Buy</button>
+		</div>
+	</body>
+	<script>
+		$(function(){
+			$("#nextBtn").on('click',function(){
+				var total_fee = $("#total_fee").val();
+				if(total_fee.length == 0){
+					cvphp.msg({
+	    				content: 'Please select an amount'
+	    			});
+					return false;
+				}	
+				$("#form1").submit();
+			});
+		});
+	</script>
+</html>

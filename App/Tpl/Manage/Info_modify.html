@@ -1,0 +1,394 @@
+<!DOCTYPE>
+<html>
+<head>
+    <include file="Public/head"/>
+    <script src="__PUBLIC__/Manage/js/layer/layui.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/Manage/js/layer/css/layui.css">
+    <link rel="stylesheet" href="__PUBLIC__/Manage/css/user.css"/>
+    <style type="text/css">
+        .upload-image-preview {
+            padding: 10px
+        }
+
+        .upload-image-preview img {
+            height: 100px;
+        }
+    </style>
+    <title>用户资料详情编辑</title>
+</head>
+<body>
+<div class="nestable">
+    <div class="console-title console-title-border drds-detail-title clearfix">
+        <h5>用户资料详情编辑</h5>
+    </div>
+    <div class="console-table-wapper margin-top">
+        <div class="flash-wrap">
+            <ul class="nav nav-tabs margin-t-20">
+                <li class="active">
+                    <a href="javascript:void(0)">身份信息</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">联系人信息</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">银行卡信息</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">其他信息</a>
+                </li>
+            </ul>
+        </div>
+        <form class="layui-form layui-form-pane" action="{:U('Info/modify',array('uid'=>$uid))}" method="post">
+            <input type="hidden" name="uid" value="{$uid}">
+            <div class="tab-content margin-t-20 clearfix" id="tab">
+                <!--基本信息-->
+                <div class="tab-pane active">
+                    <fieldset>
+                        <php>$identity = json_decode($data['identity'],true);</php>
+
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">真实姓名：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="真实姓名" name="name" value="{$identity.name}"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">身份证号：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="身份证号"
+                                       name="idcard" value="{$identity.idcard}" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <php>
+                            if($identity['sex']){
+                            $sex=$identity['sex'];
+                            }elseif(!$identity['idcard']){
+                                $sex='';
+                            }else{
+                            if(strlen($identity['idcard']) == 15){
+                                 $num = substr($identity['idcard'],-1,1);
+                            }else{
+                                    $num = substr($identity['idcard'],-2,1);
+                            }
+                            if($num % 2==0)
+                                $sex= 0;
+                            else
+                                $sex=1;
+                            }
+                        </php>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">性别:</label>
+
+                            <div class="layui-input-block">
+                                <input type="radio" readonly disabled name="sex" value="1" title="男"
+                                <php>if($sex==1) echo "checked"</php>
+                                >
+                                <input type="radio" readonly  disabled name="sex" value="0" title="女"
+                                <php>if($sex==0) echo "checked"</php>
+                                >
+                            </div>
+                        </div>
+                        <php>
+                            if($identity['birthday']){
+                                $birthday=$identity['birthday'];
+                            }elseif(!$identity['idcard']){
+                                 $birthday="";
+                            }else{
+                                if(strlen($identity['idcard']) == 15){
+                                    $birthday=$num = '19'.substr($identity['idcard'],6,6);
+                                }else{
+                                     $birthday=$num = substr($identity['idcard'],6,8);
+                                }
+                                 $birthday=$num = substr($num,0,4).'-'.substr($num,4,2).'-'.substr($num,-2,2);
+                            }
+                        </php>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">出生日期：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="出生日期" id="birthday"
+                                       name="birthday" readonly disabled value="{$birthday}" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <php>
+                            if($identity['age'])
+                            $age=$identity['age'];
+                            elseif($num)
+                            $age= countage($num);
+                            else
+                            $age= "";
+                        </php>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">年龄：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="年龄"
+                                       name="age" readonly disabled value="{$age}" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">身份证正面照：</label>
+                            <div class="layui-input-block">
+                                <button type="button" class="layui-btn upload-image-btn">
+                                    <i class="layui-icon">&#xe67c;</i>上传图片<input type="hidden"
+                                                                                     name='frontimg'/>
+                                </button>
+                                <empty name="identity.frontimg">
+                                    <span class="not-upload-image">未上传</span>
+                                    <else/>
+                                    <div class="upload-image-preview"><img
+                                            layer-src="{$image_base_url}{$identity.frontimg}"
+                                            src="{$image_base_url}{$identity.frontimg}"
+                                            alt="点击查看大图"/></div>
+                                </empty>
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">身份证反面照：</label>
+                            <div class="layui-input-block">
+                                <button type="button" class="layui-btn upload-image-btn">
+                                    <i class="layui-icon">&#xe67c;</i>上传图片<input type="hidden"
+                                                                                     name='backimg'/>
+                                </button>
+                                <empty name="identity.backimg">
+                                    <span class="not-upload-image">未上传</span>
+                                    <else/>
+                                    <div class="upload-image-preview"><img
+                                            layer-src="{$image_base_url}{$identity.backimg}"
+                                            src="{$image_base_url}{$identity.backimg}"
+                                            alt="点击查看大图"/></div>
+                                </empty>
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">手持身份证照：</label>
+                            <div class="layui-input-block">
+                                <button type="button" class="layui-btn upload-image-btn">
+                                    <i class="layui-icon">&#xe67c;</i>上传图片<input type="hidden"
+                                                                                     name='personimg'/>
+                                </button>
+                                <empty name="identity.personimg">
+                                    <span class="not-upload-image">未上传</span>
+                                    <else/>
+                                    <div class="upload-image-preview"><img
+                                            layer-src="{$image_base_url}{$identity.personimg}"
+                                            src="{$image_base_url}{$identity.personimg}"
+                                            alt="点击查看大图"/></div>
+                                </empty>
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">账户注册手机号：</label>
+                            <div class="layui-input-block">
+                                <input placeholder="账户注册手机号" name="telnum" value="{$data.user.telnum}"
+                                       autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="tab-pane">
+                    <fieldset>
+                        <php>$contacts = json_decode($data['contacts'],true);</php>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">姓名：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="姓名" name="zhishuName" value="{$contacts.zhishuName}"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">与借款人关系：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="与借款人关系" name="zhishuRelation"
+                                       value="{$contacts.zhishuRelation}"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">联系电话：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="联系电话" name="zhishuPhone"
+                                       value="{$contacts.zhishuPhone}"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">第二联系人姓名：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="姓名" name="jinjiName" value="{$contacts.jinjiName}"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">与借款人关系：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="与借款人关系" name="jinjiRelation"
+                                       value="{$contacts.jinjiRelation}"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">联系电话：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="联系电话" name="jinjiPhone"
+                                       value="{$contacts.jinjiPhone}"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="tab-pane">
+                    <fieldset>
+                        <php>$bank = json_decode($data['bank'],true);</php>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">开户银行名称：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="开户银行名称" name="bankName" value="{$bank.bankName}"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">银行卡号：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="银行卡号" name="bankNum" value="{$bank.bankNum}"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">银行预留手机号：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="银行预留手机号" name="bankPhone"
+                                       value="{$bank.bankPhone}"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">IFSC：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="IFSC" name="ifsc"
+                                       value="{$bank.ifsc}"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="tab-pane">
+                    <fieldset>
+                        <php>$addess = json_decode($data['addess'],true);</php>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">婚姻状况：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="婚姻状况" name="marriage" value="{$addess.marriage}"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">最高学历：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="最高学历" name="education" value="{$addess.education}"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">从事行业：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="从事行业" name="industry" value="{$addess.industry}"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">居住城市：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="居住城市" name="addess" value="{$addess.addess}"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" pane>
+                            <label class="layui-form-label">详细地址：</label>
+                            <div class="layui-input-block">
+                                <input type="text" placeholder="详细地址" name="addessMore" value="{$addess.addessMore}"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+            </div>
+            <div class="btnArea">
+                <a href="javascript:;" class="btn btn-sereachBg" id="submitBtn">
+                    <span class="public-label">提交</span>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script>
+    $(".nav-tabs li").click(function () {
+        $(this).addClass("active")
+        $(this).siblings().removeClass("active")
+        var index = $(this).index();
+        $("#tab .tab-pane:eq(" + index + ")").siblings().removeClass("active");
+        $("#tab .tab-pane:eq(" + index + ")").addClass('active');
+    })
+
+    layui.use('upload', function () {
+        var upload = layui.upload;
+
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '.upload-image-btn', //绑定{$Think.config.CURRENCY}素
+            url: "{:U('Setting/uploadImg')}", //上传接口
+            data: {"fileName": "file"},
+            done: (res) => {
+                if (res.status == 1) {
+                    var _ele = uploadInst.config.item[0]
+                    console.log(_ele)
+                    $(_ele).find('input[type="hidden"]').val(res.info)
+                    imgsrc = "{$image_base_url}" + res.info;
+                    _preview = '<div class="upload-image-preview"><img layer-src="' + imgsrc + '" src="' + imgsrc + '"  alt="点击查看大图"/></div>';
+                    $(_ele).parent().find('.not-upload-image').remove();
+                    $(_ele).parent().find('.upload-image-preview').remove();
+                    $(_ele).parent().append(_preview);
+                    layer.photos({
+                        photos: '.upload-image-preview'//0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+                    });
+                    layer.msg("上传成功");
+                } else {
+                    layer.msg("上传失败");
+                }
+                //上传完毕回调
+            }, error: function () {
+                //请求异常回调
+            }
+        });
+    });
+    $(function () {
+        $("#submitBtn").on('click', function () {
+            cvphp.submit($("form"), function (data) {
+                if (data.status != 1) {
+                    layer.msg(data.info);
+                } else {
+                    layer.msg('保存成功');
+                    setTimeout(function () {
+                        window.location.href = "{:U('Info/view',array('uid'=>$uid))}";
+                    }, 2000);
+                }
+            });
+        });
+    });
+    var laydate = layui.laydate;
+
+    //执行一个laydate实例
+    laydate.render({
+        elem: '#birthday' //指定{$Think.config.CURRENCY}素
+    });
+    layer.photos({
+        photos: '.upload-image-preview'//0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+    });
+</script>
+
+</html>

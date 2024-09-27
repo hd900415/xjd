@@ -1,0 +1,228 @@
+*{
+    box-sizing: border-box;
+}
+p{
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+html{
+    background-color: #fff;
+}
+body {
+	max-width: 414px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.flexH {
+	display: flex;
+	justify-content: center;
+}
+.flexV {
+	display: flex;
+	align-items: center;
+}
+.flexHV {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.flexH_C{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.flexV_C{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.flexHV_C{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.flex {
+	display: flex;
+}
+.flex_C{
+	display: flex;
+	flex-direction: column;
+}
+.flex_1 {
+	flex: 1;
+}
+.flex_wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+.flex_sb {
+	display: flex;
+	justify-content: space-between;
+}
+.flexV_sb {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.flexB_sb{
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}
+.flexB{
+	display: flex;
+	align-items: baseline;
+}
+.flexB_sb{
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}
+.flex_sa {
+	display: flex;
+	justify-content: space-around;
+}
+.flexV_sa{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.head-wrap{
+	height: 282px;
+	background-image: url('../img/20221009-img2.png');
+	background-size: 100% 100%;
+	padding-top: 110px;
+}
+.head-wrap .c-wrap{
+	width: 314px;
+	padding-bottom: 20px;
+	border-bottom: 1px dashed #E7E7E7;
+}
+.head-wrap .c-wrap .price-wrap{
+	color: #333333;
+}
+.head-wrap .c-wrap .price-wrap .s1{
+	font-size: 20px;
+	font-family: PingFang SC-Semibold, PingFang SC;
+	font-weight: 600;
+}
+.head-wrap .c-wrap .price-wrap .s2{
+	font-size: 20px;
+	font-family: PingFang SC-Semibold, PingFang SC;
+	font-weight: 600;
+	margin-left: 6px;
+	line-height: 32px;
+}
+.head-wrap .c-wrap .text2{
+	font-size: 14px;
+	font-family: PingFang SC-Regular, PingFang SC;
+	font-weight: 400;
+	color: #666666;
+	line-height: 16px;
+	margin-top: 10px;
+}
+.head-wrap .c-wrap>div:last-child{
+	padding-left: 40px;
+}
+.head-wrap .c-wrap .date-text{
+	font-size: 20px;
+	font-family: PingFang SC-Semibold, PingFang SC;
+	font-weight: 600;
+	color: #333333;
+	line-height: 24px;
+	padding-bottom:8px;
+}
+.head-wrap .btn-wrap{
+	margin-top: 16px;
+}
+.head-wrap .repay-btn{
+	width: 149px;
+	height: 44px;
+	background: #22B75B;
+	border-radius: 6px;
+	text-align: center;
+	line-height: 44px;
+	font-size: 16px;
+	font-family: PingFang SC-Semibold, PingFang SC;
+	font-weight: 600;
+	color: #FFFFFF;
+}
+.head-wrap .repay-btn.btn2{
+	background-color: #FFC32A;
+	margin-left: 16px;
+}
+
+.bottom-wrap{
+	background-color: #FFFFFF;
+	margin-top: 4px;
+	padding: 16px;
+}
+.tip-wrap{
+	padding: 10px;
+	background: #FFF9EB;
+	border-radius: 8px;
+	border: 1px dashed #E0CBA2;
+}
+.tip-wrap p{
+	font-size: 13px;
+	font-family: PingFang SC-Regular, PingFang SC;
+	font-weight: 400;
+	color: #B67325;
+	line-height: 18px;
+	text-align: justify;
+}
+.card-wrap{
+	border-radius: 6px;
+	border: 1px solid #E7E7E7;
+	margin-top: 15px;
+	overflow: hidden;
+}
+.card-wrap .card-utr{
+	height: 38px;
+	background: rgba(34, 183, 91, .1);
+	padding-left: 16px;
+	line-height: 38px;
+	font-size: 15px;
+	font-family: PingFang SC-Semibold, PingFang SC;
+	font-weight: 600;
+	color: #22B75B;
+}
+.card-wrap .card-content{
+	padding: 7px 16px 18px 16px;
+}
+.card-content .repayment-utr-input{
+	height: 52px;
+	border-bottom: 1px solid #E7E7E7;
+}
+.card-content .utr-input{
+	padding-left: 0px;
+	border: none;
+	flex: 1;
+}
+.card-content .upload-btn{
+	width: 71px;
+	height: 32px;
+	border-radius: 6px;
+	border: 1px solid #666666;
+	text-align: center;
+	line-height: 30px;
+	font-size: 13px;
+	font-family: PingFang SC-Heavy, PingFang SC;
+	font-weight: 600;
+	color: #666666;
+}
+.card-content .upload-btn.screenshort-upload-btn{
+	width: 224px;
+	margin: 0 auto;
+	height: 38px;
+	line-height: 36px;
+}
+.card-content .repayment-img{
+	margin-top: 7px;
+}
+.card-content .utr-img {
+	width: 66px;
+	height: 66px;
+	margin-bottom: 12px;
+}

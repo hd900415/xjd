@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<include file="Public/head" />
+		<link href="__PUBLIC__/Wchat/css/logincss.css" rel="stylesheet">
+		<title>Login - <config name="siteName" /> - <config name="siteTitle" />-www.huimaw.com</title>
+	</head>
+	<body>
+		<div class="logo" style="margin-top: 2rem;">
+	    	<img src="__PUBLIC__/Wchat/images/re_logo.png">
+	    </div>
+	    <div class="login_res" style="min-height:50rem;">
+<!--	     	<div class="tab">-->
+<!--	        	<ul>-->
+<!--	            	<li>-->
+<!--	                	<em></em>-->
+<!--	                    <em></em>-->
+<!--	                    <span>Login</span>-->
+<!--	                </li>-->
+<!--	                <li class="action">-->
+<!--	                	<em></em>-->
+<!--	                    <em></em>-->
+<!--	                    <span>Register</span>-->
+<!--	                </li>-->
+<!--	            </ul>-->
+<!--	       </div>-->
+	        <div class="con">
+	            <div class="login_con">
+	            	<form action="{:U('Index/ajaxLogin')}" method="post" id="loginForm">
+		            	<ul>
+		                	<li>
+		                		<input type="number" placeholder="Username/Phone Number" class="user" name="username">
+		                	</li>
+		                    <li class="fu_pwd">
+		                    	<input type="password" placeholder="Password" class="pwd" name="password">
+		                    	<a href="{:U('Index/forgetpwd')}">Forgot password？</a>
+		                    </li>
+		                </ul>
+		                <button class="abut" type="button" id="loginBtn">Login</button>
+	            	</form>
+	            </div>
+	            <div class="res_con">
+					<form action="{:U('Index/ajaxReg')}" method="post" id="regForm">
+		            	<ul>
+		                	<li>
+		                		<input type="text" placeholder="Please enter 11 digits" class="user">
+		                	</li>
+		                    <li class="yz">
+		                    	<input type="text" placeholder="verification Coode" class="yzm">
+		                    	<button type="button">Send SMS</button>
+		                    </li>
+		                    <li class="fu_pwd">
+		                    	<input type="password" placeholder="Password" class="pwd">
+		                    </li>
+		                </ul>
+		                <p><img src="__PUBLIC__/Wchat/images/queren.png">I read and agree<a href="{:U('Page/protocol')}">《<config name="siteName" />Service protocol》</a></p>
+		                <button class="abut1" type="button" id="regBtn" disabled="disabled">Register</button>
+		                <div class="verify">
+		                	<p>
+		                		<img src="{:U('Index/verify')}" alt="Can't see clearly, change a picture" />
+		                	</p>
+		                	<p>
+		                		<input type="number" value="" placeholder="enter confirmation code" />
+		                	</p>
+		                	<p>
+		                		<a class="btn" id="verifySendcode">Confirm</a>
+		                		<a class="btn btnred" id="verifyClose">Cancel</a>
+		                	</p>
+		                </div>
+					</form>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="zhezhao"></div>
+	    <div class="footer">
+	    	<!--<img src="__PUBLIC__/Wchat/images/logo_foot.png">-->
+	       	<config name="siteCorporate" />
+	    </div>
+	    <include file="Public/foot" />
+	    <script>
+	    	var resendTime = 0;
+	    	var resendFun;
+	    	$(function(){
+	    		/*登录*/
+	    		$("#loginBtn").on('click',function(){
+	    			// if(!cvphp.ismobile( $("#loginForm .user").val() )){
+	    			// 	cvphp.msg({
+	    			// 		content: '手机号码不符合规范'
+	    			// 	});
+	    			// 	return false;
+	    			// }
+	    			if(! $("#loginForm .pwd").val() ){
+	    				cvphp.msg({
+	    					content: 'Please enter your password'
+	    				});
+	    				return false;
+	    			}
+	    			cvphp.submit($("#loginForm"),function(data){
+	    				if(data.status != 1){
+	    					cvphp.msg({
+	    						content: data.info,
+	    					});
+	    				}else{
+	    					cvphp.msg({
+	    						content: 'login successful',
+	    					});
+	    					setTimeout(function(){window.location.href = data.url;},3000);
+	    				}
+	    			});
+	    			return false;
+	    		});
+	    		/*注册*/
+	    		$(".res_con .yz button").on('click',function(){
+	    			if(!cvphp.ismobile( $("#regForm .user").val() )){
+	    				cvphp.msg({
+	    					content: 'The mobile phone number does not comply with the specification'
+	    				});
+	    				return false;
+	    			}
+	    			$(".verify input").val('');
+	    			var imgUrl = "{:U('Index/verify',array('t','randTime'))}";
+	    			imgUrl = imgUrl.replace(/randTime/,Date.parse(new Date()));
+	    			$(".verify img").attr('src',imgUrl);
+	    			$(".verify").show();
+	    			$(".zhezhao").show();
+	    			$(".verify input").focus();
+	    		});
+	    		$("#verifyClose").on('click',function(){
+	    			$(".verify").hide();
+	    			$(".zhezhao").hide();
+	    		});
+	    		$(".verify img").on('click',function(){
+	    			var imgUrl = "{:U('Index/verify',array('t','randTime'))}";
+	    			imgUrl = imgUrl.replace(/randTime/,Date.parse(new Date()));
+	    			$(".verify img").attr('src',imgUrl);
+	    		});
+	    		$("#verifySendcode").on('click',function(){
+	    			$(".verify").hide();
+	    			$(".zhezhao").hide();
+	    			var code = $(".verify input").val();
+	    			if(code.length != 4){
+						cvphp.msg({
+	    					content: 'Please enter the correct graphics verification code',
+	    				});
+	    				return ;
+	    			}
+	    			cvphp.post(
+	    				"{:U('Sms/sendcode')}",
+	    				{
+	    					verify:code,
+	    					user:$("#regForm .user").val(),
+	    					type:'reg'
+	    				},
+	    				function(data){
+		    				if(data.status != 1){
+		    					cvphp.msg({
+		    						content: data.info,
+		    					});
+		    				}else{
+		    					resendTime = 59;
+		    					resendFun = setInterval(resend,1000);
+				    			$(".verify").hide();
+				    			$(".zhezhao").hide();
+		    				}
+	    				}
+	    			);
+	    		});
+	    		$("#regForm .yzm").on('input',function(){
+	    			var code = $(this).val();
+	    			if(code.length == 4){
+	    				$("#regBtn").removeAttr('disabled');
+	    				$("#regBtn").removeClass('abut1');
+	    				$("#regBtn").addClass('abut');
+	    			}else{
+	    				$("#regBtn").attr('disabled',"true");
+	    				$("#regBtn").removeClass('abut');
+	    				$("#regBtn").addClass('abut1');
+	    			}
+	    		});
+	    		$("#regBtn").on('click',function(){
+	    			if(!cvphp.ismobile( $("#regForm .user").val() )){
+	    				cvphp.msg({
+	    					content: 'The mobile phone number does not comply with the specification'
+	    				});
+	    				return false;
+	    			}
+	    			if($("#regForm .yzm").val().length != 4){
+	    				cvphp.msg({
+	    					content: 'Please enter the SMS verification code'
+	    				});
+	    				return false;
+	    			}
+	    			if($("#regForm .pwd").val().length < 6 || $("#regForm .pwd").val().length > 18){
+	    				cvphp.msg({
+	    					content: 'Please enter the 6-18-bit login password'
+	    				});
+	    				return false;
+	    			}
+	    			cvphp.post(
+	    				"{:U('Index/ajaxReg')}",
+	    				{
+	    					username:$("#regForm .user").val(),
+	    					code:$("#regForm .yzm").val(),
+	    					password:$("#regForm .pwd").val()
+	    				},
+	    				function(data){
+		    				if(data.status != 1){
+		    					cvphp.msg({
+		    						content: data.info,
+		    					});
+		    				}else{
+		    					cvphp.msg({
+		    						content: 'registration success',
+		    					});
+		    					setTimeout(function(){window.location.href = data.url;},3000);
+		    				}
+	    				}
+	    			);
+	    		});
+	    	});
+	    	function resend(){
+	    		if(resendTime == 1){
+	    			$(".res_con .yz button").html('Resend');
+	    			clearInterval(resendFun);
+	    			$(".res_con .yz button").removeAttr('disabled');
+	    		}else{
+	    			resendTime--;
+	    			$(".res_con .yz button").html( ' Repeat after '+resendTime +' seconds');
+	    			$(".res_con .yz button").attr('disabled',"true");
+	    		}
+	    	}
+	    </script>
+	</body>
+</html>

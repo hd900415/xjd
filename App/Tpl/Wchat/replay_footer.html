@@ -1,0 +1,128 @@
+<php>
+    $domainRules = C('APP_SUB_DOMAIN_RULES');
+    $domans = array_keys($domainRules);
+    $baseUrl = $domans [1];
+    if(!strstr($baseUrl,"http")){
+    $baseUrl="http://".$baseUrl;
+    }
+</php>
+<script type="text/javascript">
+    layui.use('upload', function () {
+        var upload = layui.upload;
+        var dl = null;
+        var uploadInst = upload.render({
+            elem: '.upload-image-btn', //绑定{$Think.config.CURRENCY}素
+            url: "{:U('Info/uploadImg')}", //上传接口
+            accept: "images",
+            data: {"fileName": "file"},
+            before: function () {
+                dl = layer.load(1);
+            },
+            done: function (res) {
+                //上传完毕回调
+                console.log(res);
+                if (dl) layer.close(dl);
+                if (res.status == 1) {
+                    console.log(uploadInst);
+                    var _ele = uploadInst.config.item[0]
+                    _image_url = "{$baseUrl}/Public/Upload/" + res.info
+                    layer.msg("Uploaded successfully")
+                    $(_ele).find('input[type="hidden"]').val(_image_url)
+                    $(_ele).find('img').attr('src', _image_url);
+                } else {
+                    layer.msg("upload failed");
+                }
+
+            }
+            , error: function () {
+                //请求异常回调
+                if (dl) layer.close(dl);
+            }
+        });
+    })
+    $("#payfee").click(function () {
+        var orderno = $('input[name="oid"]').val();//订单号
+        //还款业务类型
+        var ld = layer.open({type: 3});
+        $.ajax({
+            type: "POST",
+            url: "{:U('Repay/nextpay')}",
+            dataType: "json",
+            data: {'oid': orderno},
+            success: function (data) {
+                layer.close(ld);
+                if (data.status == 1) {
+                    window.location.href = data.info;
+                } else {
+                    layer.msg("Error");
+                }
+            },
+            error: function (jqXHR) {
+                console.log("Error: " + jqXHR.status);
+            }
+        });
+    });
+
+    function fullRepay(event) {
+        event.preventDefault();
+        var ll = layer.open({type: 3});
+        var orderno = $('input[name="oid"]').val();//订单号
+        $.ajax({
+            type: "POST",
+            url: "{:U('Repay/payUrl')}",
+            dataType: "json",
+            data: {'oid': orderno},
+            success: function (response) {
+                if (response.status == 200) {
+                    window.location.href = response.data;
+                } else {
+                    layer.msg("Error" + response.data);
+                }
+                layer.close(ll);
+            },
+            error: function (jqXHR) {
+                console.log("Error: " + jqXHR.status);
+            }
+        });
+    }
+
+
+    function doRepayProof(evt) {
+        evt.preventDefault();
+        var utr = $("input[name='utr']").val();
+
+        var toid = $("input[name='oid']").val();
+        var utr_image = $("input[name='utr_image']").val();
+        var repay_image = $("input[name='repay_image']").val();
+        utr = utr ? utr : '';
+        repay_image = repay_image ? repay_image : '';
+        if (utr.length < 2 && repay_image.length < 2) {
+            layer.msg('Please enter current UTR Number OR Upload Repayment Image');
+            return false;
+        }
+        $.ajax({
+            type: "POST",
+            url: "{:U('Repay/repayProof')}",
+            dataType: 'JSON',
+            data: {
+                oid: toid,
+                utr: utr,
+                utr_image: utr_image,
+                repay_image: repay_image
+            },
+            success: function (data) {
+                console.log(data.info);
+                if (data.status == 1) {
+                    layer.msg('Save Successfully');
+                    // window.location.reload();
+                } else {
+                    layer.msg('The submission failed. Please replace the UTR and try again');
+                }
+            }
+        })
+    }
+
+    $(".update-proof").click(function (evt) {
+        doRepayProof(evt);
+    });
+</script>

@@ -1,0 +1,2404 @@
+[ 2024-09-23T22:58:43+08:00 ] 103.27.229.60 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000426s ]
+NOTIC: [8] Use of undefined constant ISADMIN - assumed 'ISADMIN' /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/CommonAction.class.php 第 20 行.
+
+[ 2024-09-23T22:58:44+08:00 ] 103.27.229.60 /Index/login.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000419s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000327s ]
+NOTIC: [8] Use of undefined constant ISADMIN - assumed 'ISADMIN' /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/CommonAction.class.php 第 20 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004895s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004968s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000219s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000198s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000154s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000286s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000927s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000359s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000390s ]
+
+[ 2024-09-23T22:58:45+08:00 ] 103.27.229.60 /Index/captcha.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000391s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000288s ]
+NOTIC: [8] Use of undefined constant ISADMIN - assumed 'ISADMIN' /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/CommonAction.class.php 第 20 行.
+
+[ 2024-09-23T22:59:21+08:00 ] 103.27.229.60 /Index/login.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000453s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000281s ]
+NOTIC: [8] Use of undefined constant ISADMIN - assumed 'ISADMIN' /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/CommonAction.class.php 第 20 行.
+SQL: SHOW COLUMNS FROM `cv_admin` [ RunTime:0.002480s ]
+SQL: SELECT * FROM `cv_admin` WHERE ( `username` = 'admin' ) AND ( `password` = '01ab1067e0dc67d63adc0c316c3e6794d5096b8f' ) LIMIT 1   [ RunTime:0.000374s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/IndexAction.class.php 第 157 行.
+NOTIC: [2] Redis::connect() expects at least 1 parameter, 0 given /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 12 行.
+NOTIC: [8] Undefined index: pconnect /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: auth /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 18 行.
+SQL: UPDATE `cv_admin` SET `last_ip`='103.27.229.60',`last_time`=1727103561 WHERE ( `id` = 4 ) [ RunTime:0.001021s ]
+
+[ 2024-09-23T22:59:21+08:00 ] 103.27.229.60 /Index/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000372s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000302s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006105s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006135s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000198s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000170s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000131s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000227s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000772s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000272s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000293s ]
+
+[ 2024-09-23T22:59:22+08:00 ] 103.27.229.60 /Index/main.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000387s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000490s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000404s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000323s ]
+NOTIC: [2] Redis::connect() expects at least 1 parameter, 0 given /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 12 行.
+NOTIC: [8] Undefined index: pconnect /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: auth /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 18 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004524s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004554s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000197s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000169s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000128s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000237s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000786s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000276s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000298s ]
+
+[ 2024-09-23T22:59:24+08:00 ] 103.27.229.60 /User/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000576s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000659s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000445s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000479s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000258s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000079s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000068s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000068s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000056s ]
+SQL: SELECT * FROM `cv_user` ORDER BY id Desc LIMIT 0,50   [ RunTime:0.000155s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000393s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000293s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 223 )  [ RunTime:0.000345s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 222 )  [ RunTime:0.000145s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 221 )  [ RunTime:0.000130s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 220 )  [ RunTime:0.000118s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 215 )  [ RunTime:0.000114s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 214 )  [ RunTime:0.000104s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 213 )  [ RunTime:0.000099s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 212 )  [ RunTime:0.000207s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000136s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000074s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000093s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: id /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 55 行.
+NOTIC: [8] Undefined index: username /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 63 行.
+NOTIC: [8] Undefined index: timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 73 行.
+NOTIC: [8] Undefined index: timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 73 行.
+NOTIC: [8] Undefined index: timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 76 行.
+NOTIC: [8] Undefined index: timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 77 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010776s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010807s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000249s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000218s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000138s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000225s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000883s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000282s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000300s ]
+
+[ 2024-09-23T22:59:29+08:00 ] 103.27.229.60 /Loan/all.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000387s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000327s ]
+NOTIC: [8] Undefined variable: where /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/LoanAction.class.php 第 985 行.
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000603s ]
+SQL: SHOW COLUMNS FROM `cv_payorder` [ RunTime:0.000334s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanorder` LIMIT 1   [ RunTime:0.000146s ]
+SQL: SELECT * FROM `cv_loanorder` ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000293s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000250s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='223' ) LIMIT 1   [ RunTime:0.000176s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='222' ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='221' ) LIMIT 1   [ RunTime:0.000119s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='220' ) LIMIT 1   [ RunTime:0.000106s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='215' ) LIMIT 1   [ RunTime:0.000087s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000072s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='214' ) LIMIT 1   [ RunTime:0.000075s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='213' ) LIMIT 1   [ RunTime:0.000069s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000084s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000426s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000140s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000086s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000368s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 233 )  [ RunTime:0.000223s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 232 )  [ RunTime:0.000121s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 231 )  [ RunTime:0.000112s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 230 )  [ RunTime:0.000120s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 222 )  [ RunTime:0.000110s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 223 )  [ RunTime:0.000106s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 224 )  [ RunTime:0.000110s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 225 )  [ RunTime:0.000100s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 226 )  [ RunTime:0.000091s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 227 )  [ RunTime:0.000111s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 228 )  [ RunTime:0.000098s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 229 )  [ RunTime:0.000094s ]
+NOTIC: [2] Missing argument 1 for I(), called in /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/LoanAction.class.php on line 428 and defined /www/wwwroot/yindu_xjd/Base/Common/common.php 第 71 行.
+NOTIC: [8] Undefined variable: name /www/wwwroot/yindu_xjd/Base/Common/common.php 第 72 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8] Undefined index: oid /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 58 行.
+NOTIC: [8] Undefined index: telnum /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 66 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 83 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 86 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 89 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 92 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 95 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 98 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 109 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 109 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 112 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 113 行.
+NOTIC: [8] Undefined index: p_start_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 122 行.
+NOTIC: [8] Undefined index: p_end_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 122 行.
+NOTIC: [8] Undefined index: p_start_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 125 行.
+NOTIC: [8] Undefined index: p_end_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 126 行.
+NOTIC: [8] Undefined index: repay_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 135 行.
+NOTIC: [8] Undefined index: repay_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 135 行.
+NOTIC: [8] Undefined index: repay_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 138 行.
+NOTIC: [8] Undefined index: repay_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 140 行.
+NOTIC: [8] Undefined index: add_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 150 行.
+NOTIC: [8] Undefined index: add_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 150 行.
+NOTIC: [8] Undefined index: add_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 153 行.
+NOTIC: [8] Undefined index: add_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 155 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 240 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010081s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010109s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000437s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000209s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000139s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000238s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001082s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000313s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000332s ]
+
+[ 2024-09-23T22:59:30+08:00 ] 103.27.229.60 /Loan/pending/__type__/2.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000362s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000294s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000630s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanorder` WHERE ( `pending` = 0 ) AND ( `loan_total` > 1 ) LIMIT 1   [ RunTime:0.000254s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `pending` = 0 ) AND ( `loan_total` > 1 ) ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000239s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000353s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: oid /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 66 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 75 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 75 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 78 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 79 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006452s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006477s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000216s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000189s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000198s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000214s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000882s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000270s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000289s ]
+
+[ 2024-09-23T22:59:30+08:00 ] 103.27.229.60 /Loan/pending.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000365s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000282s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000611s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanorder` WHERE ( `pending` = 0 ) AND ( `loan_total` <= 1 ) LIMIT 1   [ RunTime:0.000239s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `pending` = 0 ) AND ( `loan_total` <= 1 ) ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000263s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000270s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='222' ) LIMIT 1   [ RunTime:0.000199s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='220' ) LIMIT 1   [ RunTime:0.000292s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000287s ]
+SQL: SELECT SUM(money) AS tp_sum FROM `cv_loanbill` WHERE ( `oid` = '2024092311012164582270' ) AND ( `status` IN ('2','3') ) LIMIT 1   [ RunTime:0.000210s ]
+SQL: SELECT SUM(money) AS tp_sum FROM `cv_loanbill` WHERE ( `oid` = '2024092120034770885230' ) AND ( `status` IN ('2','3') ) LIMIT 1   [ RunTime:0.000109s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: oid /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 66 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 75 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 75 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 78 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 79 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006822s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006849s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000321s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000207s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000133s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000210s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000935s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000263s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000280s ]
+
+[ 2024-09-23T22:59:32+08:00 ] 103.27.229.60 /Block/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000367s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000280s ]
+SQL: SHOW COLUMNS FROM `cv_block` [ RunTime:0.001461s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_block` LIMIT 1   [ RunTime:0.000117s ]
+SQL: SELECT * FROM `cv_block` ORDER BY id Desc LIMIT 0,50   [ RunTime:0.000086s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004597s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004653s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000198s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000191s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000140s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000227s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000811s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000302s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000324s ]
+
+[ 2024-09-23T22:59:33+08:00 ] 103.27.229.60 /User/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000392s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000494s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000219s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000078s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000058s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000046s ]
+SQL: SELECT * FROM `cv_user` ORDER BY id Desc LIMIT 0,50   [ RunTime:0.000127s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000394s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000278s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 223 )  [ RunTime:0.000227s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 222 )  [ RunTime:0.000135s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 221 )  [ RunTime:0.000132s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 220 )  [ RunTime:0.000115s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 215 )  [ RunTime:0.000097s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 214 )  [ RunTime:0.000109s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 213 )  [ RunTime:0.000147s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 212 )  [ RunTime:0.000153s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000073s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000051s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000045s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: id /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 55 行.
+NOTIC: [8] Undefined index: username /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 63 行.
+NOTIC: [8] Undefined index: timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 73 行.
+NOTIC: [8] Undefined index: timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 73 行.
+NOTIC: [8] Undefined index: timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 76 行.
+NOTIC: [8] Undefined index: timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 77 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010068s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010098s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000304s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000213s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000138s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000340s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001071s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000416s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000461s ]
+
+[ 2024-09-23T22:59:33+08:00 ] 103.27.229.60 /Info/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000376s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000306s ]
+NOTIC: [8] Undefined offset: 0 /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/InfoAction.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `cv_info` [ RunTime:0.000513s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_info` LIMIT 1   [ RunTime:0.000159s ]
+SQL: SELECT * FROM `cv_info` ORDER BY id Desc LIMIT 0,50   [ RunTime:0.000274s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000262s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='223' ) LIMIT 1   [ RunTime:0.000154s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='222' ) LIMIT 1   [ RunTime:0.000102s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='221' ) LIMIT 1   [ RunTime:0.000077s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='220' ) LIMIT 1   [ RunTime:0.000072s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='211' ) LIMIT 1   [ RunTime:0.000073s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='210' ) LIMIT 1   [ RunTime:0.000058s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='209' ) LIMIT 1   [ RunTime:0.000067s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='208' ) LIMIT 1   [ RunTime:0.000064s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='207' ) LIMIT 1   [ RunTime:0.000073s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='206' ) LIMIT 1   [ RunTime:0.000058s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='205' ) LIMIT 1   [ RunTime:0.000073s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='202' ) LIMIT 1   [ RunTime:0.000058s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='201' ) LIMIT 1   [ RunTime:0.000062s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='194' ) LIMIT 1   [ RunTime:0.000053s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='193' ) LIMIT 1   [ RunTime:0.000055s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='204' ) LIMIT 1   [ RunTime:0.000073s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='191' ) LIMIT 1   [ RunTime:0.000063s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='190' ) LIMIT 1   [ RunTime:0.000059s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='189' ) LIMIT 1   [ RunTime:0.000075s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='188' ) LIMIT 1   [ RunTime:0.000060s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='187' ) LIMIT 1   [ RunTime:0.000058s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='186' ) LIMIT 1   [ RunTime:0.000055s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='185' ) LIMIT 1   [ RunTime:0.000055s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='184' ) LIMIT 1   [ RunTime:0.000067s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='177' ) LIMIT 1   [ RunTime:0.000078s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='176' ) LIMIT 1   [ RunTime:0.000070s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='175' ) LIMIT 1   [ RunTime:0.000055s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='168' ) LIMIT 1   [ RunTime:0.000061s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='167' ) LIMIT 1   [ RunTime:0.000057s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='166' ) LIMIT 1   [ RunTime:0.000054s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='165' ) LIMIT 1   [ RunTime:0.000056s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='164' ) LIMIT 1   [ RunTime:0.000054s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='163' ) LIMIT 1   [ RunTime:0.000055s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='162' ) LIMIT 1   [ RunTime:0.000055s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='161' ) LIMIT 1   [ RunTime:0.000064s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='160' ) LIMIT 1   [ RunTime:0.000070s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='159' ) LIMIT 1   [ RunTime:0.000058s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='158' ) LIMIT 1   [ RunTime:0.000062s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='157' ) LIMIT 1   [ RunTime:0.000058s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='156' ) LIMIT 1   [ RunTime:0.000056s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='149' ) LIMIT 1   [ RunTime:0.000056s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='148' ) LIMIT 1   [ RunTime:0.000056s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='141' ) LIMIT 1   [ RunTime:0.000055s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='138' ) LIMIT 1   [ RunTime:0.000056s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='137' ) LIMIT 1   [ RunTime:0.000058s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='112' ) LIMIT 1   [ RunTime:0.000058s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='111' ) LIMIT 1   [ RunTime:0.000057s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='109' ) LIMIT 1   [ RunTime:0.000061s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='110' ) LIMIT 1   [ RunTime:0.000058s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='68' ) LIMIT 1   [ RunTime:0.000056s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: s-username /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/dfee54da6208d21dcd79e6f4f4fa3d65.php 第 64 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006821s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006855s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000278s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000197s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000150s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000227s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000906s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000269s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000286s ]
+
+[ 2024-09-23T22:59:34+08:00 ] 103.27.229.60 /User/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000372s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000296s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000498s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000139s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000076s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000063s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000048s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000045s ]
+SQL: SELECT * FROM `cv_user` ORDER BY id Desc LIMIT 0,50   [ RunTime:0.000137s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000347s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000252s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 223 )  [ RunTime:0.000213s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 222 )  [ RunTime:0.000133s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 221 )  [ RunTime:0.000135s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 220 )  [ RunTime:0.000133s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 215 )  [ RunTime:0.000131s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 214 )  [ RunTime:0.000145s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 213 )  [ RunTime:0.000101s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 212 )  [ RunTime:0.000107s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000064s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000049s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000044s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: id /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 55 行.
+NOTIC: [8] Undefined index: username /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 63 行.
+NOTIC: [8] Undefined index: timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 73 行.
+NOTIC: [8] Undefined index: timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 73 行.
+NOTIC: [8] Undefined index: timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 76 行.
+NOTIC: [8] Undefined index: timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 77 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009957s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009983s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000267s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000195s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000134s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000218s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000865s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000297s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000315s ]
+
+[ 2024-09-23T22:59:34+08:00 ] 103.27.229.60 /Admin/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000376s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000295s ]
+SQL: SHOW COLUMNS FROM `cv_admin` [ RunTime:0.000627s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_admin` LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT * FROM `cv_admin` ORDER BY id Desc LIMIT 0,50   [ RunTime:0.000224s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004686s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004715s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000219s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000184s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000128s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000208s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000795s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000288s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000312s ]
+
+[ 2024-09-23T22:59:35+08:00 ] 103.27.229.60 /Setting/api.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000389s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000280s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005948s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005982s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000216s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000208s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000134s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000205s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000812s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000258s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000278s ]
+
+[ 2024-09-23T22:59:36+08:00 ] 103.27.229.60 /Setting/loan.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000371s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000306s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012505s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012556s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000366s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000279s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000208s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000368s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001315s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000412s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000443s ]
+
+[ 2024-09-23T22:59:36+08:00 ] 103.27.229.60 /Setting/contract.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000591s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000666s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005083s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005123s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000202s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000177s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000133s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000240s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000804s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000299s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000322s ]
+
+[ 2024-09-23T22:59:37+08:00 ] 103.27.229.60 /Index/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000453s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000312s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006050s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006080s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000199s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000197s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000142s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000235s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000823s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000307s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000332s ]
+
+[ 2024-09-23T22:59:38+08:00 ] 103.27.229.60 /Index/main.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000391s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000312s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000653s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000391s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000288s ]
+NOTIC: [2] Redis::connect() expects at least 1 parameter, 0 given /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 12 行.
+NOTIC: [8] Undefined index: pconnect /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: auth /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 18 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004754s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004786s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000228s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000181s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000133s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000222s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000842s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000319s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000342s ]
+
+[ 2024-09-23T22:59:43+08:00 ] 103.27.229.60 /Index/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000396s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000299s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006558s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006597s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000202s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000176s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000142s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000216s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000787s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000283s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000306s ]
+
+[ 2024-09-23T22:59:43+08:00 ] 103.27.229.60 /Index/main.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000522s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000428s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000512s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000454s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000344s ]
+NOTIC: [2] Redis::connect() expects at least 1 parameter, 0 given /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 12 行.
+NOTIC: [8] Undefined index: pconnect /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: auth /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 18 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004856s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004891s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000212s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000176s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000149s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000250s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000842s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000295s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000316s ]
+
+[ 2024-09-23T22:59:44+08:00 ] 103.27.229.60 /Index/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000388s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000253s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000287s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006596s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006628s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000200s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000188s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000140s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000304s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000884s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000293s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000315s ]
+
+[ 2024-09-23T22:59:44+08:00 ] 103.27.229.60 /Index/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000404s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000306s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006025s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006074s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000211s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000175s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000134s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000207s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000774s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000305s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000327s ]
+
+[ 2024-09-23T22:59:44+08:00 ] 103.27.229.60 /Index/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000360s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000273s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005748s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005778s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000186s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000172s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000196s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000197s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000804s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000257s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000277s ]
+
+[ 2024-09-23T22:59:44+08:00 ] 103.27.229.60 /Index/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000344s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000316s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005827s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005856s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000210s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000179s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000146s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000208s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000793s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000270s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000291s ]
+
+[ 2024-09-23T22:59:44+08:00 ] 103.27.229.60 /Index/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000383s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005967s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005999s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000223s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000178s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000129s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000199s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000778s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000332s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000358s ]
+
+[ 2024-09-23T22:59:45+08:00 ] 103.27.229.60 /Index/main.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000337s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000286s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000401s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000338s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000270s ]
+NOTIC: [2] Redis::connect() expects at least 1 parameter, 0 given /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 12 行.
+NOTIC: [8] Undefined index: pconnect /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: auth /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 18 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004418s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004449s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000206s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000172s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000129s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000213s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000772s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000289s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000311s ]
+
+[ 2024-09-23T22:59:46+08:00 ] 103.27.229.60 /Index/main.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000514s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000573s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000296s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000430s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000431s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000311s ]
+NOTIC: [2] Redis::connect() expects at least 1 parameter, 0 given /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 12 行.
+NOTIC: [8] Undefined index: pconnect /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: auth /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 18 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004711s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004744s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000215s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000207s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000133s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000236s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000852s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000285s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000306s ]
+
+[ 2024-09-23T22:59:48+08:00 ] 103.27.229.60 /Loan/all.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000367s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000414s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000288s ]
+NOTIC: [8] Undefined variable: where /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/LoanAction.class.php 第 985 行.
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000595s ]
+SQL: SHOW COLUMNS FROM `cv_payorder` [ RunTime:0.000402s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanorder` LIMIT 1   [ RunTime:0.000187s ]
+SQL: SELECT * FROM `cv_loanorder` ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000411s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000308s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='223' ) LIMIT 1   [ RunTime:0.000222s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='222' ) LIMIT 1   [ RunTime:0.000139s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='221' ) LIMIT 1   [ RunTime:0.000135s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='220' ) LIMIT 1   [ RunTime:0.000131s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='215' ) LIMIT 1   [ RunTime:0.000109s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='214' ) LIMIT 1   [ RunTime:0.000099s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='213' ) LIMIT 1   [ RunTime:0.000102s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000107s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000087s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000325s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 233 )  [ RunTime:0.000234s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 232 )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 231 )  [ RunTime:0.000188s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 230 )  [ RunTime:0.000159s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 222 )  [ RunTime:0.000131s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 223 )  [ RunTime:0.000199s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 224 )  [ RunTime:0.000172s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 225 )  [ RunTime:0.000146s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 226 )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 227 )  [ RunTime:0.000148s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 228 )  [ RunTime:0.000130s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 229 )  [ RunTime:0.000141s ]
+NOTIC: [2] Missing argument 1 for I(), called in /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/LoanAction.class.php on line 428 and defined /www/wwwroot/yindu_xjd/Base/Common/common.php 第 71 行.
+NOTIC: [8] Undefined variable: name /www/wwwroot/yindu_xjd/Base/Common/common.php 第 72 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8] Undefined index: oid /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 58 行.
+NOTIC: [8] Undefined index: telnum /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 66 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 83 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 86 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 89 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 92 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 95 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 98 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 109 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 109 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 112 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 113 行.
+NOTIC: [8] Undefined index: p_start_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 122 行.
+NOTIC: [8] Undefined index: p_end_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 122 行.
+NOTIC: [8] Undefined index: p_start_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 125 行.
+NOTIC: [8] Undefined index: p_end_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 126 行.
+NOTIC: [8] Undefined index: repay_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 135 行.
+NOTIC: [8] Undefined index: repay_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 135 行.
+NOTIC: [8] Undefined index: repay_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 138 行.
+NOTIC: [8] Undefined index: repay_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 140 行.
+NOTIC: [8] Undefined index: add_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 150 行.
+NOTIC: [8] Undefined index: add_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 150 行.
+NOTIC: [8] Undefined index: add_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 153 行.
+NOTIC: [8] Undefined index: add_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 155 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 240 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.014781s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014830s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000529s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000315s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000251s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000362s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001560s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000442s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000475s ]
+
+[ 2024-09-23T22:59:49+08:00 ] 103.27.229.60 /Loan/pending.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000360s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000448s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000497s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanorder` WHERE ( `pending` = 0 ) AND ( `loan_total` <= 1 ) LIMIT 1   [ RunTime:0.000333s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `pending` = 0 ) AND ( `loan_total` <= 1 ) ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000274s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000318s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='222' ) LIMIT 1   [ RunTime:0.000152s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='220' ) LIMIT 1   [ RunTime:0.000134s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000299s ]
+SQL: SELECT SUM(money) AS tp_sum FROM `cv_loanbill` WHERE ( `oid` = '2024092311012164582270' ) AND ( `status` IN ('2','3') ) LIMIT 1   [ RunTime:0.000203s ]
+SQL: SELECT SUM(money) AS tp_sum FROM `cv_loanbill` WHERE ( `oid` = '2024092120034770885230' ) AND ( `status` IN ('2','3') ) LIMIT 1   [ RunTime:0.000127s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: oid /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 66 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 75 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 75 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 78 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 79 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007164s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007203s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000243s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000200s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000190s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000254s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000943s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000349s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000376s ]
+
+[ 2024-09-23T22:59:50+08:00 ] 103.27.229.60 /Loan/all.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000338s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000266s ]
+NOTIC: [8] Undefined variable: where /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/LoanAction.class.php 第 985 行.
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000514s ]
+SQL: SHOW COLUMNS FROM `cv_payorder` [ RunTime:0.000355s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanorder` LIMIT 1   [ RunTime:0.000155s ]
+SQL: SELECT * FROM `cv_loanorder` ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000262s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='223' ) LIMIT 1   [ RunTime:0.000147s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='222' ) LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='221' ) LIMIT 1   [ RunTime:0.000078s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='220' ) LIMIT 1   [ RunTime:0.000076s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='215' ) LIMIT 1   [ RunTime:0.000068s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000064s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='214' ) LIMIT 1   [ RunTime:0.000066s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='213' ) LIMIT 1   [ RunTime:0.000063s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000068s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000066s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000061s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000062s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000256s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 233 )  [ RunTime:0.000175s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 232 )  [ RunTime:0.000143s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 231 )  [ RunTime:0.000116s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 230 )  [ RunTime:0.000100s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 222 )  [ RunTime:0.000093s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 223 )  [ RunTime:0.000098s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 224 )  [ RunTime:0.000096s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 225 )  [ RunTime:0.000092s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 226 )  [ RunTime:0.000091s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 227 )  [ RunTime:0.000096s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 228 )  [ RunTime:0.000084s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 229 )  [ RunTime:0.000080s ]
+NOTIC: [2] Missing argument 1 for I(), called in /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/LoanAction.class.php on line 428 and defined /www/wwwroot/yindu_xjd/Base/Common/common.php 第 71 行.
+NOTIC: [8] Undefined variable: name /www/wwwroot/yindu_xjd/Base/Common/common.php 第 72 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8] Undefined index: oid /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 58 行.
+NOTIC: [8] Undefined index: telnum /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 66 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 83 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 86 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 89 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 92 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 95 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 98 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 109 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 109 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 112 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 113 行.
+NOTIC: [8] Undefined index: p_start_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 122 行.
+NOTIC: [8] Undefined index: p_end_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 122 行.
+NOTIC: [8] Undefined index: p_start_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 125 行.
+NOTIC: [8] Undefined index: p_end_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 126 行.
+NOTIC: [8] Undefined index: repay_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 135 行.
+NOTIC: [8] Undefined index: repay_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 135 行.
+NOTIC: [8] Undefined index: repay_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 138 行.
+NOTIC: [8] Undefined index: repay_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 140 行.
+NOTIC: [8] Undefined index: add_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 150 行.
+NOTIC: [8] Undefined index: add_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 150 行.
+NOTIC: [8] Undefined index: add_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 153 行.
+NOTIC: [8] Undefined index: add_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 155 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 240 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010248s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010284s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000400s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000224s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000161s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000294s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001142s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000304s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000323s ]
+
+[ 2024-09-23T22:59:51+08:00 ] 103.27.229.60 /Loan/all.shtml?m=Loan&a=all&oid=&telnum=&audit_state=-100&stimeStart=&stimeEnd=&p_start_time=&p_end_time=&repay_timeStart=&repay_timeEnd=&add_timeStart=&add_timeEnd=
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000519s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000574s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000397s ]
+NOTIC: [8] Undefined variable: where /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/LoanAction.class.php 第 985 行.
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `cv_payorder` [ RunTime:0.000401s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanorder` LIMIT 1   [ RunTime:0.000156s ]
+SQL: SELECT * FROM `cv_loanorder` ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000341s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000288s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='223' ) LIMIT 1   [ RunTime:0.000180s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='222' ) LIMIT 1   [ RunTime:0.000155s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='221' ) LIMIT 1   [ RunTime:0.000114s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='220' ) LIMIT 1   [ RunTime:0.000117s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='215' ) LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='214' ) LIMIT 1   [ RunTime:0.000131s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='213' ) LIMIT 1   [ RunTime:0.000102s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000078s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000083s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000343s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 233 )  [ RunTime:0.000220s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 232 )  [ RunTime:0.000168s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 231 )  [ RunTime:0.000141s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 230 )  [ RunTime:0.000126s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 222 )  [ RunTime:0.000140s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 223 )  [ RunTime:0.000129s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 224 )  [ RunTime:0.000125s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 225 )  [ RunTime:0.000121s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 226 )  [ RunTime:0.000116s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 227 )  [ RunTime:0.000126s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 228 )  [ RunTime:0.000117s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 229 )  [ RunTime:0.000107s ]
+NOTIC: [2] Missing argument 1 for I(), called in /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/LoanAction.class.php on line 428 and defined /www/wwwroot/yindu_xjd/Base/Common/common.php 第 71 行.
+NOTIC: [8] Undefined variable: name /www/wwwroot/yindu_xjd/Base/Common/common.php 第 72 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009526s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009566s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000445s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000302s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000151s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000270s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001243s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000293s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000311s ]
+
+[ 2024-09-23T22:59:52+08:00 ] 103.27.229.60 /Loan/all.shtml?m=Loan&a=all&oid=&telnum=&audit_state=-100&stimeStart=&stimeEnd=&p_start_time=&p_end_time=&repay_timeStart=&repay_timeEnd=&add_timeStart=&add_timeEnd=
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000379s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000339s ]
+NOTIC: [8] Undefined variable: where /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/LoanAction.class.php 第 985 行.
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000522s ]
+SQL: SHOW COLUMNS FROM `cv_payorder` [ RunTime:0.000287s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanorder` LIMIT 1   [ RunTime:0.000178s ]
+SQL: SELECT * FROM `cv_loanorder` ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000258s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000244s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='223' ) LIMIT 1   [ RunTime:0.000131s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='222' ) LIMIT 1   [ RunTime:0.000089s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='221' ) LIMIT 1   [ RunTime:0.000077s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='220' ) LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='215' ) LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000131s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='214' ) LIMIT 1   [ RunTime:0.000105s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='213' ) LIMIT 1   [ RunTime:0.000104s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000102s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000149s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000078s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000285s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 233 )  [ RunTime:0.000224s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 232 )  [ RunTime:0.000175s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 231 )  [ RunTime:0.000155s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 230 )  [ RunTime:0.000137s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 222 )  [ RunTime:0.000132s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 223 )  [ RunTime:0.000130s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 224 )  [ RunTime:0.000109s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 225 )  [ RunTime:0.000103s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 226 )  [ RunTime:0.000158s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 227 )  [ RunTime:0.000169s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 228 )  [ RunTime:0.000141s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 229 )  [ RunTime:0.000121s ]
+NOTIC: [2] Missing argument 1 for I(), called in /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/LoanAction.class.php on line 428 and defined /www/wwwroot/yindu_xjd/Base/Common/common.php 第 71 行.
+NOTIC: [8] Undefined variable: name /www/wwwroot/yindu_xjd/Base/Common/common.php 第 72 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012084s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012134s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000412s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000230s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000170s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000251s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001130s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000538s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000568s ]
+
+[ 2024-09-23T22:59:52+08:00 ] 103.27.229.60 /Loan/process.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000334s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000278s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000463s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanorder` WHERE ( `pending` IN ('-1',' -2',' -3') ) LIMIT 1   [ RunTime:0.000174s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `pending` IN ('-1',' -2',' -3') ) ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000195s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: oid /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/74c6ab2d643ae45f28dee0d3a4666c0e.php 第 59 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/74c6ab2d643ae45f28dee0d3a4666c0e.php 第 68 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/74c6ab2d643ae45f28dee0d3a4666c0e.php 第 68 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/74c6ab2d643ae45f28dee0d3a4666c0e.php 第 70 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/74c6ab2d643ae45f28dee0d3a4666c0e.php 第 71 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006895s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006922s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000212s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000197s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000134s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000226s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000825s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000364s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000391s ]
+
+[ 2024-09-23T22:59:53+08:00 ] 103.27.229.60 /Loan/refuse.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000501s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000561s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000403s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000549s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanorder` WHERE ( `pending` = 2 ) LIMIT 1   [ RunTime:0.000196s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `pending` = 2 ) ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000342s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: oid /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/20d50be623e0befd122c8975bc64b5b3.php 第 58 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/20d50be623e0befd122c8975bc64b5b3.php 第 67 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/20d50be623e0befd122c8975bc64b5b3.php 第 67 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/20d50be623e0befd122c8975bc64b5b3.php 第 70 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/20d50be623e0befd122c8975bc64b5b3.php 第 71 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005446s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005474s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000204s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000179s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000135s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000217s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000784s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000311s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000329s ]
+
+[ 2024-09-23T23:09:02+08:00 ] 103.27.229.60 /Help/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000665s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000796s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000506s ]
+SQL: SHOW COLUMNS FROM `cv_question` [ RunTime:0.003274s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_question` LIMIT 1   [ RunTime:0.000228s ]
+SQL: SELECT * FROM `cv_question` ORDER BY id Desc LIMIT 0,50   [ RunTime:0.000142s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007851s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007935s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000330s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000278s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000211s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000399s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001320s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000450s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000490s ]
+
+[ 2024-09-23T23:09:03+08:00 ] 103.27.229.60 /Feedback/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000382s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000305s ]
+SQL: SHOW COLUMNS FROM `cv_feedback` [ RunTime:0.001200s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_feedback` LIMIT 1   [ RunTime:0.000500s ]
+SQL: SELECT * FROM `cv_feedback` ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000192s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: s-name /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 58 行.
+NOTIC: [8] Undefined index: s-timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 67 行.
+NOTIC: [8] Undefined index: s-timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 67 行.
+NOTIC: [8] Undefined index: s-start_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 70 行.
+NOTIC: [8] Undefined index: s-end_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 71 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006968s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007016s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000346s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000289s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000204s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000354s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001282s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000445s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000475s ]
+
+[ 2024-09-23T23:12:02+08:00 ] 103.27.229.60 /Feedback/index.shtml?m=Feedback&a=index&s-name=&s-timeStart=&s-timeEnd=
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000451s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000321s ]
+SQL: SHOW COLUMNS FROM `cv_feedback` [ RunTime:0.001721s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_feedback` LIMIT 1   [ RunTime:0.000295s ]
+SQL: SELECT * FROM `cv_feedback` ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000248s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: s-start_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 70 行.
+NOTIC: [8] Undefined index: s-end_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 71 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006776s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006813s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000240s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000188s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000163s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000246s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000889s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000281s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000299s ]
+
+[ 2024-09-23T23:12:05+08:00 ] 103.27.229.60 /Feedback/index.shtml?m=Feedback&a=index&s-name=&s-timeStart=&s-timeEnd=
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000363s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000278s ]
+SQL: SHOW COLUMNS FROM `cv_feedback` [ RunTime:0.000622s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_feedback` LIMIT 1   [ RunTime:0.000132s ]
+SQL: SELECT * FROM `cv_feedback` ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000163s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: s-start_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 70 行.
+NOTIC: [8] Undefined index: s-end_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 71 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005642s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005669s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000224s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000188s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000146s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000234s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000843s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000271s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000289s ]
+
+[ 2024-09-23T23:12:08+08:00 ] 103.27.229.60 /Loan/pending.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000388s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000288s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000672s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanorder` WHERE ( `pending` = 0 ) AND ( `loan_total` <= 1 ) LIMIT 1   [ RunTime:0.000386s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `pending` = 0 ) AND ( `loan_total` <= 1 ) ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000272s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000280s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='222' ) LIMIT 1   [ RunTime:0.000170s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='220' ) LIMIT 1   [ RunTime:0.000092s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000288s ]
+SQL: SELECT SUM(money) AS tp_sum FROM `cv_loanbill` WHERE ( `oid` = '2024092311012164582270' ) AND ( `status` IN ('2','3') ) LIMIT 1   [ RunTime:0.000296s ]
+SQL: SELECT SUM(money) AS tp_sum FROM `cv_loanbill` WHERE ( `oid` = '2024092120034770885230' ) AND ( `status` IN ('2','3') ) LIMIT 1   [ RunTime:0.000120s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: oid /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 66 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 75 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 75 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 78 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/d02e14fcb96acfa8b97ed43f954acde6.php 第 79 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006805s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006832s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000233s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000187s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000167s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000228s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000869s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000273s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000291s ]
+
+[ 2024-09-23T23:12:09+08:00 ] 103.27.229.60 /Loan/all.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000395s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000280s ]
+NOTIC: [8] Undefined variable: where /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/LoanAction.class.php 第 985 行.
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000603s ]
+SQL: SHOW COLUMNS FROM `cv_payorder` [ RunTime:0.000358s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanorder` LIMIT 1   [ RunTime:0.000153s ]
+SQL: SELECT * FROM `cv_loanorder` ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000290s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000249s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='223' ) LIMIT 1   [ RunTime:0.000151s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='222' ) LIMIT 1   [ RunTime:0.000101s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='221' ) LIMIT 1   [ RunTime:0.000099s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='220' ) LIMIT 1   [ RunTime:0.000091s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='215' ) LIMIT 1   [ RunTime:0.000073s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000070s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='214' ) LIMIT 1   [ RunTime:0.000071s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='213' ) LIMIT 1   [ RunTime:0.000066s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000081s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000080s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000082s ]
+SQL: SELECT * FROM `cv_user` WHERE ( 1=1 AND id='212' ) LIMIT 1   [ RunTime:0.000066s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000300s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 233 )  [ RunTime:0.000197s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 232 )  [ RunTime:0.000174s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 231 )  [ RunTime:0.000137s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 230 )  [ RunTime:0.000126s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 222 )  [ RunTime:0.000106s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 223 )  [ RunTime:0.000092s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 224 )  [ RunTime:0.000091s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 225 )  [ RunTime:0.000117s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 226 )  [ RunTime:0.000136s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 227 )  [ RunTime:0.000106s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 228 )  [ RunTime:0.000099s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `toid` = 229 )  [ RunTime:0.000097s ]
+NOTIC: [2] Missing argument 1 for I(), called in /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/LoanAction.class.php on line 428 and defined /www/wwwroot/yindu_xjd/Base/Common/common.php 第 71 行.
+NOTIC: [8] Undefined variable: name /www/wwwroot/yindu_xjd/Base/Common/common.php 第 72 行.
+INFO: [ view_parse ] --START--
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8] Undefined index: oid /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 58 行.
+NOTIC: [8] Undefined index: telnum /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 66 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 83 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 86 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 89 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 92 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 95 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 98 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 109 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 109 行.
+NOTIC: [8] Undefined index: stimeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 112 行.
+NOTIC: [8] Undefined index: stimeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 113 行.
+NOTIC: [8] Undefined index: p_start_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 122 行.
+NOTIC: [8] Undefined index: p_end_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 122 行.
+NOTIC: [8] Undefined index: p_start_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 125 行.
+NOTIC: [8] Undefined index: p_end_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 126 行.
+NOTIC: [8] Undefined index: repay_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 135 行.
+NOTIC: [8] Undefined index: repay_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 135 行.
+NOTIC: [8] Undefined index: repay_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 138 行.
+NOTIC: [8] Undefined index: repay_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 140 行.
+NOTIC: [8] Undefined index: add_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 150 行.
+NOTIC: [8] Undefined index: add_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 150 行.
+NOTIC: [8] Undefined index: add_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 153 行.
+NOTIC: [8] Undefined index: add_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 155 行.
+NOTIC: [8] Undefined index: audit_state /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/8496e4df296312fe89c3a9fe231f708d.php 第 240 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009647s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009673s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000367s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000227s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000139s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000226s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001016s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000285s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000303s ]
+
+[ 2024-09-23T23:12:10+08:00 ] 103.27.229.60 /Index/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000406s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000462s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000299s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006208s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006240s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000211s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000182s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000141s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000232s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000822s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000305s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000329s ]
+
+[ 2024-09-23T23:12:10+08:00 ] 103.27.229.60 /Index/main.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000417s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000305s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000525s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000384s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000304s ]
+NOTIC: [2] Redis::connect() expects at least 1 parameter, 0 given /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 12 行.
+NOTIC: [8] Undefined index: pconnect /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: auth /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 18 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004896s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004930s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000237s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000180s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000175s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000225s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000874s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000300s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000331s ]
+
+[ 2024-09-23T23:12:13+08:00 ] 103.27.229.60 /User/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000364s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000303s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000496s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000204s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000073s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000055s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000051s ]
+SQL: SELECT * FROM `cv_user` ORDER BY id Desc LIMIT 0,50   [ RunTime:0.000160s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000383s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000339s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 223 )  [ RunTime:0.000225s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 222 )  [ RunTime:0.000125s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 221 )  [ RunTime:0.000114s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 220 )  [ RunTime:0.000185s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 215 )  [ RunTime:0.000202s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 214 )  [ RunTime:0.000143s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 213 )  [ RunTime:0.000104s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 212 )  [ RunTime:0.000117s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000082s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000057s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000046s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: id /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 55 行.
+NOTIC: [8] Undefined index: username /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 63 行.
+NOTIC: [8] Undefined index: timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 73 行.
+NOTIC: [8] Undefined index: timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 73 行.
+NOTIC: [8] Undefined index: timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 76 行.
+NOTIC: [8] Undefined index: timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 77 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009366s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009398s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000278s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000195s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000134s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000246s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000908s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000306s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000325s ]
+
+[ 2024-09-23T23:12:15+08:00 ] 103.27.229.60 /Setting/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000406s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000281s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006487s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006534s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000299s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000192s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000131s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000205s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000885s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000297s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000327s ]
+
+[ 2024-09-23T23:12:16+08:00 ] 103.27.229.60 /Help/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000475s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000541s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000409s ]
+SQL: SHOW COLUMNS FROM `cv_question` [ RunTime:0.001001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_question` LIMIT 1   [ RunTime:0.000120s ]
+SQL: SELECT * FROM `cv_question` ORDER BY id Desc LIMIT 0,50   [ RunTime:0.000105s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004723s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004765s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000225s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000180s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000127s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000218s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000803s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000296s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000318s ]
+
+[ 2024-09-23T23:12:16+08:00 ] 103.27.229.60 /Setting/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000574s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000400s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000447s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008326s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008370s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000287s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000258s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000175s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000277s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001066s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000386s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000415s ]
+
+[ 2024-09-23T23:12:17+08:00 ] 103.27.229.60 /Help/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000392s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000298s ]
+SQL: SHOW COLUMNS FROM `cv_question` [ RunTime:0.000659s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_question` LIMIT 1   [ RunTime:0.000115s ]
+SQL: SELECT * FROM `cv_question` ORDER BY id Desc LIMIT 0,50   [ RunTime:0.000097s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004935s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004980s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000212s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000184s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000139s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000255s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000851s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000299s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000325s ]
+
+[ 2024-09-23T23:12:22+08:00 ] 103.27.229.60 /Help/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000367s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000292s ]
+SQL: SHOW COLUMNS FROM `cv_question` [ RunTime:0.000524s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_question` LIMIT 1   [ RunTime:0.000115s ]
+SQL: SELECT * FROM `cv_question` ORDER BY id Desc LIMIT 0,50   [ RunTime:0.000092s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005113s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005155s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000210s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000179s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000128s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000214s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000785s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000305s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000327s ]
+
+[ 2024-09-23T23:12:23+08:00 ] 103.27.229.60 /Help/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000638s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000484s ]
+SQL: SHOW COLUMNS FROM `cv_question` [ RunTime:0.000755s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_question` LIMIT 1   [ RunTime:0.000222s ]
+SQL: SELECT * FROM `cv_question` ORDER BY id Desc LIMIT 0,50   [ RunTime:0.000150s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007530s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007599s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000294s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000271s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000204s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000347s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001212s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000418s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000456s ]
+
+[ 2024-09-23T23:12:24+08:00 ] 103.27.229.60 /Feedback/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000391s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000283s ]
+SQL: SHOW COLUMNS FROM `cv_feedback` [ RunTime:0.000897s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_feedback` LIMIT 1   [ RunTime:0.000139s ]
+SQL: SELECT * FROM `cv_feedback` ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000144s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: s-name /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 58 行.
+NOTIC: [8] Undefined index: s-timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 67 行.
+NOTIC: [8] Undefined index: s-timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 67 行.
+NOTIC: [8] Undefined index: s-start_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 70 行.
+NOTIC: [8] Undefined index: s-end_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 71 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005683s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005722s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000218s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000206s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000130s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000199s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000799s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000282s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000300s ]
+
+[ 2024-09-23T23:12:26+08:00 ] 103.27.229.60 /Help/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000435s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000316s ]
+SQL: SHOW COLUMNS FROM `cv_question` [ RunTime:0.001199s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_question` LIMIT 1   [ RunTime:0.000117s ]
+SQL: SELECT * FROM `cv_question` ORDER BY id Desc LIMIT 0,50   [ RunTime:0.000105s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004929s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004976s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000214s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000188s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000136s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000267s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000878s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000315s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000344s ]
+
+[ 2024-09-23T23:12:28+08:00 ] 103.27.229.60 /Feedback/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000414s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000309s ]
+SQL: SHOW COLUMNS FROM `cv_feedback` [ RunTime:0.000624s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_feedback` LIMIT 1   [ RunTime:0.000135s ]
+SQL: SELECT * FROM `cv_feedback` ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000156s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: s-name /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 58 行.
+NOTIC: [8] Undefined index: s-timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 67 行.
+NOTIC: [8] Undefined index: s-timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 67 行.
+NOTIC: [8] Undefined index: s-start_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 70 行.
+NOTIC: [8] Undefined index: s-end_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 71 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005662s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005712s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000240s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000186s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000130s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000201s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000807s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000323s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000342s ]
+
+[ 2024-09-23T23:12:29+08:00 ] 103.27.229.60 /Feedback/index.shtml?m=Feedback&a=index&s-name=&s-timeStart=&s-timeEnd=
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000374s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000262s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000291s ]
+SQL: SHOW COLUMNS FROM `cv_feedback` [ RunTime:0.000879s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_feedback` LIMIT 1   [ RunTime:0.000132s ]
+SQL: SELECT * FROM `cv_feedback` ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000167s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: s-start_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 70 行.
+NOTIC: [8] Undefined index: s-end_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 71 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005559s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005590s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000239s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000182s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000128s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000253s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000852s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000284s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000302s ]
+
+[ 2024-09-23T23:12:36+08:00 ] 103.27.229.60 /Index/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000382s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000291s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006109s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006144s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000208s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000179s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000137s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000239s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000817s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000297s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000319s ]
+
+[ 2024-09-23T23:12:36+08:00 ] 103.27.229.60 /Index/main.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000388s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000397s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000447s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000466s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000433s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000324s ]
+NOTIC: [2] Redis::connect() expects at least 1 parameter, 0 given /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 12 行.
+NOTIC: [8] Undefined index: pconnect /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 13 行.
+NOTIC: [8] Undefined index: auth /www/wwwroot/yindu_xjd/App/Lib/Model/RedisModel.class.php 第 18 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004826s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004858s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000245s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000181s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000144s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000226s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000862s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000308s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000329s ]
+
+[ 2024-09-23T23:12:38+08:00 ] 103.27.229.60 /Help/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000362s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000295s ]
+SQL: SHOW COLUMNS FROM `cv_question` [ RunTime:0.000664s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_question` LIMIT 1   [ RunTime:0.000115s ]
+SQL: SELECT * FROM `cv_question` ORDER BY id Desc LIMIT 0,50   [ RunTime:0.000088s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004892s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004942s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000204s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000180s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000132s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000242s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000816s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000289s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000312s ]
+
+[ 2024-09-23T23:12:39+08:00 ] 103.27.229.60 /Feedback/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000631s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+SQL: SHOW COLUMNS FROM `cv_feedback` [ RunTime:0.000655s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_feedback` LIMIT 1   [ RunTime:0.000206s ]
+SQL: SELECT * FROM `cv_feedback` ORDER BY add_time DESC LIMIT 0,50   [ RunTime:0.000221s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: s-name /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 58 行.
+NOTIC: [8] Undefined index: s-timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 67 行.
+NOTIC: [8] Undefined index: s-timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 67 行.
+NOTIC: [8] Undefined index: s-start_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 70 行.
+NOTIC: [8] Undefined index: s-end_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/6317e272130a468f173b2c81af829315.php 第 71 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006522s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006557s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000300s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000256s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000204s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000300s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001153s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000420s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000450s ]
+
+[ 2024-09-23T23:12:48+08:00 ] 103.27.229.60 /User/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000359s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000259s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000509s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000154s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000104s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000066s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000063s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000059s ]
+SQL: SELECT * FROM `cv_user` ORDER BY id Desc LIMIT 0,50   [ RunTime:0.000136s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000382s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000275s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 223 )  [ RunTime:0.000274s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 222 )  [ RunTime:0.000152s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 221 )  [ RunTime:0.000126s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 220 )  [ RunTime:0.000111s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 215 )  [ RunTime:0.000096s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 214 )  [ RunTime:0.000113s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 213 )  [ RunTime:0.000129s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 212 )  [ RunTime:0.000130s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000068s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000045s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: id /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 55 行.
+NOTIC: [8] Undefined index: username /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 63 行.
+NOTIC: [8] Undefined index: timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 73 行.
+NOTIC: [8] Undefined index: timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 73 行.
+NOTIC: [8] Undefined index: timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 76 行.
+NOTIC: [8] Undefined index: timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 77 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009441s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009466s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000237s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000196s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000160s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000258s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000909s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000444s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000465s ]
+
+[ 2024-09-23T23:12:50+08:00 ] 103.27.229.60 /Pay/proof.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000408s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000291s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+SQL: SHOW COLUMNS FROM `cv_pay_proof` [ RunTime:0.003235s ]
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Lib/Action/Manage/PayAction.class.php 第 76 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_pay_proof` WHERE ( `status` = 0 ) LIMIT 1   [ RunTime:0.000192s ]
+SQL: SELECT * FROM `cv_pay_proof` WHERE ( `status` = 0 ) ORDER BY add_time Desc LIMIT 0,10   [ RunTime:0.000222s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000330s ]
+SQL: SHOW COLUMNS FROM `cv_payorder` [ RunTime:0.000397s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill_delay` [ RunTime:0.002000s ]
+SQL: SELECT `pending`,`status` FROM `cv_loanorder` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000198s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_payorder` WHERE ( `loid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000618s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanbill_delay` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000798s ]
+SQL: SELECT `pending`,`status` FROM `cv_loanorder` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_payorder` WHERE ( `loid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000265s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanbill_delay` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT `pending`,`status` FROM `cv_loanorder` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000102s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_payorder` WHERE ( `loid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000219s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanbill_delay` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT `pending`,`status` FROM `cv_loanorder` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_payorder` WHERE ( `loid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000234s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanbill_delay` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000356s ]
+SQL: SELECT `pending`,`status` FROM `cv_loanorder` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000098s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_payorder` WHERE ( `loid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000221s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanbill_delay` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000090s ]
+SQL: SELECT `pending`,`status` FROM `cv_loanorder` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000068s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_payorder` WHERE ( `loid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000214s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanbill_delay` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000100s ]
+SQL: SELECT `pending`,`status` FROM `cv_loanorder` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000076s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_payorder` WHERE ( `loid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000200s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanbill_delay` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT `pending`,`status` FROM `cv_loanorder` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000075s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_payorder` WHERE ( `loid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000212s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanbill_delay` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000091s ]
+SQL: SELECT `pending`,`status` FROM `cv_loanorder` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000071s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_payorder` WHERE ( `loid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000198s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanbill_delay` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT `pending`,`status` FROM `cv_loanorder` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000069s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_payorder` WHERE ( `loid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000230s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_loanbill_delay` WHERE ( `oid` = '2024082108345299971170' ) LIMIT 1   [ RunTime:0.000096s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /www/wwwroot/yindu_xjd/Base/Lib/Template/TagLib.class.php 第 128 行.
+NOTIC: [8] Undefined index: toid /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 44 行.
+NOTIC: [8] Undefined index: add_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 53 行.
+NOTIC: [8] Undefined index: add_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 53 行.
+NOTIC: [8] Undefined index: add_timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 56 行.
+NOTIC: [8] Undefined index: add_timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 58 行.
+NOTIC: [8] Undefined index: delay /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 122 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 126 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 128 行.
+NOTIC: [8] Undefined index: delay /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 122 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 126 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 128 行.
+NOTIC: [8] Undefined index: delay /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 122 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 126 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 128 行.
+NOTIC: [8] Undefined index: delay /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 122 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 126 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 128 行.
+NOTIC: [8] Undefined index: delay /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 122 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 126 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 128 行.
+NOTIC: [8] Undefined index: delay /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 122 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 126 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 128 行.
+NOTIC: [8] Undefined index: delay /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 122 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 126 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 128 行.
+NOTIC: [8] Undefined index: delay /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 122 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 126 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 128 行.
+NOTIC: [8] Undefined index: delay /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 122 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 126 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 128 行.
+NOTIC: [8] Undefined index: delay /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 122 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 126 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 128 行.
+NOTIC: [8] Undefined index: status /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/937dadd841805a734e0e4b8a0a26fab7.php 第 137 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007659s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000311s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000193s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000134s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000260s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000953s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000293s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000313s ]
+
+[ 2024-09-23T23:12:52+08:00 ] 103.27.229.60 /User/index.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000324s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000264s ]
+SQL: SHOW COLUMNS FROM `cv_user` [ RunTime:0.000447s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000165s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000084s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000061s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000055s ]
+SQL: SELECT * FROM `cv_user` ORDER BY id Desc LIMIT 0,50   [ RunTime:0.000134s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000424s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.000383s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 223 )  [ RunTime:0.000281s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 222 )  [ RunTime:0.000171s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 221 )  [ RunTime:0.000156s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 220 )  [ RunTime:0.000157s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 215 )  [ RunTime:0.000150s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 214 )  [ RunTime:0.000139s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 213 )  [ RunTime:0.000144s ]
+SQL: SELECT * FROM `cv_loanorder` WHERE ( `uid` = 212 )  [ RunTime:0.000150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000072s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cv_user` LIMIT 1   [ RunTime:0.000075s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: id /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 55 行.
+NOTIC: [8] Undefined index: username /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 63 行.
+NOTIC: [8] Undefined index: timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 73 行.
+NOTIC: [8] Undefined index: timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 73 行.
+NOTIC: [8] Undefined index: timeStart /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 76 行.
+NOTIC: [8] Undefined index: timeEnd /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 77 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+NOTIC: [8] Undefined index: login_time /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: login_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: reply_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 142 行.
+NOTIC: [8] Undefined index: get_order /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: pay_count /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 143 行.
+NOTIC: [8] Undefined index: bank /www/wwwroot/yindu_xjd/App/Runtime/Cache/Manage/17471e1783ed2e4eb8f634098e404afb.php 第 153 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010339s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010374s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000232s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000204s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000149s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000227s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000868s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000280s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000298s ]
+
+[ 2024-09-23T23:13:12+08:00 ] 103.27.229.60 /Setting/uploadImg.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000401s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000260s ]
+SQL: SHOW COLUMNS FROM `cv_file` [ RunTime:0.001153s ]
+NOTIC: [2] mkdir(): No such file or directory /www/wwwroot/yindu_xjd/App/Lib/Model/FileModel.class.php 第 40 行.
+
+[ 2024-09-23T23:13:30+08:00 ] 103.27.229.60 /Setting/uploadImg.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000602s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000694s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000296s ]
+SQL: SHOW COLUMNS FROM `cv_file` [ RunTime:0.000649s ]
+NOTIC: [2] mkdir(): No such file or directory /www/wwwroot/yindu_xjd/App/Lib/Model/FileModel.class.php 第 40 行.
+
+[ 2024-09-23T23:13:35+08:00 ] 103.27.229.60 /Setting/uploadImg.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000331s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000281s ]
+SQL: SHOW COLUMNS FROM `cv_file` [ RunTime:0.000868s ]
+NOTIC: [2] mkdir(): No such file or directory /www/wwwroot/yindu_xjd/App/Lib/Model/FileModel.class.php 第 40 行.
+
+[ 2024-09-23T23:14:12+08:00 ] 103.27.229.60 /Setting/uploadImg.shtml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000404s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000284s ]
+SQL: SHOW COLUMNS FROM `cv_file` [ RunTime:0.001319s ]
+SQL: INSERT INTO `cv_file` (`load_time`,`url`,`suffix`,`filemd5`,`filesize`) VALUES (1727104452,'20240923/866439a508c81df235cb62e15c9add85.xlsx','xlsx','ade8cebd3022966a8e5199a6152d82e4',9786) [ RunTime:0.001138s ]
+
+[ 2024-09-23T23:19:28+08:00 ] 165.154.59.90 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000385s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.001495s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000461s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `repayment_time` < 1727104768 ) AND ( `status` IN ('0','1') ) AND ( `overdue_settime` < 1727018368 )  [ RunTime:0.000520s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `repayment_time` < 1727363968 ) AND ( `status` = 0 ) AND ( `overdue_smsstatus` = 0 )  [ RunTime:0.000188s ]
+
+[ 2024-09-23T23:19:47+08:00 ] 165.154.59.90 /robots.txt
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000630s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000710s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000451s ]
+NOTIC: [8] Undefined variable: group /www/wwwroot/yindu_xjd/Base/Lib/Core/App.class.php 第 102 行.
+ERR: 无法加载模块:robots.txt
+
+[ 2024-09-23T23:19:48+08:00 ] 165.154.59.90 /sitemap.xml
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000581s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000380s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000434s ]
+NOTIC: [8] Undefined variable: group /www/wwwroot/yindu_xjd/Base/Lib/Core/App.class.php 第 102 行.
+ERR: 无法加载模块:sitemap.xml
+
+[ 2024-09-23T23:19:53+08:00 ] 165.154.59.90 /config.json
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000418s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000389s ]
+NOTIC: [8] Undefined variable: group /www/wwwroot/yindu_xjd/Base/Lib/Core/App.class.php 第 102 行.
+ERR: 无法加载模块:config.json
+
+[ 2024-09-23T23:45:24+08:00 ] 45.79.120.183 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000349s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000466s ]
+SQL: SHOW COLUMNS FROM `cv_loanbill` [ RunTime:0.001393s ]
+SQL: SHOW COLUMNS FROM `cv_loanorder` [ RunTime:0.000417s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `repayment_time` < 1727106324 ) AND ( `status` IN ('0','1') ) AND ( `overdue_settime` < 1727019924 )  [ RunTime:0.000506s ]
+SQL: SELECT * FROM `cv_loanbill` WHERE ( `repayment_time` < 1727365524 ) AND ( `status` = 0 ) AND ( `overdue_smsstatus` = 0 )  [ RunTime:0.000181s ]
+

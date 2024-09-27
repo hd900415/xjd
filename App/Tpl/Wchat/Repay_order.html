@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <include file="Public/head"/>
+    <link rel="stylesheet" href="__PUBLIC__/Wchat/css/dhkCss.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Manage/js/layer/css/layui.css">
+    <title>pending payment order - <config name="siteName" /> - <config name="siteTitle"
+        />-汇码网（www.huimaw.com）</title>
+    <style>
+        .con_right .b {
+            line-height: 3rem;
+            font-size: 0.95rem;
+            color: #0abfff;
+            position: absolute;
+            right: 9%;
+            bottom: 0;
+            background: url(../images/fh.png) center right no-repeat;
+            background-size: 17px;
+            padding-right: 10%;
+        }
+
+        .con_right .t {
+            line-height: 3rem;
+            font-size: 0.95rem;
+            color: #0abfff;
+            position: absolute;
+            right: 9%;
+            top: 0;
+            background: url(../images/fh.png) center right no-repeat;
+            background-size: 17px;
+            padding-right: 10%;
+        }
+
+        .con_right .z {
+            line-height: 3rem;
+            font-size: 0.95rem;
+            color: #0abfff;
+            position: absolute;
+            right: 1%;
+            top: 0;
+            background: url(../images/fh.png) center right no-repeat;
+            background-size: 17px;
+            padding-right: 10%;
+        }
+
+        .hk_sub_info {
+            width: 94%;
+            margin-left: 3%;
+            margin-top: 4rem;
+            position: relative;
+            min-height: 2rem;
+            float: left;
+            z-index: -99;
+        }
+        .con_left span.amount_tag{
+            font-size: 1.2rem;
+        }
+        .con_left span.amount_bill_tag{
+            font-size: 1.2rem;
+        }
+        .repay_fee_tag{
+            display:block;
+            margin-top: 2px;
+            color: #ede5e5;
+        }
+    </style>
+</head>
+<body>
+<div class="hk_head">
+    <p>Amount to be repaid{$Think.config.CURRENCY_SYMBOL}{$noneMoney}{$Think.config.CURRENCY}</p>
+</div>
+<!--<div class="hk_sub_info">-->
+<!--    <div class="layui-col-md4 layui-bg-blue">到账金额<span class="layui-badge layui-bg-gray">1</span></div>-->
+<!--    <div class="layui-col-md4 layui-bg-blue">应还金额<span class="layui-badge layui-bg-gray">1</span></div>-->
+<!--    <div class="layui-col-md4 layui-bg-blue">已还金额<span class="layui-badge layui-bg-gray">1</span></div>-->
+<!--</div>-->
+<div class="hk_list">
+    <php>$empty="<span style='text-align: center;display: block;margin-top: 1rem;'>No order at the moment</span>";</php>
+    <volist name="list" id="vo" empty="$empty">
+        <if condition="($vo['pending'] eq 0) OR ($vo['pending'] eq -2) OR ($vo['pending'] eq -1) OR ($vo['pending'] eq -3)">
+            <div class="one_hk" onclick="window.location.href='{:U(\'Publicproject/index\')}'">
+                <div class="ON">
+                    <a href="javascript:;">Order：{$vo.oid}</a>
+                </div>
+                <div class="hk_con">
+                    <div class="con_left" style="background-color: #3ed050;">
+                        <h2>Processing</h2>
+                        <span class="amount_tag">{$Think.config.CURRENCY_SYMBOL}{$vo.money}</span>
+                        <span class="repay_fee_tag">fee:{$vo.repay_interest}</span>
+                    </div>
+                    <div class="con_right">
+                        <h2>{$vo.add_time|date="Y.m.d",###}</h2>
+                        <!--<span>等待确认签名后还款</span>-->
+                        <span>Purchase mall credit loan (purchase)</span>
+                    </div>
+                </div>
+            </div>
+            <elseif condition="$vo['pending'] eq 2"/>
+            <div class="one_hk">
+                <div class="ON">
+                    <a href="javascript:;">Order:{$vo.oid}</a>
+                </div>
+                <div class="hk_con">
+                    <div class="con_left" style="background-color: #f54747;">
+                        <h2>Fail</h2>
+                        <span class="amount_tag">{$Think.config.CURRENCY_SYMBOL}{$vo.money}</span>
+                        <span class="repay_fee_tag">fee:{$vo.repay_interest}</span>
+                    </div>
+                    <div class="con_right">
+                        <h2>{$vo.add_time|date="Y.m.d",###}</h2>
+                        <span>{$vo.error}</span>
+                    </div>
+                </div>
+            </div>
+            <else/>
+            <div class="one_hk">
+                <div class="ON">
+                    <a href="{:U('Repay/viewbill',array('oid'=>$vo['id']))}">Loan order number：{$vo.oid}</a>
+                </div>
+                <div class="hk_con">
+                    <div class="con_left"
+                         onclick="window.location.href = '{:U('Repay/viewbill',array('oid'=>$vo['id']))}';">
+                        <h2>{$Think.config.CURRENCY_SYMBOL}{$vo.bill.allmoney}</h2>
+                        <span class="amount_bill_tag">Phase{$vo.bill.billnum} / {$vo.bill.allbill}</span>
+                        <span class="repay_fee_tag">fee:{$vo.repay_interest}</span>
+                    </div>
+                    <div class="con_right">
+                        <h2>{$vo.bill.repayment_time|date="Y.m.d",###}</h2>
+                        <if condition="$vo['bill']['status'] eq 0">
+                            <!--<span>距离还款日{$vo.bill.timelenth}天</span>-->
+                            <span>Expected to arrive in 4-6 hours</span>
+                            <a class="z" href="{:U('Repay/gfpayment',array('id'=>$vo['bill']['id']))}">Repayment</a>
+                        </if>
+                        <if condition="$vo['bill']['status'] eq 1">
+                            <span style="color: red;">Past due{$vo.bill.timelenth}days</span>
+                            <a class="b" href="{:U('Repay/repaymentXq',array('id'=>$vo['bill']['id']))}">Renewal</a>
+                            <a class="t" href="{:U('Repay/repayment',array('id'=>$vo['bill']['id']))}">Repayment</a>
+                        </if>
+
+                    </div>
+                </div>
+            </div>
+        </if>
+    </volist>
+</div>
+</body>
+</html>

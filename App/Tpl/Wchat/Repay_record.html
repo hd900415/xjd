@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <include file="Public/head"/>
+    <link rel="stylesheet" href="__PUBLIC__/Wchat/css/dhkCss.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Manage/js/layer/css/layui.css">
+    <title>pending payment order - <config name="siteName" /> - <config name="siteTitle"
+        />-汇码网（www.huimaw.com）</title>
+    <style>
+        .con_right .b {
+            line-height: 3rem;
+            font-size: 0.95rem;
+            color: #0abfff;
+            position: absolute;
+            right: 9%;
+            bottom: 0;
+            background: url(../images/fh.png) center right no-repeat;
+            background-size: 17px;
+            padding-right: 10%;
+        }
+
+        .con_right .t {
+            line-height: 3rem;
+            font-size: 0.95rem;
+            color: #0abfff;
+            position: absolute;
+            right: 9%;
+            top: 0;
+            background: url(../images/fh.png) center right no-repeat;
+            background-size: 17px;
+            padding-right: 10%;
+        }
+
+        .con_right .z {
+            line-height: 3rem;
+            font-size: 0.95rem;
+            color: #0abfff;
+            position: absolute;
+            right: 1%;
+            top: 0;
+            background: url(../images/fh.png) center right no-repeat;
+            background-size: 17px;
+            padding-right: 10%;
+        }
+
+        .hk_sub_info {
+            width: 94%;
+            margin-left: 3%;
+            margin-top: 4rem;
+            position: relative;
+            min-height: 2rem;
+            float: left;
+            z-index: -99;
+        }
+
+        .con_left span.amount_tag {
+            font-size: 1.2rem;
+        }
+        .reply_status_tag{
+            color: red;
+            float: right;
+            margin-right: 12px;
+            font-size: 1.4rem;
+            position: relative;
+            top: -10px;
+            font-weight: bold;
+        }
+        .reply_info_tag{
+            margin-top: 4rem;
+        }
+
+    </style>
+</head>
+<body>
+<div class="info_header">
+    <ul class="myui-nav myui-nav-blue">
+        <button class="myui-btn myui-left btn-return" onclick="history.back();" style="margin-left: 10px;"><span class="arrow-left"><</span></button>  <p>Amount to be repaid{$Think.config.CURRENCY_SYMBOL}{$noneMoney}{$Think.config.CURRENCY}</p>
+    </ul>
+</div>
+<!--<div class="hk_head">-->
+<!--    <p>Amount to be repaid{$Think.config.CURRENCY_SYMBOL}{$noneMoney}{$Think.config.CURRENCY}</p>-->
+<!--</div>-->
+<!--<div class="hk_sub_info">-->
+<!--    <div class="layui-col-md4 layui-bg-blue">到账金额<span class="layui-badge layui-bg-gray">1</span></div>-->
+<!--    <div class="layui-col-md4 layui-bg-blue">应还金额<span class="layui-badge layui-bg-gray">1</span></div>-->
+<!--    <div class="layui-col-md4 layui-bg-blue">已还金额<span class="layui-badge layui-bg-gray">1</span></div>-->
+<!--</div>-->
+<div class="hk_list">
+    <php>$empty="<span style='text-align: center;display: block;margin-top: 1rem;'>No order at the moment</span>";</php>
+    <volist name="list" id="vo" empty="$empty">
+        <if condition="$vo['status'] eq 2">
+            <div class="one_hk">
+                <div class="ON">
+                    <a href="javascript:;">Order:{$vo.oid}</a>
+                </div>
+                <div class="hk_con">
+                    <div class="con_left">
+                        <h2>{$Think.config.CURRENCY_SYMBOL}{$vo.money}</h2>
+                        <span class="amount_bill_tag">Phase{$vo.billnum}</span>
+                        <span class="repay_fee_tag">fee:{$vo.repay_interest}</span>
+                    </div>
+                    <div class="con_right">
+                        <h2>{$vo.add_time|date="Y.m.d",###}<span class="reply_status_tag">repaid</span></h2>
+                        <p class="reply_info_tag"><span>Payment time:</span>{$vo.repay_time|date="Y.m.d",###}</p>
+                    </div>
+                </div>
+            </div>
+        </if>
+    </volist>
+</div>
+</body>
+</html>

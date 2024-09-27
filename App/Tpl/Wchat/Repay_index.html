@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <include file="Public/head"/>
+    <link rel="stylesheet" href="__PUBLIC__/Wchat/css/QuotaCss.css">
+    <title>I want to repay - <config name="siteName" /> - <config name="siteTitle" /></title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<div class="banner"><img src="__PUBLIC__/Wchat/images/banner.jpg"></div>
+<div class="ed">
+    <div class="edu">
+        <span>Available Amount</span>
+        <h3>{$Think.config.CURRENCY_SYMBOL}<php>if(isset($bill['money'])){echo $bill['money'];}else{echo $doquota; } </php></h3>
+        <if condition="((intval($confirm) eq 1)) and ($canLoanAgain eq false)">
+            <if condition="(intval($isRefused) eq 1) ">
+                <span>Your credit is not enough, please contact customer service</span>
+                <else/>
+                <span>You have a loan approved and will be released soon. you can click to confirm</span>
+            </if>
+            <a href="#" onclick="return false;">Confirmed</a>
+            <elseif condition="intval($canLoanAgain) eq true"/>
+            <span>You loan will be credited to your account soon.</span>
+            <a href="#" onclick="javascript:applyLoan();">Loan again</a>
+            <else/>
+            <if condition="(intval($isRefused) eq 1) ">
+                <span>Your credit is not enough, please contact customer service</span>
+                <else/>
+                <span>You loan will be credited to your account soon</span>
+            </if>
+
+            <a href="#" onclick="javascript:QuotaConfirm();return false;">Confirm</a>
+        </if>
+    </div>
+</div>
+<div class="content">
+    <div class="repay_info">
+        <ul>
+            <li class="col-xs-12">
+                <label>Loan Period:</label>
+                <span>{$Think.config.Deadline_D|array_shift} Days</span>
+            </li>
+            <li class="col-xs-12">
+                <label>Interest Rate:</label>
+                <span>{$Think.config.Interest_D}%Days</span>
+            </li>
+        </ul>
+    </div>
+    <div class="repay_summary">
+        <p class="title"> Statement</p>
+        <div class="repay_summary_content">
+                <span>1 .We pay much attention to protect the privacy of customers,
+				those who had not got loans, their data Will be deleted
+					automatically after 1 week.</span>
+            <span>2. We will raise the credit fee up to $5,000 for those who repay
+					on time.</span>
+            <span>3. We offer loans (from 18 years)</span>
+        </div>
+    </div>
+    <!--			<div class="but">-->
+    <!--				&lt;!&ndash;<a href="{:U('Repay/repayment',array('id'=>$billId))}" class="but1">当期还款</a>&ndash;&gt;-->
+    <!--				<a href="#" onclick="notpay()" class="but1">Current repayment</a>-->
+    <!--				<a href="{:U('Repay/order')}" class="but2">More</a>-->
+    <!--			</div>-->
+</div>
+
+<include file="Public/foot_repay"/>
+</body>
+<script>
+    function notpay() {
+        alert("You currently have no repayment information");
+        window.location.href = "{:U('Index/index')}";
+    }
+
+    function QuotaConfirm() {
+        cvphp.post(
+            "{:U('Index/quotaConfirm')}",
+            {
+                token: '{$token}'
+            },
+            function (data) {
+                if (data.status != 1) {
+                    cvphp.msg({
+                        content: data.info,
+                    });
+                } else {
+                    cvphp.msg({
+                        content: data.info,
+                        time: 5
+                    });
+                    location.href = "{:U('Repay/index')}";
+                }
+            }
+        );
+    }
+
+    function applyLoan() {
+        cvphp.post("{:U('Loan/applyLoan')}", {
+            token: '{$token}'
+        }, function (data) {
+            if (data.status != 1) {
+                cvphp.msg({
+                    content: data.info,
+                });
+            } else {
+                cvphp.msg({
+                    content: data.info,
+                    time: 5
+                });
+                location.href = "{:U('Repay/index')}";
+            }
+        });
+    }
+</script>
+</html>

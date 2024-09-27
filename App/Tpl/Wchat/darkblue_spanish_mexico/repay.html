@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="address=no">
+    <title></title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="__PUBLIC__/Wchat/casheasya/css/slicy.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Wchat/casheasya/css/swiper.min.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Wchat/casheasya/css/style.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Manage/js/layer/css/layui.css">
+
+</head>
+
+<body>
+<div class="layout">
+    <div class="hpage1 pk">
+        <div class="hds">
+            <div class="qiu">
+                <h3>Cantidad de Pago </h3>
+                <h2>{$Think.config.CURRENCY_SYMBOL}{$needRepayMoney}</h2>
+                <a href="{:U('Repay/fullRepay',array('next'=>'delay','oid'=>$oid))}" class="b1">Préstamo extendido</a>
+                <a href="{:U('Repay/gfpayment',array('id'=>$bill['id']))}" class="b1 on" onClick="fullRepay(event)">Pago completo</a>
+            </div>
+            <dl>
+                <dd>
+                    <h4>Cantidad total del préstamo</h4>
+                    <h6>{$Think.config.CURRENCY_SYMBOL} {$needRepayMoney}</h6>
+                </dd>
+                <dd>
+                    <h4>Fecha de Pago</h4>
+                    <h6>{$needRepaymentDay}</h6>
+                </dd>
+            </dl>
+            <p>*Atención: Es necesario ingresar la clave de rastreo y subir una captura de pantalla con la clave de rastreo; de lo contrario, podría resultar en un fallo en el reembolso. (Si el pago se realiza fuera de línea, es necesario ingresar el número de referencia y subir una captura de pantalla con la referencia)!</p>
+        </div>
+
+        <div class="bds">
+            <div class="dfsw">
+                <h4>Clave:</h4>
+                <a href="#" class="btn" onclick="doRepayProof(event)">Actualizar</a>
+            </div>
+            <div class="txt">
+                <input type="text" style="min-height: 40px;width: 100%;outline: none;background: none;border:none;"
+                       name="utr"
+                       placeholder="Clave de rastreo de 18 dígitos"/>
+            </div>
+        </div>
+        <div class="bds">
+            <div class="dfsw">
+                <h4>Captura de pantalla del Pago:</h4>
+                <a href="#" class="btn" onclick="doRepayProof(event)">Actualizar</a>
+            </div>
+            <div class="file">
+                <form action="" method="post">
+                    <!--						<input class="f1" type="file" name="" id="">-->
+                    <div class="img upload-image-btn">
+                        <img src="__PUBLIC__/Wchat/casheasya/images/qms2.png" alt="">
+                        <input type="hidden" name="repay_image"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" name="oid" value="{$oid}">
+<input type="hidden" name="toid" value="{$bill.toid}">
+<script src="__PUBLIC__/Wchat/casheasya/js/jquery-3.5.1.min.js"></script>
+<script src="__PUBLIC__/Wchat/casheasya/js/swiper.min.js"></script>
+<script src="__PUBLIC__/Wchat/casheasya/js/wow.min.js"></script>
+<script src="__PUBLIC__/Manage/js/layer/layui.js"></script>
+<script src="__PUBLIC__/Wchat/casheasya/js/script.js"></script>
+<include file="replay/mexico_footer"/>
+</body>
+</html>

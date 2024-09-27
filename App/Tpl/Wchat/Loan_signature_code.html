@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<include file="Public/head" />
+		<title>Sign this loan contract - <config name="siteName" /> - <config name="siteTitle" /></title>
+		<script src="__PUBLIC__/Wchat/js/jSignature.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="__PUBLIC__/Wchat/js/flashcanvas.js"></script>
+        <![endif]-->
+		<style type="text/css">
+			#signature {
+				border: 2px dotted black;
+				background-color:lightgrey;
+			}
+			.textTitle{
+				text-align: center;
+				margin-top: 2rem;
+			}
+			.btnDiv{
+				width: 90%;
+				margin: 0 auto;
+			}
+			.btnDiv a,a:hover{
+				width: 48%;
+			    display: inline-block;
+			    text-align: center;
+			    line-height: 3rem;
+			    height: 3rem;
+			    margin-top: 0.5rem;
+			    color: #fff;
+			    border-radius: 3%;
+			    text-decoration:none;
+			}
+.verify{
+	z-index: 999;
+    position: absolute;
+    top: 3rem;
+    width: 94%;
+    background-color: #fafafa;
+    border-radius: 12px;
+    display: none;
+}
+.verify .btn{
+    width: 45%;
+    display: inline-block;
+    height: 3rem;
+    line-height: 2rem;
+    background: #e4e0e0;
+    text-align: center;
+    border-radius: 56px;
+    font-size: 1.2rem;
+    color: #31ab6d;
+    font-weight: 700;
+    font-family: '微软雅黑';
+    border: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.verify .btnred{
+    width: 45%;
+    display: inline-block;
+    height: 3rem;
+    line-height: 2rem;
+    background: #e4e0e0;
+    text-align: center;
+    border-radius: 56px;
+    font-size: 1.2rem;
+    color: #e04b67;
+    font-weight: 700;
+    font-family: '微软雅黑';
+    border: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.verify p img{
+	width: 8rem;
+	margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.verify input{
+    color: #666;
+    font-size: 25px;
+    width: 8rem;
+    text-align: center;
+}
+.verify p{
+	margin-top: none;
+	margin-bottom: 0;
+    text-align: center;
+}
+.zhezhao{
+    background-color: rgb(137, 146, 142, 0.55);
+    filter: alpha(opacity=20);
+    background-color: rgba(137, 146, 142, 0.55);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    display: none;
+}			
+		</style>
+	</head>
+	<body>
+		<div class="textTitle">Please sign within the dotted line. The signature must be standardized, complete, and the handwriting must be clear and must be signed by yourself.</div>
+		<div id="signature" style="height: 18rem;width: 90%;margin: 0 auto;"></div>
+		<form action="{:U('Loan/signature')}" method="post">
+			<input type="hidden" name="signature" value="" />
+			<input type="hidden" name="verifycode" value="" />
+		</form>
+		<div class="verify">
+			<p>
+				<input type="number" value="" name="code" placeholder="Enter confirmation code" />
+			</p>
+			<p>
+				<a class="btn" id="doneBtn">Confirm</a>
+				<a class="btn btnred" id="verifyClose">Cancel</a>
+			</p>
+		</div>
+		<div class="zhezhao"></div>
+		<div class="btnDiv">
+			<a href="javascript:;" id="resetBtn" style="background-color: rgba(243, 182, 13, 0.83);">Reset</a>
+			<a href="javascript:;" id="doneBtn" style="background-color: #3699ef; float: right;">Submit</a>
+		</div>
+		<script>
+			var $sigdiv = $("#signature").jSignature('init',{height:'18rem',width:'100%'});
+			$(function(){
+				$("#resetBtn").on('click',function(){
+					$sigdiv.jSignature("reset");
+				});
+	    		$("#verifyClose").on('click',function(){
+	    			$(".verify").hide();
+	    			$(".zhezhao").hide();
+	    		});				
+				$("#yzm").on('click',function(){
+	    			$(".verify").show();
+	    			$(".zhezhao").show();
+				});
+				$("#doneBtn").on('click',function(){
+					var datapair = $sigdiv.jSignature("getData", "image");
+					var verifycode = $("input[name='code']").val();
+					$("input[name='signature']").val(datapair[1]);
+					$("input[name='verifycode']").val(verifycode);
+					cvphp.submit($("form"),function(data){
+						if(data.status != 1){
+							cvphp.msg({
+		    					content: data.info
+		    				});
+							if(data.url != ""){
+								setTimeout(function(){
+									window.location.href = data.url;
+								},2000);
+							}
+						}else{
+							window.location.href = data.url;
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+</html>

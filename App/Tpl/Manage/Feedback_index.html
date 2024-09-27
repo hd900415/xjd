@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <include file="Public/head"/>
+    <link rel="stylesheet" href="__PUBLIC__/Manage/css/table.css">
+    <script src="__PUBLIC__/Manage/js/layer/layui.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/Manage/js/layer/css/layui.css">
+    <title>用户反馈</title>
+    <style>
+        .modal-audit-status-content {
+            padding-top: 20px;
+        }
+
+        .modal-audit-status-content .layui-form-item .layui-col-md4 {
+            width: 30%;
+            height: 80px;
+        }
+
+        .modal-audit-status-content .layui-form-item .layui-col-md8 {
+            width: 70%;
+            height: 80px;
+            margin: 0;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="nestable">
+    <div class="console-title console-title-border drds-detail-title clearfix">
+        <h5>用户反馈</h5>
+    </div>
+    <form method="get" id="seachForm">
+        <input type="hidden" name="m" value="Feedback"/>
+        <input type="hidden" name="a" value="index"/>
+        <div class="public-selectArea" id="pxs">
+            <div class="clearfix">
+                <div class="wp_box col-sm-4">
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">用户名/手机号：</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control" name="s-name" value="{$Think.get.s-name}">
+                        </div>
+                    </div>
+                </div>
+                <div class="wp_box col-sm-4">
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">反馈时间：</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="time-input form-control" id="s-time"
+                                   value="{$Think.get.s-timeStart} ~ {$Think.get.s-timeEnd}">
+                            <i class="layui-icon layui-icon-close-fill clear-icon-btn"></i>
+                            <input type="hidden" name="s-timeStart"
+                                   value="{$Think.get.s-start_time}"/>
+                            <input type="hidden" name="s-timeEnd" value="{$Think.get.s-end_time}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btnArea">
+                <a href='javascript:$("#seachForm").submit();' class="btn btn-sereachBg">
+                    <i class="glyphicon glyphicon-search public-ico"></i>
+                    <span class="public-label">查询</span>
+                </a>
+                <!--                <button onclick="exportLoanOrder(event)" class="btn btn-primary">-->
+                <!--                    <span class="public-label">导出订单</span>-->
+                <!--                </button>-->
+            </div>
+        </div>
+    </form>
+    <div class="scroll-bar-table" style="margin-top: 10px">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th><input type="checkbox" value="0" lay-skin="primary" id="checkall"
+                           onclick="javascript:checkAll(this);"></th>
+                <th>用户ID</th>
+                <th>用户名/手机号</th>
+                <th>内容</th>
+                <th>图片其他信息</th>
+                <th>联系方式</th>
+                <th>反馈时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <volist name="list" id="vo">
+                <tr id="list-{$vo.id}">
+                    <td><input type="checkbox" name="lid[]" class="check-lid" value="{$vo.id}"></td>
+                    <td>{$vo.uid}</td>
+                    <td>{$vo.uname}</td>
+                    <td>{$vo.content}</td>
+                    <td>
+                        <if condition="$vo.attachment neq null">
+                            <div class="layer-check-image"><img src="{$vo.attachment}" layer-src="{$vo.attachment}"
+                                                                style="height: 120px" class="check-preview"/></div>
+                        </if>
+                    </td>
+                    <td>{$vo.contact}</td>
+                    <td>{$vo.add_time|date="Y/m/d H:i:s H:i:s",###}</td>
+                   <td>
+                       <a href="javascript:deleteFacebook('{$vo.id}');" class="btn">删除</a>
+                   </td>
+                </tr>
+            </volist>
+            </tbody>
+        </table>
+    </div>
+    <div class="table-pagin-container">
+        <!--        <div class="pull-left page-box">-->
+        <!--            <input type="hidden" name="current_status" value="3">-->
+        <!--            <button type="button" class="btn btn-primary btn-audit" onclick="batchAudit()">批量修改</button>-->
+        <!--&lt;!&ndash;            &lt;!&ndash;&ndash;&gt;<button type="button" class="btn btn-primary btn-audit" onclick="batchAudit('all')">全部修改</button>&ndash;&gt;-->
+        <!--         -->
+        <!--        </div>-->
+        <button type="button" class="btn btn-danger btn-delete" onclick="batchDeleteAction()">批量删除</button>
+        <div class="pull-right page-box">
+            {$page}
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    function deleteFacebook(id) {
+        layer.confirm(
+            '建议保留反馈,反馈删除后不可恢复,请确认？',
+            {
+                btn: ['确认删除', '取消'],
+                offset: ['45wh']
+            }, function () {
+                cvphp.post(
+                    "{:U('Feedback/remove')}",
+                    {
+                        id: id
+                    },
+                    function (data) {
+                        if (data.status != 1) {
+                            layer.msg(data.info,{offset: ['45wh']});
+                        } else {
+                            $("#list-" + id).remove();
+                            layer.msg("操作成功",{offset: ['45wh']});
+                        }
+                    }
+                );
+            }
+        );
+    }
+    function batchDeleteAction() {
+        var check_all = $("input[name=check_all]").prop('checked')
+        var checkType = 1;
+        if (check_all == true) checkType = 2;
+        layer.confirm(
+            '建议保留反馈,反馈删除后不可恢复,请确认？',
+            {
+                btn: ['确认删除', '取消'],
+                offset: ['45wh']
+            }, function () {
+                // batchDelete('', checkType)
+                var ids=[];
+
+                $(".check-lid:checked").each(function (index,ele){
+                    ids.push($(ele).val());
+                });
+                cvphp.post(
+                    "{:U('Feedback/remove')}",
+                    {
+                        id: ids
+                    },
+                    function (data) {
+                        if (data.status != 1) {
+                            layer.msg(data.info,{offset: ['45wh']});
+                        } else {
+                            ids.forEach(function(v){
+                                console.log(v);
+                                $("#list-" + v).remove();
+                            });
+                            layer.msg("操作成功",{offset: ['45wh']});
+                        }
+                    }
+                );
+            }
+        );
+
+    }
+    $(".check-preview").click(function () { //查看图片大图
+        console.log('hello world');
+        var _url = $(this).attr('src');
+        var imgHeight = $(this)[0].naturalHeight;
+        console.log($(this), 'imgHeight:', imgHeight);
+        checkPhotoPreview(_url, imgHeight);
+    })
+</script>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <include file="Public/head"/>
+    <link href="__PUBLIC__/Wchat/css/bankCss.css" rel="stylesheet">
+    <title>Binding receipt bank card -information certification- <config name="siteName" /> - <config name="siteTitle"
+        /></title>
+</head>
+<body>
+<div class="info_header">
+    <ul class="myui-nav myui-nav-blue">
+        <button class="myui-btn myui-left btn-return" onclick="history.back();"><span class="arrow-left"><</span>
+        </button>
+        Bank Card
+    </ul>
+</div>
+<form action="{:U('Info/bankcard')}" method="post">
+    <div class="row xinxi">
+        <ul>
+            <li class="col-xs-12">
+                <label>Bank Name</label>
+                <input type="text" placeholder="Please enter bank Name of the account" class="form-control"
+                       name="bankName"/>
+            </li>
+            <li class="col-xs-12">
+                <label>Bank Number</label>
+                <input type="text" placeholder="Please enter the account bank Number" class="form-control"
+                       name="bankNum"/>
+            </li>
+            <li class="col-xs-12">
+                <label>Phone Number</label>
+                <input type="text" placeholder="Please enter the reserved phone number" class="form-control"
+                       name="bankPhone"/>
+            </li>
+        </ul>
+    </div>
+</form>
+<div class="footer">
+    <button class="but1" id="nextBtn">Next</button>
+</div>
+</body>
+<script>
+    $(function () {
+        $("#nextBtn").on('click', function () {
+            var bankNum = $("input[name='bankNum']").val();
+            var bankPhone = $("input[name='bankPhone']").val();
+            var bankName = $("input[name='bankName']").val();
+            console.log(bankNum, bankPhone, bankName);
+            if (bankName.length == 0) {
+                cvphp.msg({
+                    content: 'Please enter bank Name of the account'
+                });
+                return false;
+            }
+            if (bankNum.length == 0) {
+                cvphp.msg({
+                    content: 'Please enter bank number'
+                });
+                return false;
+            }
+            // if (!cvphp.ismobile(bankPhone)) {
+            //     cvphp.msg({
+            //         content: 'Please enter bank phone number'
+            //     });
+            //     return false;
+            // }
+            cvphp.submit($("form"), function (data) {
+                if (data.status != 1) {
+                    cvphp.msg({
+                        content: data.info
+                    });
+                    return false;
+                } else {
+                    cvphp.msg({
+                        content: 'successfully save'
+                    });
+                    var url = data.url;
+                    if (url.length > 0) {
+                        setTimeout(function () {
+                            history.go(-1);
+                        }, 2000);
+                    }
+                }
+            });
+        });
+    });
+</script>
+</html>

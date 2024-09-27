@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<include file="Public/head" />
+		<link href="__PUBLIC__/Wchat/css/bankCss.css" rel="stylesheet">
+		<script src="__PUBLIC__/Wchat/js/LArea.js"></script>
+		<link type="text/css" href="__PUBLIC__/Wchat/css/LArea.css" rel="stylesheet">
+		<script src="__PUBLIC__/Wchat/js/one_LArea.js"></script>
+		<script src="__PUBLIC__/Wchat/js/LAreaData2.js"></script>
+		<title>Fill in personal information -information certification - <config name="siteName" /> - <config name="siteTitle" /></title>
+	</head>
+	<body>
+		<include file="Public/info_head" />
+		<form action="{:U('Info/addessAuth')}" method="post">
+			<div class="row xinxi">
+				<ul>
+					<li class="col-xs-12 hang">
+						<label>marital status</label>
+						<span class="form-control" id="marriageSel">Please select the marriage status</span>
+						<input type="hidden" id="marriage" name="marriage" />
+					</li>
+					<li class="col-xs-12 hang">
+						<label>Academic degree</label>
+						<span class="form-control" id="educationSel">Please select your highest degree</span>
+						<input type="hidden" id="education" name="education" />
+					</li>
+					<li class="col-xs-12">
+						<label>Engaged in the industry</label>
+						<input type="text" placeholder="Please enter your work industry" class="form-control" name="industry" />
+					</li>
+				</ul>
+			</div>
+			<p class="changzhu">Residential address</p>
+			<div class="row xinxi">
+				<ul>
+					<li class="col-xs-12 hang">
+						<label>Residential Address</label>
+						<span class="form-control" id="addessSel">Please choose a living city</span>
+						<input type="hidden" id="addess" name="addess" />
+					</li>
+					<li class="col-xs-12">
+						<label>Address</label>
+						<input type="text" placeholder="Please enter the detailed address to the house number" class="form-control" name="addessMore" />
+					</li>
+				</ul>
+			</div>
+		</form>
+		<div class="footer">
+			<button class="but1" id="nextBtn">Next step</button>
+		</div>
+	</body>
+	<script>
+		$(function(){
+			$("#nextBtn").on('click',function(){
+				cvphp.submit($("form"),function(data){
+					if(data.status != 1){
+						cvphp.msg({
+		    				content: data.info
+		    			});
+						return false;
+					}else{
+						cvphp.msg({
+		    				content: 'Successfully saved'
+		    			});
+		    			var url = data.url;
+		    			if(url.length > 0){
+		    				setTimeout(function(){
+		    					window.location.href = url;
+		    				},2000);
+		    			}
+					}
+				});
+			});
+			
+			
+		});
+		
+		var area3 = new one_LArea();
+		area3.init({
+			'trigger': '#marriageSel',
+			'valueTo': '#marriage',
+			'keys': {
+				id: 'value',
+				name: 'text'
+			},
+			'type': 2,
+			'data': [marriage]
+		});
+		var area2 = new one_LArea();
+		area2.init({
+			'trigger': '#educationSel',
+			'valueTo': '#education',
+			'keys': {
+				id: 'value',
+				name: 'text'
+			},
+			'type': 2,
+			'data': [education]
+		});
+		var area4 = new LArea();
+		area4.init({
+			'trigger': '#addessSel',
+			'valueTo': '#addess',
+			'keys': {
+				id: 'value',
+				name: 'text'
+			},
+			'type': 2,
+			'data': [provs_data, citys_data, dists_data]
+		});
+	</script>
+</html>

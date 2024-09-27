@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <include file="Public/head"/>
+    <link href="__PUBLIC__/Wchat/css/bankCss.css" rel="stylesheet">
+    <title>ID information -information certification - <config name="siteName" /> - <config name="siteTitle" /></title>
+</head>
+<body>
+<div class="info_header">
+    <ul class="myui-nav myui-nav-blue">
+        <button class="myui-btn myui-left btn-return" onclick="history.back();"><span class="arrow-left"><</span></button> Identity Authentication
+    </ul>
+</div>
+<div class="fileDiv row">
+    <ul>
+        <li class="col-xs-6">
+            <img src="__PUBLIC__/Wchat/images/ic_commit_idcard_img_front.png">
+            <span>ID card font</span>
+            <div class="shangchuang">
+                <form action="{:U('Info/uploadImg')}" method="post" enctype="multipart/form-data">
+                    <a href="javascript:;">Click upload</a>
+                    <input type="file" name="front"/>
+                    <input type="hidden" name="fileName" value="front"/>
+                </form>
+            </div>
+        </li>
+        <li class="col-xs-6">
+            <img src="__PUBLIC__/Wchat/images/ic_dialog_id_back.png">
+            <span>ID card back</span>
+            <div class="shangchuang">
+                <form action="{:U('Info/uploadImg')}" method="post" enctype="multipart/form-data">
+                    <a href="javascript:;"> Upload</a>
+                    <input type="file" name="back"/>
+                    <input type="hidden" name="fileName" value="back"/>
+                </form>
+            </div>
+        </li>
+<!--        <li class="col-xs-4">-->
+<!--            <img src="__PUBLIC__/Wchat/images/ic_dialog_id_back.png">-->
+<!--            <span>Handheld ID photo</span>-->
+<!--            <div class="shangchuang">-->
+<!--                <form action="{:U('Info/uploadImg')}" method="post" enctype="multipart/form-data">-->
+<!--                    <a href="javascript:;">Upload</a>-->
+<!--                    <input type="file" name="person"/>-->
+<!--                    <input type="hidden" name="fileName" value="person"/>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </li>-->
+    </ul>
+</div>
+<form action="{:U('Info/identity')}" method="post" id="identity">
+    <input type="hidden" name="front"/>
+    <input type="hidden" name="back"/>
+    <input type="hidden" name="person"/>
+    <div class="row xinxi">
+        <ul>
+            <li class="col-xs-12">
+                <label>full name</label>
+                <input type="text" placeholder="please enter your real name" class="form-control" name="realName">
+            </li>
+            <li class="col-xs-12">
+                <label>ID Number</label>
+                <input type="text" placeholder="Please enter the ID Card" class="form-control" name="idCard">
+            </li>
+        </ul>
+    </div>
+</form>
+<div class="footer">
+    <button class="but1" id="NextBtn">Next</button>
+</div>
+</body>
+<script>
+    $(function () {
+        $("input[type='file']").on('change', function () {
+            var value = $(this).val();
+            if (value.length == 0) {
+                cvphp.msg({
+                    content: 'Please select the file'
+                });
+                return false;
+            }
+            //上传图片
+            var obj = $(this).parent();
+            var fileinputObj = this;
+            cvphp.submit($(obj), function (data) {
+                if (data.status != 1) {
+                    cvphp.msg({
+                        content: data.info
+                    });
+                    return false;
+                } else {
+                    var imgUrl = "__PUBLIC__/Upload/" + data.info;
+                    $("#identity").find("input[name='" + $(fileinputObj).attr('name') + "']").val(imgUrl);
+                    $($($(obj).parent()).parent()).find("img").attr('src', imgUrl);
+                }
+            });
+        });
+
+
+        $("#NextBtn").on('click', function () {
+            var realName = $("input[name='realName']").val();
+            var idCard = $("input[name='idCard']").val();
+            var frontImg = $("#identity input[name='front']").val();
+            var backImg = $("#identity input[name='back']").val();
+            var personImg = $("#identity input[name='person']").val();
+            if (frontImg.length <= 0) {
+                cvphp.msg({
+                    content: 'Please upload your ID card positive photo'
+                });
+                return false;
+            }
+            if (backImg.length <= 0) {
+                cvphp.msg({
+                    content: 'Please upload your ID card negative photos'
+                });
+                return false;
+            }
+            // if (personImg.length <= 0) {
+            //     cvphp.msg({
+            //         content: 'Please upload your hand -held ID card'
+            //     });
+            //     return false;
+            // }
+            if (realName.length < 2) {
+                cvphp.msg({
+                    content: 'Please enter the full name'
+                });
+                return false;
+            }
+            if (idCard.length != 15 && idCard.length != 18) {
+                cvphp.msg({
+                    content: 'Please enter the specified ID number'
+                });
+                return false;
+            }
+            cvphp.submit($("#identity"), function (data) {
+                if (data.status != 1) {
+                    cvphp.msg({
+                        content: data.info
+                    });
+                    return false;
+                } else {
+                    cvphp.msg({
+                        content: 'Successfully saved'
+                    });
+                    var url = data.url;
+                    if (url.length > 0) {
+                        setTimeout(function () {
+                            window.location.href = url;
+                        }, 2000);
+                    }
+                }
+            });
+        });
+    });
+</script>
+</html>

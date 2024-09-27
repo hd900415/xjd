@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <include file="Public/head" />
+    <link rel="stylesheet" href="__PUBLIC__/Wchat/css/dhkCss.css" />
+    <title>paymentMethod - <config name="siteName" />  - <config name="siteTitle" /></title>
+    <style>
+    </style>
+</head>
+<body>
+<div class="logo">
+    <img src="/Public/Wchat/images/re_logo.png">
+</div>
+<div class="paytype">
+    <!--<a class="weixin" href="{:U('Pay/alipay',array('order' => $data,'paytype'=>3))}">微信</a>-->
+    <a class="weixin" href="{$product.wechat_url}">WeChat</a>
+    <!--<a class="zhifubao" href="{:U('Pay/alipay',array('order' => $data,'paytype'=>1))}">支付宝</a>-->
+    <a class="zhifubao" href="{$product.alipay_url}">Alipay</a>
+</div>
+<script>
+    //$('.paytype').css('height',window.innerHeight+"px");
+</script>
+</body>
+</html>

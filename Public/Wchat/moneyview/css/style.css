@@ -1,0 +1,143 @@
+.layout {
+	width:7.5rem;
+	margin:0 auto;
+	overflow:hidden;
+	min-height: 100vh;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.hd {
+	padding:0.8rem 0.55rem 1.2rem;
+	position:relative;
+	z-index:11;
+}
+.hd h2 {
+	font-weight:600;
+	font-size:0.5rem;
+	color:#FFFFFF;
+	line-height:1.6;
+}
+.hd img {
+	width:1.48rem;
+	position:absolute;
+	right:0.58rem;
+	bottom:-0.5rem;
+}
+.box {
+	border-radius:0.38rem 0.38rem 0 0;
+	background:#FDFCFA;
+	padding:0.4rem 0.26rem 0.6rem;
+}
+.box h3 {
+	text-align:center;
+	font-weight:500;
+	font-size:0.36rem;
+	color:#E2BE9D;
+	line-height:0.5rem;
+}
+.box h4 {
+	font-weight:bold;
+	font-size:0.96rem;
+	color:#96602E;
+	background:#f9f3eb;
+	border-radius:0.34rem;
+	line-height:2.1rem;
+	margin:0.4rem 0.64rem 0.3rem;
+	text-align:center;
+}
+.box a.nt {
+	display:block;
+	font-weight:500;
+	font-size:0.32rem;
+	color:#CCA785;
+	line-height:0.96rem;
+	border-radius:0.6rem;
+	border:0.06rem solid #CCA785;
+	display:block;
+	text-align:center;
+	margin-bottom:0.14rem;
+}
+.box a.nt.on {
+	background:#E2BE9D;
+	border-color:#E2BE9D;
+	color:#fff;
+}
+.box ul {
+	display:flex;
+	justify-content:space-between;
+	flex-wrap:wrap;
+	margin:0.5rem 0 0.1rem;
+}
+.box ul li {
+	width:3.38rem;
+	height:1.5rem;
+	background:#FFFFFF;
+	box-shadow:0rem 0.04rem 0.16rem 0rem #F5ECE4;
+	border-radius:0.12rem;
+	margin-bottom:0.2rem;
+	text-align:center;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:0.22rem 0 0;
+}
+.box ul li h5 {
+	font-weight:400;
+	font-size:0.24rem;
+	color:#595959;
+	line-height:0.34rem;
+}
+.box ul li h3 {
+	font-weight:600;
+	font-size:0.36rem;
+	color:#4B4B4B;
+	line-height:0.5rem;
+	margin-top:0.2rem;
+}
+.box dd {
+	background:#FFFFFF;
+	box-shadow:0rem 0.04rem 0.16rem 0rem #F5ECE4;
+	border-radius:0.16rem;
+	padding:0.2rem 0.18rem 0.2rem 0.36rem;
+	overflow:hidden;
+	margin-bottom:0.2rem;
+}
+.box dd p {
+	font-weight:400;
+	font-size:0.24rem;
+	color:#595959;
+	line-height:0.36rem;
+}
+.box dd .l {
+	float:left;
+	width:calc(100% - 1.9rem);
+	padding: 0.05rem 0;
+}
+.box dd .l h2 {
+	font-weight:600;
+	font-size:0.32rem;
+	color:#4B4B4B;
+	line-height:0.44rem;
+}
+.box dd .l h6 {
+	font-weight:400;
+	font-size:0.24rem;
+	color:#D9D9D9;
+	line-height:1.4;
+	margin-top:0.2rem;
+}
+.box dd a {
+	width:1.64rem;
+	line-height:0.6rem;
+	border-radius:0.6rem;
+	text-align:center;
+	background:#E1BD9B;
+	font-weight:500;
+	font-size:0.24rem;
+	color:#FFFFFF;
+	display:block;
+	float:right;
+}

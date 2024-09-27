@@ -1,0 +1,170 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<include file="Public/head" />
+		<link type="text/css" rel="stylesheet" href="__PUBLIC__/Wchat/css/forget_pwd.css">
+		<title>change Password - <config name="siteName" />  - <config name="siteTitle" /></title>
+	</head>
+	<body>
+		<div class="res_con">
+			<form action="{:U('Index/forgetpwd')}" method="post" id="findForm">
+		        <ul>
+		            <li>
+<php>$user = getUserInfo();</php>
+<empty name="user">
+				<input type="number" placeholder="Please enter 11 digits" class="user">
+<else />
+				<input type="number" placeholder="Please enter 11 digits" class="user" value="{$user.telnum}" readonly="readonly" />
+</empty>
+		            </li>
+		            <li class="yz">
+		            	<input type="text" placeholder="please enter verification code" class="yzm">
+		            	<button type="button">Send the verification code</button>
+		            </li>
+		            <li class="fu_pwd">
+		            	<input type="password" placeholder="Please change your password" class="pwd">
+		            </li>
+		        </ul>
+		        <button class="abut1" id="findBtn" disabled="disabled" type="button">submit</button>
+			</form>
+            <div class="verify">
+            	<p>
+            		<img src="{:U('Index/verify')}" alt="Can't see clearly, change one" />
+            	</p>
+            	<p>
+            		<input type="number" value="" placeholder="Enter confirmation code" />
+            	</p>
+            	<p>
+            		<a class="btn" id="verifySendcode">Confirm</a>
+            		<a class="btn btnred" id="verifyClose">Cancel</a>
+            	</p>
+            </div>
+	    </div>
+	    <div class="zhezhao"></div>
+	</body>
+	<script>
+	    	var resendTime = 0;
+	    	var resendFun;
+	    	$(function(){
+	    		/*找回密码*/
+	    		$(".res_con .yz button").on('click',function(){
+	    			if(!cvphp.ismobile( $("#findForm .user").val() )){
+	    				cvphp.msg({
+	    					content: 'The mobile number does not meet the specification'
+	    				});
+	    				return false;
+	    			}
+	    			$(".verify input").val('');
+	    			var imgUrl = "{:U('Index/verify',array('t','randTime'))}";
+	    			imgUrl = imgUrl.replace(/randTime/,Date.parse(new Date()));
+	    			$(".verify img").attr('src',imgUrl);
+	    			$(".verify").show();
+	    			$(".zhezhao").show();
+	    			$(".verify input").focus();
+	    		});
+	    		$("#verifyClose").on('click',function(){
+	    			$(".verify").hide();
+	    			$(".zhezhao").hide();
+	    		});
+	    		$(".verify img").on('click',function(){
+	    			var imgUrl = "{:U('Index/verify',array('t','randTime'))}";
+	    			imgUrl = imgUrl.replace(/randTime/,Date.parse(new Date()));
+	    			$(".verify img").attr('src',imgUrl);
+	    		});
+	    		$("#verifySendcode").on('click',function(){
+	    			$(".verify").hide();
+	    			$(".zhezhao").hide();
+	    			var code = $(".verify input").val();
+	    			if(code.length != 4){
+						cvphp.msg({
+	    					content: 'Please enter the correct graphic verification code',
+	    				});
+	    				return ;
+	    			}
+	    			cvphp.post(
+	    				"{:U('Sms/sendcode')}",
+	    				{
+	    					verify:code,
+	    					user:$("#findForm .user").val(),
+	    					type:'find'
+	    				},
+	    				function(data){
+		    				if(data.status != 1){
+		    					cvphp.msg({
+		    						content: data.info,
+		    					});
+		    				}else{
+		    					resendTime = 59;
+		    					resendFun = setInterval(resend,1000);
+				    			$(".verify").hide();
+				    			$(".zhezhao").hide();
+		    				}
+	    				}
+	    			);
+	    		});
+	    		$("#findForm .yzm").on('input',function(){
+	    			var code = $(this).val();
+	    			if(code.length == 4){
+	    				$("#findBtn").removeAttr('disabled');
+	    				$("#findBtn").removeClass('abut1');
+	    				$("#findBtn").addClass('abut');
+	    			}else{
+	    				$("#findBtn").attr('disabled',"true");
+	    				$("#findBtn").removeClass('abut');
+	    				$("#findBtn").addClass('abut1');
+	    			}
+	    		});
+	    		$("#findBtn").on('click',function(){
+	    			if(!cvphp.ismobile( $("#findForm .user").val() )){
+	    				cvphp.msg({
+	    					content: 'The mobile number does not meet the specification'
+	    				});
+	    				return false;
+	    			}
+	    			if($("#findForm .yzm").val().length != 4){
+	    				cvphp.msg({
+	    					content: 'Please enter SMS verification code'
+	    				});
+	    				return false;
+	    			}
+	    			if($("#findForm .pwd").val().length < 6 || $("#findForm .pwd").val().length > 18){
+	    				cvphp.msg({
+	    					content: 'Please enter a 6-18 digit login password'
+	    				});
+	    				return false;
+	    			}
+	    			cvphp.post(
+	    				"{:U('Index/forgetpwd')}",
+	    				{
+	    					username:$("#findForm .user").val(),
+	    					code:$("#findForm .yzm").val(),
+	    					password:$("#findForm .pwd").val()
+	    				},
+	    				function(data){
+		    				if(data.status != 1){
+		    					cvphp.msg({
+		    						content: data.info,
+		    					});
+		    				}else{
+		    					cvphp.msg({
+		    						content: 'Password retrieved successfully',
+		    					});
+		    					setTimeout(function(){window.location.href = data.url;},3000);
+		    				}
+	    				}
+	    			);
+	    		});
+	    	});
+	    	function resend(){
+	    		if(resendTime == 1){
+	    			$(".res_con .yz button").html('Resend');
+	    			clearInterval(resendFun);
+	    			$(".res_con .yz button").removeAttr('disabled');
+	    		}else{
+	    			resendTime--;
+	    			$(".res_con .yz button").html(resendTime + ' seconds to retry');
+	    			$(".res_con .yz button").attr('disabled',"true");
+	    		}
+	    	}
+	</script>
+</html>

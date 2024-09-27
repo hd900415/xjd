@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<include file="Public/head" />
+		<link rel="stylesheet" href="__PUBLIC__/Wchat/css/style.css">
+		<script src="__PUBLIC__/Wchat/js/jquery.range.js"></script>
+		<script src="__PUBLIC__/Wchat/js/index.js"></script>
+		<title><config name="siteName" />  - <config name="siteTitle" /></title>
+	</head>
+	<body>
+<php>
+	$MoneyScale = getMoneyScale();
+	$Interest   = getInterest();
+	$Deadline = getDeadlineList();
+	$DeadlineStr = $Deadline['str'];
+	$DeadlineList = $Deadline['list'];
+	$user = getUserInfo();
+</php>
+		<div class="banner">
+			<img src="__PUBLIC__/Wchat/images/home_banner.jpg">
+		</div>
+	    <!--借款金额-->
+	    <div class="jkje">
+	        <div class="title">
+	        	<hr>
+	            <span>TERM/AMOUNT</span>
+	        </div>
+	        <div class="siwt">
+	        	<a href="javascript:;" class="jian">
+	        		<img src="__PUBLIC__/Wchat/images/jian.png">
+	        	</a>
+	        	<a href="javascript:;" class="jia">
+	        		<img src="__PUBLIC__/Wchat/images/jia.png">
+	        	</a>
+	        	<span class="cenjine">{$MoneyScale.min}</span>
+	        	<input type="hidden" class="single-slider" value="0" />
+	        </div>
+	        <div class="shuzhi">
+	        	<ul>
+	            	<li>{$MoneyScale.min}{$MoneyScale.currency_symbol}</li>
+	                <li>{$MoneyScale.max}{$MoneyScale.currency_symbol}</li>
+	           </ul>
+	        </div>
+	    </div>
+	    <!--借款金额-->
+	    <!--借款期限-->
+	    <div class="jkqx">
+	        <div class="title">
+	        	<hr>
+	            <span>loan term</span>
+	        </div>
+	        <div class="qixian">
+	        	<ul>
+<volist name="DeadlineList" id="vo" offset='0' length='1'>
+					<li class="action" data="{$vo}">{$vo}{$DeadlineStr}</li>
+</volist>
+<volist name="DeadlineList" id="vo" offset='1'>
+					<li data="{$vo}">{$vo}{$DeadlineStr}</li>
+</volist>
+	            </ul>
+	        </div>
+	        <div class="daoqi">
+	        	<ul>
+	            	<li class="AllMoney">
+	                	<span>Loan Amount</span>
+	                    <strong></strong>
+	                </li>
+	                <li class="AllInterest">
+	                	<span>Service Charge</span>
+	                    <strong></strong>
+	                </li>
+	                <li class="LoanTime">
+	                	<span>Loan Period</span>
+	                    <strong></strong>
+	                </li>
+	           </ul>
+	        </div>
+	        <div class="tedian">
+	        	<ul>
+	            	<li>
+	            		<span>Simple</span>
+	            	</li>
+	                <li>
+	                	<span>Low Rate</span>
+	                </li>
+	                <li>
+	                	<span>Fast</span>
+	                </li>
+	            </ul>
+	        </div>
+	    </div>
+	    <!--借款期限-->
+	    <div class="con">
+<empty name="user">
+			<a href="{:U('Index/login')}" class="but1">Apply for a loan</a>
+<else />
+			<a href="javascript:void(0)" class="but1" id="shenqing">Apply for a loan</a>
+</empty>
+<!--	        <p><img src="__PUBLIC__/Wchat/images/queren.png">I read and agree<a href="{:U('Page/protocol')}">《<config name="siteName" />service agreement》</a></p>-->
+	    </div>
+		<include file="Public/foot_index" />
+	    <div class="alert1">
+	    	<div class="win1">
+	            <p>Confirm loan information<a href="javascript:void(0)" id="gaun">close</a></p>
+	            <div class="xinxi">
+	                <ul>
+	                    <li class="col-xs-12" to="money">
+	                        <label>Loan amount</label>
+	                        <span>0{$MoneyScale.currency|strtolower}</span>
+	                    </li>
+						<li class="col-xs-12" to="truemoney">
+							<label>actual credit</label>
+							<span>0{$MoneyScale.currency|strtolower}</span>
+						</li>
+	                    <li class="col-xs-12" to="productlines">
+	                        <label>Mall quota</label>
+	                        <span>0{$MoneyScale.currency|strtolower}</span>
+	                    </li>
+	                    <li class="col-xs-12" to="bank">
+	                        <label>Accounts receivable</label>
+	                        <span></span>
+	                    </li>
+	                    <li class="col-xs-12" to="interest">
+	                        <label>rate</label>
+	                        <span>0%</span>
+	                    </li>
+	                    <li class="col-xs-12" to="loantime">
+	                        <label>start date</label>
+	                        <span></span>
+	                    </li>
+	                </ul>
+	            </div>
+	            <div class="xinxi xinxi1">
+	                <ul>
+	                    <li class="col-xs-12" to="fastrepayment">
+	                        <label>first repayment date</label>
+	                        <span>01/04</span>
+	                    </li>
+	                    <li class="col-xs-12" to="repaymenttime">
+	                        <label>repayment date</label>
+	                        <span>4th of every month</span>
+	                    </li>
+	                    <li class="col-xs-12" to="time">
+	                        <label>4th of every month</label>
+	                        <span>5 months (period)</span>
+	                    </li>
+<!--	                    <li class="col-xs-12 Agreement">I have read and agreed-->
+<!--	                    	<a href="{:U('Loan/viewContract')}">《Agreement》</a>-->
+<!--	                    </li>-->
+	                </ul>
+	            </div>
+	            <a href="{:U('Loan/signature')}" class="liji">Sign a loan agreement</a>
+	    	</div>
+	    </div>
+	</body>
+	<script>
+		$(function(){
+			var Num_1 = ({$MoneyScale.max} - {$MoneyScale.min}) / 100;
+			viewLoanInfo();
+			$('.single-slider').jRange({
+				from: parseInt({$MoneyScale.min}),//滑动范围的最小值，数字，如0
+				to: parseInt({$MoneyScale.max}),//滑动范围的最大值，数字，如100
+				step: parseInt({$MoneyScale.step}),//步长值，每次滑动大小
+				scale: [0*Num_1 + {$MoneyScale.min}, 25*Num_1 + {$MoneyScale.min}, 50*Num_1 + {$MoneyScale.min}, 75*Num_1 + {$MoneyScale.min}, 100*Num_1 + {$MoneyScale.min}],//滑动条下方的尺度标签，数组类型，如[0,50,100]
+				format: '%s',//数值格式
+				width: 100+"%",//滑动条宽度签
+				onstatechange: function(){
+					var Money = $(".single-slider").val();
+					$(".siwt .cenjine").html(Money);
+					viewLoanInfo();
+				}
+			});
+
+			$(".qixian ul li").on('click',function(){
+				var obj = $(this);
+				$(".qixian ul").find(".action").removeClass('action');
+				obj.addClass('action');
+				viewLoanInfo();
+			});
+
+			//金额减按钮
+			$(".siwt .jian").on('click',function(){
+				var Money = $(".single-slider").val();
+				if(Money >= ({$MoneyScale.min} + {$MoneyScale.step})){
+					Money = parseInt(Money) - {$MoneyScale.step};
+				}else if(Money > {$MoneyScale.min} && Money <= {$MoneyScale.min} + {$MoneyScale.step}){
+					Money = parseInt({$MoneyScale.min});
+				}
+				$(".single-slider").val(Money);
+				$('.single-slider').jRange('setValue', Money);
+				$(".siwt .cenjine").html(Money);
+				viewLoanInfo();
+			});
+
+			//金额加按钮
+			$(".siwt .jia").on('click',function(){
+				var Money = $(".single-slider").val();
+				if(Money == 0){
+					Money = {$MoneyScale.min} + {$MoneyScale.step};
+				}else{
+					if(Money < {$MoneyScale.max} - {$MoneyScale.step}){
+						Money = parseInt(Money) + {$MoneyScale.step};
+					}else if(Money < {$MoneyScale.max} && Money >= {$MoneyScale.max} - {$MoneyScale.step}){
+						Money = parseInt({$MoneyScale.max});
+					}
+				}
+				$(".single-slider").val(Money);
+				$('.single-slider').jRange('setValue', Money);
+				$(".siwt .cenjine").html(Money);
+				viewLoanInfo();
+			});
+
+		});
+		document.documentElement.ontouchstart = function(){
+		    return true;
+		}
+
+		function viewLoanInfo(){
+			var Money = $(".single-slider").val();
+			if(Money == 0) Money = {$MoneyScale.min};
+			Money = cvphp.getmoney(Money);
+			var Time  = $(".qixian ul").find(".action").attr('data');
+			var Interest = {$Interest};
+			//利息 = 本金 * 利息 * 期限
+			Interest = parseFloat(Interest);
+			var AllInterest = cvphp.getmoney(Money * Interest * Time);
+			AllInterest = cvphp.getmoney(AllInterest);
+			//var AllMoney = cvphp.getmoney(parseFloat(Money) + parseFloat(AllInterest));
+			var AllMoney = cvphp.getmoney(parseFloat(Money));
+			//显示
+			$(".daoqi .AllMoney strong").html("{$MoneyScale.currency_symbol}" + AllMoney);
+			$(".daoqi .AllInterest strong").html("{$MoneyScale.currency_symbol}" + AllInterest);
+			$(".daoqi .LoanTime strong").html(Time + '{$DeadlineStr}');
+		}
+
+		$("#shenqing").click(function(){
+			var Money = $(".single-slider").val();
+			if(Money == 0) Money = {$MoneyScale.min};
+			var Time  = $(".qixian ul").find(".action").attr('data');
+			cvphp.post(
+				"{:U('Loan/getConfirmInfo')}",
+				{
+					money: Money,
+					time: Time
+				},
+				function(data){
+					if(data.status != 1){
+						cvphp.msg({
+	    					content: data.info
+	    				});
+						if(data.url != ""){
+							setTimeout(function(){
+								window.location.href = data.url;
+							},2000);
+						}
+					}else{
+						var data = data.info;
+						console.dir(data)
+						var AllInterest = cvphp.getmoney(data.money * data.interest * data.time);
+						AllInterest = cvphp.getmoney(AllInterest);
+						var truemoney = data.money - AllInterest;
+						$(".alert1 .xinxi li[to='money'] span").html(data.money + "{$MoneyScale.currency|strtolower}");
+						$(".alert1 .xinxi li[to='truemoney'] span").html(data.money + "{$MoneyScale.currency|strtolower}");
+						// $(".alert1 .xinxi li[to='truemoney'] span").html(truemoney + "{$MoneyScale.currency|strtolower}");
+						// 商城额度
+						$(".alert1 .xinxi li[to='productlines'] span").html((data.money - truemoney) + "{$MoneyScale.currency|strtolower}");
+						$(".alert1 .xinxi li[to='bank'] span").html(data.bankname+'（'+data.banknum+'）');
+						$(".alert1 .xinxi li[to='loantime'] span").html(data.starttime_str+'-'+data.endtime_str);
+						$(".alert1 .xinxi li[to='interest'] span").html(data.interest+'%');
+						$(".Agreement a").attr('href',data.contract);
+						if(data.loantype == 1){
+							$(".alert1 .xinxi li[to='interest'] label").html('Monthly rate');
+							$(".alert1 .xinxi li[to='fastrepayment'] span").html(data.fastrepayment_str);
+							$(".alert1 .xinxi li[to='repaymenttime'] span").html('per month'+data.repaymenttime+'day');
+							$(".alert1 .xinxi li[to='time'] span").html(data.time+'Month (period)');
+						}else{
+							$(".alert1 .xinxi li[to='interest'] label").html('Daily rate');
+							$(".alert1 .xinxi li[to='fastrepayment']").remove();
+							$(".alert1 .xinxi li[to='repaymenttime'] span").html(data.fastrepayment_str);
+							$(".alert1 .xinxi li[to='time'] span").html(data.time+'day');
+						}
+						$(".alert1").show();
+						$(".win1").animate({height:'toggle'});
+					}
+				}
+			);
+
+			//收集签名
+			$("#ConfirmLoan").on('click',function(){
+				$(".alert2").show();
+			});
+
+
+
+		});
+		$("#gaun").click(function(){
+			$(".win1").animate({height:'toggle'});
+			setTimeout('$(".alert1").hide()',500);
+		});
+	</script>
+</html>

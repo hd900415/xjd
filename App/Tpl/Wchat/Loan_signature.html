@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<include file="Public/head" />
+		<title>Sign this loan contract - <config name="siteName" /> - <config name="siteTitle" /></title>
+		<script src="__PUBLIC__/Wchat/js/jSignature.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="__PUBLIC__/Wchat/js/flashcanvas.js"></script>
+        <![endif]-->
+		<style type="text/css">
+			#signature {
+				border: 2px dotted black;
+				background-color:lightgrey;
+			}
+			.textTitle{
+				text-align: center;
+				margin-top: 2rem;
+			}
+			.btnDiv{
+				width: 90%;
+				margin: 0 auto;
+			}
+			.btnDiv a,a:hover{
+				width: 48%;
+			    display: inline-block;
+			    text-align: center;
+			    line-height: 3rem;
+			    height: 3rem;
+			    margin-top: 0.5rem;
+			    color: #fff;
+			    border-radius: 3%;
+			    text-decoration:none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="textTitle">Please sign within the dotted line. The signature must be standardized, complete, and the handwriting must be clear and must be signed by yourself.</div>
+		<div id="signature" style="height: 18rem;width: 90%;margin: 0 auto;"></div>
+		<form action="{:U('Loan/signature')}" method="post">
+			<input type="hidden" name="signature" value="" />
+		</form>
+		<div class="btnDiv">
+			<a href="javascript:;" id="resetBtn" style="background-color: rgba(243, 182, 13, 0.83);">Reset</a>
+			<a href="javascript:;" id="doneBtn" style="background-color: #3699ef; float: right;">Submit</a>
+		</div>
+		<script>
+			var $sigdiv = $("#signature").jSignature('init',{height:'18rem',width:'100%'});
+			$(function(){
+				$("#resetBtn").on('click',function(){
+					$sigdiv.jSignature("reset");
+				});
+				$("#doneBtn").on('click',function(){
+					var datapair = $sigdiv.jSignature("getData", "image");
+					$("input[name='signature']").val(datapair[1]);
+					cvphp.submit($("form"),function(data){
+						if(data.status != 1){
+							cvphp.msg({
+		    					content: data.info
+		    				});
+							if(data.url != ""){
+								setTimeout(function(){
+									window.location.href = data.url;
+								},2000);
+							}
+						}else{
+							window.location.href = data.url;
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+</html>

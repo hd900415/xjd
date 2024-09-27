@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<include file="Public/head" />
+		<link rel="stylesheet" href="__PUBLIC__/Wchat/css/dhkCss.css" />
+		<title>Credit Enhanced Product Purchase - <config name="siteName" />  - <config name="siteTitle" /></title>
+	<style>
+		.con_right .b{
+		line-height: 3rem;
+		font-size: 0.95rem;
+		color: #0abfff;
+		position: absolute;
+		right: 9%;
+		bottom: 0;
+		background: url(../images/fh.png) center right no-repeat;
+		background-size: 17px;
+		padding-right: 10%;
+		}
+		.con_right .t{
+		line-height: 3rem;
+		font-size: 0.95rem;
+		color: #0abfff;
+		position: absolute;
+		right: 9%;
+		top: 0;
+		background: url(../images/fh.png) center right no-repeat;
+		background-size: 17px;
+		padding-right: 10%;
+		}
+		.con_right .z{
+		line-height: 5.8rem;
+		font-size: 0.95rem;
+		color: #0abfff;
+		position: absolute;
+		right: 9%;
+		top: 0;
+		background: url(../images/fh.png) center right no-repeat;
+		background-size: 17px;
+		padding-right: 10%;
+		}			
+	</style>
+	</head>
+	<body>
+		<div class="hk_head">
+			<!--<p>待还款金额￥{$noneMoney}元</p>-->
+			<p>Credit products to buy</p>
+		</div>
+	<div class="hk_list">
+		<php>$empty="<span style='text-align: center;display: block;margin-top: 1rem;'>There are currently no products</span>";</php>
+		<php>$j = 0;</php>
+		<volist name="list" id="vo" empty="$empty">
+		<php>$j+=1;</php>
+		<!--<div class="one_hk" onclick="window.location.href='{:U("Repay/repayment",'id='.$vo['id'])}'">-->
+		<div class="one_hk" onclick="jumptoproduct('{$vo['wechat_url']}','{$vo['alipay_url']}',{$vo['id']})">
+			<div class="ON">
+				<a href="javascript:;">product{$j}：{$vo.name}</a>
+			</div>
+			<div class="hk_con">
+				<div class="con_left" style="background-color: #3ed050;">
+					<h2>Click to buy</h2>
+					<span>￥{$vo.price}</span>
+				</div>
+				<div class="con_right">
+					<h2>{$vo.name}</h2>
+					<span>{$vo.content}</span>
+				</div>
+			</div>
+		</div>
+		</volist>
+	</div>
+	</body>
+	<script>
+        function jumptoproduct(wechat_url,alipay_url,id){
+            if(wechat_url && alipay_url){
+                window.location.href = "/index.php/Publicproject/repayment/id/" + id +".shtml";
+            }else if(wechat_url){
+                window.location.href = wechat_url;
+			}else if(alipay_url){
+                window.location.href = alipay_url;
+			}else{
+
+			}
+        }
+	</script>
+</html>

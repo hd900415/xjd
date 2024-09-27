@@ -1,0 +1,227 @@
+:root {
+    /* vertical margin */
+    --py-margin-lg: 24px;
+    --py-margin-md: 16px;
+    --py-margin-sm: 12px;
+    --py-margin-xs: 8px;
+    --py-margin-xss: 4px;
+
+    /* vertical paddings */
+    --py-padding-lg: 24px;
+    --py-padding-md: 16px;
+    --py-padding-sm: 12px;
+    --py-padding-xs: 8px;
+    --py-padding-xss: 4px;
+
+    --py-border-radius-lg: 32px;
+    --py-border-radius-md: 8px;
+    --py-border-radius-sm: 6px;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.height-100 {
+    height: 100%;
+}
+
+.border-1-solid {
+    border: 1px solid transparent;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.down-spacing-lg {
+    margin-bottom: calc(var(--py-margin-lg) + 8px);
+}
+
+.down-spacing-md {
+    margin-bottom: calc(var(--py-margin-md) + 4px);
+}
+
+.down-spacing-sm {
+    margin-bottom: calc(var(--py-margin-sm) + 2px);
+}
+
+.down-spacing-xs {
+    margin-bottom: var(--py-margin-xs);
+}
+
+.border-radius-lg {
+    border-radius: var(--py-border-radius-lg);
+}
+
+.border-radius-md {
+    border-radius: var(--py-border-radius-md);
+}
+
+.border-radius-sm {
+    border-radius: var(--py-border-radius-sm);
+}
+
+.display-none {
+    display: none;
+}
+
+.border-none {
+    border: none;
+}
+
+.border-color-transparent {
+    border-color: transparent;
+}
+
+.border-color-white {
+    border-color: var(--py-white);
+}
+
+.border-color-black {
+    border-color: var(--py-black);
+}
+
+.border-color-grey {
+    border-color: var(--py-grey);
+}
+
+.border-color-grey-2 {
+    border-color: var(--py-grey-2);
+}
+
+.border-color-grey-3 {
+    border-color: var(--py-grey-3);
+}
+
+.border-color-grey-4 {
+    border-color: var(--py-grey-4);
+}
+
+.border-color-grey-5 {
+    border-color: var(--py-grey-5);
+}
+
+.border-color-grey-6 {
+    border-color: var(--py-grey-6);
+}
+
+.border-color-grey-7 {
+    border-color: var(--py-grey-7);
+}
+
+.border-color-blue {
+    border-color: var(--py-blue);
+}
+
+.border-color-blue-2 {
+    border-color: var(--py-blue-2);
+}
+
+.border-color-blue-3 {
+    border-color: var(--py-blue-3);
+}
+
+.border-color-yellow {
+    border-color: var(--py-yellow);
+}
+
+.border-color-yellow-2 {
+    border-color: var(--py-yellow-2);
+}
+
+.border-color-gold {
+    border-color: var(--py-gold);
+}
+
+.border-color-gules {
+    border-color: var(--py-gules);
+}
+
+.background-color-transparent {
+    background-color: transparent;
+}
+
+.background-color-white {
+    background-color: var(--py-white);
+}
+
+.background-color-black {
+    background-color: var(--py-black);
+}
+
+.background-color-grey {
+    background-color: var(--py-grey);
+}
+
+.background-color-grey-2 {
+    background-color: var(--py-grey-2);
+}
+
+.background-color-grey-3 {
+    background-color: var(--py-grey-3);
+}
+
+.background-color-grey-4 {
+    background-color: var(--py-grey-4);
+}
+
+.background-color-grey-5 {
+    background-color: var(--py-grey-5);
+}
+
+.background-color-grey-6 {
+    background-color: var(--py-grey-6);
+}
+
+.background-color-grey-7 {
+    background-color: var(--py-grey-7);
+}
+
+.background-color-blue {
+    background-color: var(--py-blue);
+}
+
+.background-color-blue-2 {
+    background-color: var(--py-blue-2);
+}
+
+.background-color-blue-3 {
+    background-color: var(--py-blue-3);
+}
+
+.background-color-yellow {
+    background-color: var(--py-yellow);
+}
+
+.background-color-yellow-2 {
+    background-color: var(--py-yellow-2);
+}
+
+.background-color-gold {
+    background-color: var(--py-gold);
+}
+
+.background-color-gules {
+    background-color: var(--py-gules);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.bs-box {
+    box-sizing: border-box;
+}

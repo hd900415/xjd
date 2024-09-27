@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <include file="Public/head"/>
+    <link rel="stylesheet" href="__PUBLIC__/Wchat/css/QuotaCss.css">
+    <title>I want to repay - <config name="siteName" /> - <config name="siteTitle" /></title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="banner"><img src="__PUBLIC__/Wchat/images/banner.jpg"></div>
+<div class="ed">
+    <input type="hidden" name="oid" value="{$bill['id']}">
+    <div class="edu">
+        <span class="extend_info"><icon class="delay_icon"></icon><label>Extended 7 Days</label></span>
+        <php>
+            $delayFee=$bill['money'];
+            $delayFee=$bill['money']*$delayRate*$delayDay;
+        </php>
+        <h3>{$Think.config.CURRENCY_SYMBOL}{$delayFee}</h3>
+        <span>Repay {$Think.config.CURRENCY_SYMBOL}{$bill.money} now,your repayment will be extended by {$delayDay} days</span>
+        <!--				<a href="{:U('Repay/order')}">Confirmed</a>-->
+    </div>
+</div>
+<form action="{:U('Repay/delay',array('bid'=>$bill['id']))}" method="post" id="delay-form">
+    <input type="hidden" name="bid" value="{$bill['id']}"/>
+    <div class="content">
+
+        <div class="repay_info">
+            <ul>
+
+                <li class="col-xs-12">
+                    <label>Next repayment data:</label>
+                    <span>{$nextRepayDay|date="d-m-Y",###}</span>
+                </li>
+                <li class="col-xs-12">
+                    <label>Next repayment amount:</label>
+                    <span>{$bill.money}</span>
+                </li>
+            </ul>
+        </div>
+        <div>
+
+        </div>
+        <div class="but">
+<!--            <if condition="$Think.config.DAISHOU_SUBMIT_TO_PAYER neq 1"><p-->
+<!--                    style="color:#e91e1e;text-align:center;margin-top: 1rem;">The system is busy, please try again-->
+<!--                later</p></if>-->
+            <!--<a href="{:U('Repay/repayment',array('id'=>$billId))}" class="but1">当期还款</a>-->
+            <a class="but1" style="width:86%;margin:2rem 7%;" href="#" onclick="javascript:payDelayFee(); return false">Repay
+                Now</a>
+        </div>
+
+    </div>
+</form>
+<include file="Public/foot_repay"/>
+</body>
+<script>
+    function payDelayFee() {
+        $("#delay-form").submit();
+    }
+    function postpone() {
+        var _oid = $('input[name="oid"]').val();
+        cvphp.post("{:U('Repay/postpone')}", {oid: _oid}, function (data) {
+            console.log(data.info);
+            if (data.status == 1) {
+                cvphp.msg({
+                    content: data.info
+                });
+                window.location.reload();
+            } else {
+                cvphp.msg({
+                    content: data.info
+                });
+            }
+        })
+    }
+</script>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<include file="Public/head" />
+		<link href="__PUBLIC__/Wchat/css/bankCss.css" rel="stylesheet">
+		<link type="text/css" href="__PUBLIC__/Wchat/css/LArea.css" rel="stylesheet">
+		<script src="__PUBLIC__/Wchat/js/one_LArea.js"></script>
+		<script src="__PUBLIC__/Wchat/js/LAreaData2.js"></script>
+		<title>Contact Information -Information Certification - <config name="siteName" /> - <config name="siteTitle" /></title>
+	</head>
+	<body>
+		<include file="Public/info_head" />
+		<form action="{:U('Info/contactsAuth')}" method="post">
+			<div class="row xinxi">
+				<ul>
+					<li class="col-xs-12 hang">
+						<label>Direct relative relationship</label>
+						<span class="form-control duan" id="zhishu">please choose</span>
+						<input type="hidden" id="zhishuRelation" name="zhishuRelation">
+					</li>
+					<li class="col-xs-12">
+						<label>Direct relative name</label>
+						<input type="text" placeholder="Please Input ..." class="duan" name="zhishuName">
+					</li>
+					<li class="col-xs-12 hang1">
+						<label>Direct relative phone</label>
+						<input type="text" placeholder="Please Input ..." class="duan dianhua" name="zhishuPhone">
+					</li>
+				</ul>
+			</div>
+			<div class="row xinxi">
+				<ul>
+					<li class="col-xs-12 hang">
+						<label>Emergency contact relationship</label>
+						<span class="form-control duan" id="jinji">please choose</span>
+						<input type="hidden" id="jinjiRelation" name="jinjiRelation">
+					</li>
+					<li class="col-xs-12">
+						<label>Emergency contact name</label>
+						<input type="text" placeholder="please enter" class="duan" name="jinjiName">
+					</li>
+					<li class="col-xs-12 hang1">
+						<label>Emergency contact phone number</label>
+						<input type="text" placeholder="please enter" class="duan dianhua" name="jinjiPhone">
+					</li>
+				</ul>
+			</div>
+		</form>
+		<div class="footer">
+			<button class="but1" id="nextBtn">Next</button>
+		</div>
+	</body>
+	<script>
+		var area3 = new one_LArea();
+		area3.init({
+			'trigger': '#zhishu',
+			'valueTo': '#zhishuRelation',
+			'keys': {
+				id: 'value',
+				name: 'text'
+			},
+			'type': 2,
+			'data': [guanxi_zhishu]
+		});
+		var area2 = new one_LArea();
+		area2.init({
+			'trigger': '#jinji',
+			'valueTo': '#jinjiRelation',
+			'keys': {
+				id: 'value',
+				name: 'text'
+			},
+			'type': 2,
+			'data': [guanxi]
+		});
+		$(function(){
+			$("#nextBtn").on('click',function(){
+				var zhishuRelation = $("input[name='zhishuRelation']").val();
+				var zhishuName = $("input[name='zhishuName']").val();
+				var zhishuPhone = $("input[name='zhishuPhone']").val();
+				var jinjiRelation = $("input[name='jinjiRelation']").val();
+				var jinjiName = $("input[name='jinjiName']").val();
+				var jinjiPhone = $("input[name='jinjiPhone']").val();
+				if(zhishuRelation.length == 0){
+					cvphp.msg({
+	    				content: 'Please choose a direct relationship'
+	    			});
+	    			return ;
+				}
+				if(zhishuName.length == 0){
+					cvphp.msg({
+	    				content: 'Please enter the name of the direct relative'
+	    			});
+	    			return ;
+				}
+				if(!cvphp.ismobile(zhishuPhone)){
+					cvphp.msg({
+	    				content: 'Please enter the specified mobile phone number'
+	    			});
+	    			return ;
+				}
+				if(jinjiRelation.length == 0){
+					cvphp.msg({
+	    				content: 'Please choose a direct relationship'
+	    			});
+	    			return ;
+				}
+				if(jinjiName.length == 0){
+					cvphp.msg({
+	    				content: 'Please enter the name of the direct relative'
+	    			});
+	    			return ;
+				}
+				if(!cvphp.ismobile(jinjiPhone)){
+					cvphp.msg({
+	    				content: 'Please enter the specified mobile phone number'
+	    			});
+	    			return ;
+				}
+				cvphp.submit($("form"),function(data){
+					if(data.status != 1){
+						cvphp.msg({
+		    				content: data.info
+		    			});
+						return false;
+					}else{
+						cvphp.msg({
+		    				content: 'Successfully saved'
+		    			});
+		    			var url = data.url;
+		    			if(url.length > 0){
+		    				setTimeout(function(){
+		    					window.location.href = url;
+		    				},2000);
+		    			}
+					}
+				});
+			});
+		});
+	</script>
+</html>

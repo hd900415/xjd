@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<include file="Public/head" />
+		<link href="__PUBLIC__/Wchat/css/MyCss.css" rel="stylesheet">
+		<title>更多 - <config name="siteName" /> - <config name="siteTitle" /></title>
+	</head>
+	<body>
+		<div class="head_portrait">
+			<div class="header">
+				<img src="__PUBLIC__/Wchat/images/icon_weixian.png"><br/>
+<php>
+$user = getUserInfo();
+	if ($user['vipid']==0){
+	    $viptitle="regular card";
+	}else if($user['vipid']==1){
+	    $viptitle="Silver cow card";
+	}else if($user['vipid']==2){
+	    $viptitle="Taurus card";
+	}else{
+	    $viptitle="regular card";
+	}
+</php>
+</php>
+<empty name="user">
+				<a href="{:U('Index/login')}">Login / Register</a>
+<else />
+				<span>{:getViewPhone($user['telnum'])}({$viptitle})</span>
+</empty>
+			</div>
+		</div>
+		<div class="nav">
+			<ul>
+				<!--<li class="col-xs-12 buy">
+					<a href="{:U('Page/buy')}">Member purchase</a>
+				</li>-->
+				<li class="col-xs-12 guanyu">
+					<a href="{:U('Page/about')}">about us</a>
+				</li>
+				<li class="col-xs-12 one">
+					<a href="{:U('Index/fenxiang')}">Tell friends</a>
+				</li>
+				<li class="col-xs-12 three">
+					<a href="{:U('Page/problem')}">common problem</a>
+				</li>
+				<li class="col-xs-12 kefu">
+					<a href="http://kefu.cckefu.com/vclient/chat/?websiteid=136596">online service</a>
+				</li>
+			</ul>
+		</div>
+<notempty name="user">
+		<div class="nav">
+			<ul>
+				<li class="col-xs-12 system">
+					<a href="{:U('Page/setting')}">set up</a>
+				</li>
+			</ul>
+		</div>
+		<div class="anniu">
+			<a href="javascript:;" onclick="logout();">sign out</a>
+		</div>
+		<script>
+			function logout(){
+				layer.open({
+					content: 'Are you sure you want to exit the system？'
+					,btn: ['Yes','No']
+					,yes: function(index){
+						window.location.href = "{:U('Index/logout')}";
+					}
+				});
+			}
+		</script>
+</notempty>
+		<include file="Public/foot_more" />
+	</body>
+</html>

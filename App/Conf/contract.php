@@ -1,0 +1,1 @@
+<?php return array('contractTpl'=>'&amp;lt;p&amp;gt;cashgo&amp;lt;/p&amp;gt;','agreementTpl'=>'&amp;lt;h3&amp;gt;&amp;lt;!--StartFragment--&amp;gt;cashgo&amp;lt;!--EndFragment--&amp;gt;&amp;lt;/h3&amp;gt;',);

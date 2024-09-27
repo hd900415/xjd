@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+a:hover{
+	text-decoration:none;
+}
+.foot{
+	width:100%;
+	height:4rem;
+	position:fixed;
+	bottom:0;
+	left:0;
+	background:#fff;
+	border-top:1px solid #cfcfcf;
+}
+.foot .index{
+	background:url(../images/index.png) no-repeat center top 0.3rem;
+	background-size: 19%;
+}
+.foot .index_sel{
+	background: url(../images/index_sel.png) no-repeat center top 0.3rem;
+	background-size: 19%;
+}
+.foot .index_sel a{
+	color:#3097fd;
+}
+.foot .withdraw{
+	background: url(../images/withdraw.png) no-repeat center top 0.3rem;
+	background-size: 19%;
+}
+.foot .withdraw_sel{
+	background: url(../images/withdraw_sel.png) no-repeat center top 0.2rem;
+	background-size: 22%;
+}
+.foot .withdraw_sel a{
+	color:#3097fd;
+}
+.foot .more{
+	background: url(../images/more.png) no-repeat center top 0.3rem;
+	background-size: 19%;
+}
+.foot .more_sel{
+	background: url(../images/more_sel.png) no-repeat center top 0.3rem;
+	background-size: 19%;
+}
+.foot .more_sel a{
+	color:#3097fd;
+}
+.foot .public{
+	background: url(../images/withdraw.png) no-repeat center top 0.3rem;
+	background-size: 19%;
+}
+.foot .public_sel{
+	background: url(../images/withdraw_sel.png) no-repeat center top 0.3rem;
+	background-size: 19%;
+}
+.foot .public_sel a{
+	color:#3097fd;
+}
+.foot a{
+	text-align:center;
+	display:inline-block;
+	width:100%;
+	padding-top: 2.7rem;
+	font-size: 0.8rem;
+	color:#a1a9ac;
+}

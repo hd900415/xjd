@@ -1,0 +1,120 @@
+#POST http://local.cash2/Repay/orders
+##POST http://local.cash2/Repay/ajaxDelay
+#POST http://local.cash2/Loan/reLoan
+#POST http://local.cash2/Repay/loans
+#Content-Type: application/x-www-form-urlencoded; charset=utf-8
+#Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2t499
+#POST http://local.cash2/Repay/ajaxDelay
+#Content-Type: application/x-www-form-urlencoded; charset=utf-8
+#Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2t457
+#
+#oid=2022101917561621859410
+
+
+#POST https://gfpay199.com/pay/seasy/paynotify/P2022102211190385820/
+#Content-Type: application/json; charset=utf-8
+#Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2t457
+#
+#{"mch_no":"20210601022","out_trade_no":"P2022102211190385820","amount":"18.00","status":4,"version":"1.0.0","start_time":"","finish_time":"","abnormal_time":"2022-10-22 22:20:44","cancel_time":"2022-10-22 22:20:55","abnormal_remark":"\u4fe1\u606f\u9519\u8bef","platform_order_no":"22102211190409606","dollar":"18.00","ext":"","sign":"bcb2ec5354e28fe033d0848228344e0d"}
+
+#oid=9576
+
+#POST http://local.cash2/Info/ajaxUpload
+#Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2tg97
+#Content-Type: multipart/form-data; boundary=WebAppBoundary
+#
+#--WebAppBoundary
+#Content-Disposition: form-data; name="fileName"
+#
+#file
+#--WebAppBoundary
+#Content-Disposition: form-data; name="file"; filename="a.jpg"
+#
+#< C:/Users/Administrator/Pictures/Camera Roll/1.jpg
+#--WebAppBoundary--
+
+#contacts[]=[{name:zhangsan,phone:123455745,relate:父母}]
+
+#POST http://local.cash2/Contact/ajaxPush
+#Content-Type: application/x-www-form-urlencoded; charset=utf-8
+#Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2tg97
+#
+#contacts[0][name]=zhangsan&contacts[0][phone]=123455745&contacts[0][relate]=父母
+
+
+
+#POST http://loan.csgorich.top/Index/ajaxSignIn
+#Content-Type: application/x-www-form-urlencoded; charset=utf-8
+#Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2Jda123
+
+#username=181818&password=123213213
+
+#POST http://loan.csgorich.top/Repay/loans
+#Content-Type: application/x-www-form-urlencoded; charset=utf-8
+#Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2t457
+
+#POST http://local.cash2/Repay/payUrl
+#Content-Type: application/x-www-form-urlencoded; charset=utf-8
+#Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2tg97
+#
+#oid=2022101316092762872140
+
+
+#POST http://local.gfpay/paynotify/qixi?action=notify
+#Content-Type: application/json; charset=utf-8
+#Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2tg97
+#
+#
+#{"merchantLogin":"gocash1","orderCode":"C20220927141232807200","merchantCode":"2022092715572825228","status":"SUCCESS","orderAmount":"100","paidAmount":"100","sign":"310f2b6d58e97e5519905e161e2b92c4"}
+
+#POST http://loan.csgorich.top/Repay/loans
+#Content-Type: application/x-www-form-urlencoded; charset=utf-8
+#Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2t499
+
+#
+
+
+#POST http://loan2.xjd123.top/Index/ajaxSignIn
+#POST http://m.cashgoeasy.top/Index/ajaxSignIn
+#POST https://m.quikwalleta.top/Index/ajaxSignIn
+
+#POST http://local.cash2/Index/ajaxSignIn
+#Content-Type: application/x-www-form-urlencoded; charset=utf-8
+#Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2Jda19sDD
+#
+#username=82183599302&password=123213213
+
+#POST http://loan.csgorich.top/Repay/loans
+#Content-Type: application/x-www-form-urlencoded; charset=utf-8
+#Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2Jda19ss
+
+#POST http://local.cash2/Repay/loans
+#POST http://loan.csgorich.top/Repay/loans
+#Content-Type: application/x-www-form-urlencoded; charset=utf-8
+#Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2Jda188
+
+#page=3&pageSize=2
+
+#POST http://local.cash2/Loan/reLoan
+#Content-Type: application/x-www-form-urlencoded; charset=utf-8
+#Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2Jda19sDD
+#
+##POST http://loan.csgorich.top/Repay/orders
+#POST http://local.cash2/Repay/order
+##POST https://m.quikwalleta.top/Repay/loans
+#Content-Type: application/x-www-form-urlencoded; charset=utf-8
+#Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2Jda19sDD
+
+#POST https://m.goomoneyass.top/Index/ajaxSignIn
+#POST https://m.casheasya.top/Index/ajaxSignIn
+#Content-Type: application/x-www-form-urlencoded; charset=utf-8
+#Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2Jda19sDS
+#
+#username=9820498399&password=1234545
+
+POST http://local.cash2/Repay/orders
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Cookie: PHPSESSID=h76e188lbq6tbkk7f7m3a2Jda19sDD
+#
+#comments=这是一个评论attachments=https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA18EaBu.img&contact=113213@111.com
+

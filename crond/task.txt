@@ -1,0 +1,4 @@
+nohup php /www/wwwroot/cashgo.com/cli.php Wechat/Order/delaySync >>/www/wwwroot/cashgo.com/crond/php1.log 2>&1 &
+nohup php /www/wwwroot/cashgo.com/cli.php Wechat/Order/sync >>/www/wwwroot/cashgo.com/crond/php2.log 2>&1 &
+
+*/5 * * * * php cli.php Wechat/Order/clear >>/www/wwwlogs/php3.log

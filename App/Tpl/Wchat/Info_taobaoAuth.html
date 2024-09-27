@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<include file="Public/head" />
+		<link href="__PUBLIC__/Wchat/css/bankCss.css" rel="stylesheet">
+		<title>Taobao Verification - Information Verification- <config name="siteName" /> - <config name="siteTitle" /></title>
+	</head>
+	<style>
+		.yanzheng{
+		text-align: center;
+		position: absolute;
+		top: 45%;
+		left: 50%;
+		margin-left: -70px;
+		}
+	</style>
+	<body>
+		<include file="Public/info_head" />
+			<div class="row xinxi">
+				<ul>
+					<li class="col-xs-12">
+						<label>Taobao account</label>
+						<input type="text" placeholder="Please enter phone number" class="form-control" name="mobile" />
+					</li>
+					<li class="col-xs-12">
+						<label>Taobao password</label>
+						<input type="text" placeholder="Please enter service password" class="form-control" name="fwpass" />
+					</li>
+					<li class="col-xs-12">
+						<button type="button" class="btn btn-primary" id="query" onclick="TaoBaoAuth()">Confirm authorization</button>
+					</li>
+				</ul>
+				<button type="button" class="btn btn-primary" style="display:none;text-align:center;"  id="query">Click Taobao Authorization</button>
+			</div>
+			<div class="yanzheng" style="text-align:center;display:none;">
+						<img src=""/>	
+						<p style="text-align:center;">Open Taobao and scan the code</p>
+			</div>
+		<div class="footer">
+			<button class="but1" id="next">jump over</button>
+		</div>
+	</body>
+	<script>
+		/*function resend(){
+			if(resendTime == 1){
+				$("#yzm").html('重新发送');
+				clearInterval(resendFun);
+				$("#yzm").removeAttr('disabled');
+			}else{
+				resendTime--;
+				$("#yzm").html(resendTime + ' 秒重试');
+				$("#yzm").attr('disabled',"true");
+			}
+		}*/
+		function TaoBaoAuth(){
+            var mobile = $("input[name='mobile']").val();
+            var fwpass = $("input[name='fwpass']").val();
+            if(mobile.length == 0){
+                cvphp.msg({
+                    content: 'Please enter phone number'
+                });
+                return false;
+            }
+            if(fwpass.length == 0){
+                cvphp.msg({
+                    content: 'Please enter service password'
+                });
+                return false;
+            }
+            if(!cvphp.ismobile(mobile)){
+                cvphp.msg({
+                    content: 'Please enter a valid mobile phone number'
+                });
+                return false;
+            }
+            layer.open({
+                type: 2
+                ,content: 'Do not quit while reading'
+            });
+            setTimeout(function(){
+                layer.closeAll();
+                cvphp.mpost(
+                    "{:U('Info/next')}",
+                    {
+                        name:'taobao',
+                    },
+                    function(data){
+                        if(data.status != 1){
+                            // cvphp.msg({
+                            //     content: data.info
+                            // });
+                            console.log(data);
+                        }else{
+                            alert("Authorization succeeded");
+                            //window.location.reload();
+                            location.href="{:U('Index/index')}";
+                        }
+                    }
+                );
+
+
+			},8000)
+		}
+
+		var $token = '';
+		var time = 1;
+		var rw = null;
+		function getstatus(token){
+				rw = setInterval(function(){
+				cvphp.mpost("{:U('Info/taobaostatus')}",{token:$token},function(data){
+					console.log(data.msg);
+					if(data.code == '0006' && data.input.type == 'qr'){
+						$(".yanzheng img").attr('src',"data:image/png;base64,"+data.input.value); 
+						$(".yanzheng").show();
+						//clearInterval(rw);
+					}else if(data.code == '0000'){
+						cvphp.mpost(
+							"{:U('Info/taobaoAuth')}",
+							{
+								token:$token
+							},
+							function(data){
+								layer.closeAll();
+								if(data.status != 1){
+									//$token = data.token;
+									//getstatus($token);
+									cvphp.msg({
+										content: data.info
+									});
+									console.log(data);
+								}else{
+									cvphp.msg({
+										content: "Authorization succeeded"
+									});
+									clearInterval(rw);
+									location.href="{:U('Index/index')}";
+								}
+							}
+						);	
+						clearInterval(rw);						
+					}else if(data.code == '1110'){
+							cvphp.msg({
+								content: data.msg
+							});	
+							clearInterval(rw);	
+							$("#query").trigger('click');
+					}else if(data.code == '0100'){
+						  layer.open({
+							type: 2
+							,content: 'Do not quit while reading'
+						  });
+					}
+				});
+				time ++;
+				if(time >= 200){
+					cvphp.msg({
+						content: "Authorization timed out"
+					});
+					clearInterval(rw);
+				}
+			},3000);			
+		}
+		$(function(){
+			$("#query").click(function(){		
+				cvphp.mpost(
+					"{:U('Info/taobao')}",
+					{
+						mobile:1
+					},
+					function(data){
+						if(data.code == "0010"){
+							$token = data.token;
+							getstatus($token);
+						}else{
+							// cvphp.msg({
+							// 	content:data.msg
+							//
+							// })
+							console.log(data.msg);
+						}
+					}
+				);
+			
+			});	
+			$("#next").on('click',function(){
+				cvphp.mpost(
+					"{:U('Info/next')}",
+					{
+						name:'taobao',						
+					},
+					function(data){
+							if(data.status != 1){
+								cvphp.msg({
+									content: data.info
+								});
+								console.log(data);
+							}else{
+								//window.location.reload();
+								location.href="{:U('Index/index')}";
+							}
+					}
+				);
+				//location.href="{:U('Info/taobaoAuth')}";
+			});	
+			// $("#query").trigger('click');
+		});
+	</script>
+</html>

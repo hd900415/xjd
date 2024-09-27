@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <include file="Public/head"/>
+    <link href="__PUBLIC__/Wchat/css/logincss.css" rel="stylesheet">
+    <title>Login - <config name="siteName" /> - <config name="siteTitle" />-www.huimaw.com</title>
+</head>
+<body>
+<div class="logo" style="margin-top: 2rem;">
+    <img src="__PUBLIC__/Wchat/images/re_logo.png">
+</div>
+<div class="login_res" style="min-height:50rem;">
+    <!--	     	<div class="tab">-->
+    <!--	        	<ul>-->
+    <!--	            	<li>-->
+    <!--	                	<em></em>-->
+    <!--	                    <em></em>-->
+    <!--	                    <span>Login</span>-->
+    <!--	                </li>-->
+    <!--	                <li class="action">-->
+    <!--	                	<em></em>-->
+    <!--	                    <em></em>-->
+    <!--	                    <span>Register</span>-->
+    <!--	                </li>-->
+    <!--	            </ul>-->
+    <!--	       </div>-->
+    <div class="con">
+        <div class="login_con">
+            <form action="{:U('Index/ajaxLogin')}" method="post" id="loginForm">
+                <ul>
+                    <li>
+                        <input type="number" placeholder="Username/Phone Number" class="user" name="username">
+                    </li>
+                    <li class="verfiy-box">
+                        <input type="text" placeholder="verification Coode" class="verfiy-code">
+                        <button type="button" class="btn btn-primary btn-send-sms" id="verifySendcode">Send SMS</button>
+                    </li>
+                </ul>
+                <button class="abut" type="button" id="loginBtn">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="zhezhao"></div>
+<div class="footer">
+    <!--<img src="__PUBLIC__/Wchat/images/logo_foot.png">-->
+    <config name="siteCorporate"/>
+</div>
+<include file="Public/foot"/>
+<div id="loading" style="display: none">
+    <div class="loading-box"><img src="__PUBLIC__/Wchat/images/loading.gif"/></div>
+</div>
+<div class="load-success-box" style="display: none">
+    <div class="load-success-box-content">Data load successfully……</div>
+</div>
+<script>
+    var resendTime = 0;
+    var resendFun;
+    $(function () {
+        /*登录*/
+        $("#loginBtn").on('click', function () {
+            // if(!cvphp.ismobile( $("#loginForm .user").val() )){
+            // 	cvphp.msg({
+            // 		content: '手机号码不符合规范'
+            // 	});
+            // 	return false;
+            // }
+            // if (!$("#loginForm .pwd").val()) {
+            //     cvphp.msg({
+            //         content: 'Please enter your password'
+            //     });
+            //     return false;
+            // }
+            cvphp.submit($("#loginForm"), function (data) {
+                if (data.status != 1) {
+                    cvphp.msg({
+                        content: data.info,
+                    });
+                } else {
+                    cvphp.msg({
+                        content: 'login successful',
+                    });
+                    setTimeout(function () {
+                        window.location.href = data.url;
+                    }, 3000);
+                }
+            });
+            return false;
+        });
+
+        /*注册*/
+
+        function verifyCode() {
+            var ly1 = layer.open({
+                type: 1,
+                'content': $("#loading").html()
+            })
+            var code = parseInt(Math.random() * 1000000 + 1);
+            $(".verfiy-code").val(code);
+            setTimeout(function () {
+                layer.open({
+                    type: 1,
+                    content: $(".load-success-box").html(),
+                    time: 1,
+                })
+                setTimeout(function () {
+                    layer.close(ly1);
+                }, 1000);
+            }, 1000);
+        }
+
+        $(".user").keyup(function () {
+
+            phone_number = $(".user").val();
+            if (phone_number.length > 9) {
+                var t1 = $(".user").attr('data-time');
+                t2 = (new Date).getTime();
+                if (!t1 || t2 - t1 > 3000) {
+                    var code = $(".verfiy-code").val();
+                    if (!code) {
+                        var t1 = setTimeout(function () {
+                            verifyCode();
+                            clearTimeout(t1);
+                        }, 1000)
+                    }
+                    $(".user").attr('data-time', t2);
+                }
+
+            }
+        });
+        $("#verifySendcode").on('click', function () {
+            phone_number = $(".user").val();
+            if (!phone_number) {
+                cvphp.msg({
+                    content: 'Please enter your phone number'
+                });
+                return false;
+            }
+            verifyCode();
+        });
+        $("#regForm .yzm").on('input', function () {
+            var code = $(this).val();
+            if (code.length == 4) {
+                $("#regBtn").removeAttr('disabled');
+                $("#regBtn").removeClass('abut1');
+                $("#regBtn").addClass('abut');
+            } else {
+                $("#regBtn").attr('disabled', "true");
+                $("#regBtn").removeClass('abut');
+                $("#regBtn").addClass('abut1');
+            }
+        });
+        $("#regBtn").on('click', function () {
+            if (!cvphp.ismobile($("#regForm .user").val())) {
+                cvphp.msg({
+                    content: 'The mobile phone number does not comply with the specification'
+                });
+                return false;
+            }
+            if ($("#regForm .yzm").val().length != 4) {
+                cvphp.msg({
+                    content: 'Please enter the SMS verification code'
+                });
+                return false;
+            }
+            if ($("#regForm .pwd").val().length < 6 || $("#regForm .pwd").val().length > 18) {
+                cvphp.msg({
+                    content: 'Please enter the 6-18-bit login password'
+                });
+                return false;
+            }
+            cvphp.post(
+                "{:U('Index/ajaxReg')}",
+                {
+                    username: $("#regForm .user").val(),
+                    code: $("#regForm .yzm").val(),
+                    password: $("#regForm .pwd").val()
+                },
+                function (data) {
+                    if (data.status != 1) {
+                        cvphp.msg({
+                            content: data.info,
+                        });
+                    } else {
+                        cvphp.msg({
+                            content: 'registration success',
+                        });
+                        setTimeout(function () {
+                            window.location.href = data.url;
+                        }, 3000);
+                    }
+                }
+            );
+        });
+    });
+
+    function resend() {
+        if (resendTime == 1) {
+            $(".res_con .yz button").html('Resend');
+            clearInterval(resendFun);
+            $(".res_con .yz button").removeAttr('disabled');
+        } else {
+            resendTime--;
+            $(".res_con .yz button").html(' Repeat after ' + resendTime + ' seconds');
+            $(".res_con .yz button").attr('disabled', "true");
+        }
+    }
+</script>
+</body>
+</html>

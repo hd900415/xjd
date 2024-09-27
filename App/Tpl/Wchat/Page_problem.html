@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<include file="Public/head" />
+		<link rel="stylesheet" href="__PUBLIC__/Wchat/css/problemCss.css">
+		<title>Common problem - <config name="siteName" />  - <config name="siteTitle" />-汇码网（www.huimaw.com）</title>
+	</head>
+	<body>
+		<div class="problemList" id="wenti">
+			<ul>
+<volist name="list" id="vo">
+				<li>
+					<span>{$vo.title}</span>
+					<p>{$vo.content}</p>
+				</li>
+</volist>
+			</ul>
+		</div>
+		<div class="page">
+			{$page}
+		</div>
+	</body>
+</html>

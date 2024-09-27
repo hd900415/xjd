@@ -1,0 +1,268 @@
+<!DOCTYPE>
+<html>
+<head>
+    <include file="Public/head"/>
+    <link rel="stylesheet" href="__PUBLIC__/Manage/css/user.css"/>
+    <title>用户资料详情</title>
+</head>
+<body>
+<div class="nestable">
+    <div class="console-title console-title-border drds-detail-title clearfix">
+        <h5>用户资料详情</h5>    <a href="{:U('Info/modify',array('uid'=>$data['uid']))}" class="btn btn-primary"
+                                    target="_blank">编辑资料</a>
+    </div>
+    <div class="console-table-wapper margin-top">
+        <div class="flash-wrap">
+            <ul class="nav nav-tabs margin-t-20">
+                <li class="active">
+                    <a href="javascript:void(0)">基本信息</a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="tab-content margin-t-20 clearfix" id="tab">
+            <!--基本信息-->
+            <div class="tab-pane active">
+                <div class="public-infoTab public-tabBox margin-b-20">
+                    <div class="title">
+                        <span class="font-s-16" style="width:100px">身份信息</span>
+                    </div>
+                    <php>$identity = json_decode($data['identity'],true);</php>
+                    <div class="clearfix">
+                        <div class="wp_box col-lg-4 col-xs-6">
+                            <dl>
+                                <dt>真实姓名：</dt>
+                                <dd>{$identity.name|default="未填写"}</dd>
+                            </dl>
+                        </div>
+                        <div class="wp_box col-lg-4 col-xs-6">
+                            <dl>
+                                <dt>性别：</dt>
+                                <dd>
+                                    <php>
+                                        if(!$identity['idcard']){
+                                        echo "-";
+                                        }else{
+                                        if(strlen($identity['idcard']) == 15){
+                                        $num = substr($identity['idcard'],-1,1);
+                                        }else{
+                                        $num = substr($identity['idcard'],-2,1);
+                                        }
+                                        if($num % 2==0)
+                                        echo "女";
+                                        else
+                                        echo "男";
+                                        }
+                                    </php>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="wp_box col-lg-4 col-xs-6">
+                            <dl>
+                                <dt>出生日期：</dt>
+                                <dd>
+                                    <php>
+                                        if(!$identity['idcard']){
+                                        echo "-";
+                                        }else{
+                                        if(strlen($identity['idcard']) == 15){
+                                        $num = '19'.substr($identity['idcard'],6,6);
+                                        }else{
+                                        $num = substr($identity['idcard'],6,8);
+                                        }
+                                        $num = substr($num,0,4).'-'.substr($num,4,2).'-'.substr($num,-2,2);
+                                        echo $num;
+                                        }
+                                    </php>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="wp_box col-lg-4 col-xs-6">
+                            <dl>
+                                <dt>年龄：</dt>
+                                <dd>
+                                    <php>
+                                        if($identity['age']){
+                                            $age=$identity['age'];
+                                        }else if($num){
+                                            $age= countage($num);
+                                        }else{
+                                            $age= "-";
+                                        }
+                                        echo $age;
+                                    </php>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="wp_box col-lg-4 col-xs-6">
+                            <dl>
+                                <dt>身份证号：</dt>
+                                <dd>{$identity.idcard|default="未填写"}</dd>
+                            </dl>
+                        </div>
+
+                        <div class="wp_box col-lg-4 col-xs-6">
+                            <dl>
+                                <dt>身份证正面照：</dt>
+                                <dd>
+                                    <empty name="identity.frontimg">
+                                        未上传
+                                        <else/>
+                                        <a href="{$image_base_url}{$identity.frontimg}" target="_blank">
+                                            <img src="{$image_base_url}{$identity.frontimg}" alt="点击查看大图" height="28px"/>
+                                        </a>
+                                    </empty>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="wp_box col-lg-4 col-xs-6">
+                            <dl>
+                                <dt>身份证反面照：</dt>
+                                <dd>
+                                    <empty name="identity.backimg">
+                                        未上传
+                                        <else/>
+                                        <a href="{$image_base_url}{$identity.backimg}" target="_blank">
+                                            <img src="{$image_base_url}{$identity.backimg}" alt="点击查看大图" height="28px"/>
+                                        </a>
+                                    </empty>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="wp_box col-lg-4 col-xs-6">
+                            <dl>
+                                <dt>手持身份证照：</dt>
+                                <dd>
+                                    <empty name="identity.personimg">
+                                        未上传
+                                        <else/>
+                                        <a href="{$image_base_url}{$identity.personimg}" target="_blank">
+                                            <img src="{$image_base_url}{$identity.personimg}" alt="点击查看大图" height="28px"/>
+                                        </a>
+                                    </empty>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="wp_box col-lg-4 col-xs-6">
+                            <dl>
+                                <dt>账户注册手机号：</dt>
+                                <dd>
+                                    {$data.user.telnum|default="获取失败"}
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+                <!--联系人信息-->
+                <div class="public-infoTab public-tabBox">
+                    <div class="title">
+                        <span class="font-s-16" style="width:100px">联系人信息</span>
+                    </div>
+                </div>
+                <php>$contacts = json_decode($data['contacts'],true);</php>
+                <div>
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                        <tr>
+                            <th width="25%">姓名</th>
+                            <th width="25%">与借款人关系</th>
+                            <th width="25%">联系电话</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>{$contacts.zhishuName|default="未填写"}</td>
+                            <td>{$contacts.zhishuRelation|default="未填写"}</td>
+                            <td>{$contacts.zhishuPhone|default="未填写"}</td>
+                        </tr>
+                        <tr>
+                            <td>{$contacts.jinjiName|default="未填写"}</td>
+                            <td>{$contacts.jinjiRelation|default="未填写"}</td>
+                            <td>{$contacts.jinjiPhone|default="未填写"}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--联系人信息-->
+
+                <!--银行卡信息-->
+                <div class="public-infoTab public-tabBox margin-b-20">
+                    <div class="title">
+                        <span class="font-s-16" style="width:100px">银行卡信息</span>
+                    </div>
+                    <php>$bank = json_decode($data['bank'],true);</php>
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                        <tr>
+                            <th width="25%">开户银行名称</th>
+                            <th width="25%">银行卡号</th>
+                            <th width="25%">银行预留手机号</th>
+                            <th width="25%">IFSC</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>{$bank.bankName|default="未填写"}</td>
+                            <td>{$bank.bankNum|default="未填写"}</td>
+                            <td>{$bank.bankPhone|default="未填写"}</td>
+                            <td>{$bank.ifsc|default="未填写"}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--银行卡信息-->
+
+                <div class="public-infoTab public-tabBox margin-b-20">
+                    <div class="title">
+                        <span class="font-s-16" style="width:100px">其他信息</span>
+                    </div>
+                    <php>$addess = json_decode($data['addess'],true);</php>
+                    <div class="clearfix">
+                        <div class="wp_box col-lg-4 col-xs-6">
+                            <dl>
+                                <dt>婚姻状况：</dt>
+                                <dd>
+                                    {$addess.marriage|default="未填写"}
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="wp_box col-lg-4 col-xs-6">
+                            <dl>
+                                <dt>最高学历：</dt>
+                                <dd>
+                                    {$addess.education|default="未填写"}
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="wp_box col-lg-4 col-xs-6">
+                            <dl>
+                                <dt>从事行业：</dt>
+                                <dd>
+                                    {$addess.industry|default="未填写"}
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="wp_box col-lg-4 col-xs-6">
+                            <dl>
+                                <dt>居住地址：</dt>
+                                <dd>
+                                    {$addess.addess} - {$addess.addessMore}
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <p style="text-align: center;"><a href="{:U('Info/modify',array('uid'=>$data['uid']))}"
+                                                  class="btn btn-primary" target="_blank">编辑资料</a></p>
+            </div>
+            <!--基本信息-->
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+
+</script>
+</html>

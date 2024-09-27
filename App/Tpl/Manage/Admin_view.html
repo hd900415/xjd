@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<include file="Public/head" />
+		<link rel="stylesheet" href="__PUBLIC__/Manage/css/table.css">
+		<link rel="stylesheet" href="__PUBLIC__/Manage/css/index.css">
+		<script src="__PUBLIC__/Manage/js/echarts-all.js"></script>
+		<script>var apiUrl = "{:U('Index/apidata')}";</script>
+		<script src="__PUBLIC__/Manage/js/echarts-demo.min.js"></script>
+		<title>操作员数据</title>
+	</head>
+	<body>
+		<div class="wrapper-content">
+			<div class="row">
+				<!--数据统计-->
+				<div class="tongji">
+					<div class="tj_title">{$admin['username']}的数据</div>
+					<div class="tj_list">
+						<ul class="col-sm-12">
+							<li class="col-sm-3">
+								<span>审核订单数</span>
+								<div class="em">
+									{$shorder|num2str}
+								</div>
+							</li>
+							<li class="col-sm-3">
+								<span>审核资料数</span>
+								<div class="em">
+									{$shinfo|num2str}
+								</div>
+							</li>
+							<li class="col-sm-3">
+								<span>放款总金额</span>
+								<div class="em">
+									{$dkmoney|num2str}
+								</div>
+							</li>
+							<li class="col-sm-3">
+								<span>操作员信息 </span>
+								<div class="em">
+									{$admin['username']}
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--数据统计-->
+			</div>		
+		</div>
+	</body>
+
+</html>

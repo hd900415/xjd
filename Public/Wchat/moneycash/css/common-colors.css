@@ -1,0 +1,24 @@
+:root {
+    --py-white: #FFFFFF;
+    --py-black: #333333;
+    --py-black-0: #000000;
+
+    --py-grey: #C0C0C0;
+    --py-grey-2: #F7F7F7;
+    --py-grey-3: #E7E7E7;
+    --py-grey-4: #CACACA;
+    --py-grey-5: #BEBEBE;
+    --py-grey-6: #666666;
+    --py-grey-7: #F9F9F9;
+
+    --py-blue: #4975E4;
+    --py-blue-2: #488CF2;
+    --py-blue-3: #C7DDFF;
+
+    --py-yellow: #FF9F53;
+    --py-yellow-2: #FFF7E1;
+
+    --py-gold: #FFF7E3;
+    --py-gules: #F24444;
+    
+}
